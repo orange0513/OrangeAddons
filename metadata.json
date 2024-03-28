@@ -1,0 +1,8 @@
+{
+    "name": "OrangeAddons",
+    "creator": "orange0513",
+    "version": "2.0.0",
+    "description": "OrangeAddons 2.0",
+    "requires": ["Vigilance", "sleep", "axios", "WebSocket"],
+    "entry": "index.js"
+}
