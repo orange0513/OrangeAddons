@@ -75,6 +75,7 @@ function loadPfAlerts() {
                     "items": JSON.stringify(allitems),
                     "pbests": settings.personal_bests,
                     "ecbp": settings.ender_chest_and_backpack_shown,
+                    "runStats": settings.show_run_stats,
                 }
                 let forward = JSON.stringify(embededsettings);
                 console.log('Fetching stats for ' + args[0] + ' with settings: ' + forward)

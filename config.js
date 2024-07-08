@@ -23,6 +23,13 @@ class Settings {
     })
     show_own_stats_in_party_finder = false;
     @SwitchProperty({
+        name: 'Show Run Stats',
+        description: 'Show peoples secrets per run, deaths and rooms cleared per run, from actual runs',
+        category: 'Dungeons',
+        subcategory: 'Party Finder'
+    })
+    show_run_stats = true;
+    @SwitchProperty({
         name: 'Shitter List',
         description: 'Enable OA Shitter List',
         category: 'Dungeons',
@@ -201,12 +208,6 @@ class Settings {
         category: 'Loaders'
     })
     load_kuudra_module = true;
-    @SwitchProperty({
-        name: 'Load Staff Module',
-        description: 'Toggles the Staff Module (YOU MUST /ct load AFTER CHANGING THIS)\nThis module is whitelisted on backend side',
-        category: 'Loaders'
-    })
-    load_staff_module = false;
 
     constructor() {
         this.initialize(this);

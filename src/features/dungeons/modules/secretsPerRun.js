@@ -14,21 +14,7 @@ function loadSecretsPerRun() {
 			return null;
 		}
 		sleep(1000, () => {
-			let tregex = /\[\d+\]\s([A-Za-z0-9_]{2,16}).+/;
-			function saveteammate(num,tabnum,data) {
 
-				let datastrip = ChatLib.removeFormatting(data);
-				let test = tregex.test(datastrip)
-				if (test) {
-					let datatemp = tregex.exec(datastrip)
-					dungeonteam[num] = datatemp[1];
-					let newnum = num + 1;
-					let newtabnum = tabnum + 4
-					saveteammate(newnum,newtabnum,TabList.getNames()[newtabnum])
-				} else {
-					dungeonteam[num] = null;
-				}
-			}
 			dungeonteam[1] = null;
 			dungeonteam[2] = null;
 			dungeonteam[3] = null;
@@ -39,6 +25,21 @@ function loadSecretsPerRun() {
 			dungeonsecrets[3] = null;
 			dungeonsecrets[4] = null;
 			dungeonsecrets[5] = null;
+			function saveteammate(num,tabnum,data) {
+				let tregex = /\[\d+\]\s([A-Za-z0-9_]{2,16}).+/;
+				let datastrip = ChatLib.removeFormatting(data);
+				let test = tregex.test(datastrip)
+				if (test) {
+					let datatemp = tregex.exec(datastrip)
+					dungeonteam[num] = datatemp[1];
+					secrets(num);
+					let newnum = num + 1;
+					let newtabnum = tabnum + 4
+					saveteammate(newnum,newtabnum,TabList.getNames()[newtabnum])
+				} else {
+					dungeonteam[num] = null;
+				}
+			}
 			function secrets(num) {
 				if (dungeonteam[num]  != null && dungeonteam[num] != undefined) {
 					const packet = {
@@ -50,12 +51,6 @@ function loadSecretsPerRun() {
 					}
 					function send(count) {
 						dungeonsecrets[num] = count;
-						if (count >= 1) {
-							sleep(750, () => {
-								let newnum = num + 1;
-								secrets(newnum);
-							});
-						}
 					}
 					if (global.returnPacket.secretCount[dungeonteam[num]] == undefined) {
 						global.returnPacket.secretCount[dungeonteam[num]] = {}
@@ -65,7 +60,6 @@ function loadSecretsPerRun() {
 				}
 			}
 			saveteammate(1,1,TabList.getNames()[1]);
-			secrets(1);
 			dungeonactive = true;
 		});
 
@@ -82,6 +76,8 @@ function loadSecretsPerRun() {
 							"secrets": dungeonsecrets[num]
 						}
 					}
+					dungeonteam[num] = null;
+					dungeonsecrets[num] = null;
 					global.sendData.send(JSON.stringify(packet))
 					newnum = num + 1;
 					

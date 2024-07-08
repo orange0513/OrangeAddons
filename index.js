@@ -1,5 +1,5 @@
 import settings from './settings.js';
-import socketHandler from './src/comms/socketHandler.js';
+import boot from './src/comms/socketHandler.js';
 import global from './src/comms/internal.js';
 setTimeout(() => {
     function heartBeat() {
@@ -30,7 +30,7 @@ function maincmd(args) {
         }, 75);
         settings.openGUI();
     } else if (args[0] == "help" || args[0] == undefined) {
-        ChatLib.chat('&6Welcome to the OrangeAddons, the available commands are listed below (more coming soon):');
+        ChatLib.chat('&6Welcome to the OrangeAddons, the available commands are listed below (more coming soon):::::');
         ChatLib.chat('&6Orange Addons Discord: https://discord.gg/cdXGmFKbTS');
         ChatLib.chat(' &a/oa settings');
                 ChatLib.chat('    &eOpens the settings menu');
@@ -62,6 +62,16 @@ function maincmd(args) {
         }
         FileLib.write("OrangeAddons", "/src/comms/connection.json", JSON.stringify({backend: args[1]}));
         ChatLib.chat('&6&lOA - &6Changed Backend Address to: '+ args[1])
+        ChatLib.chat('&6&lOA - &cYou must /ct load to apply changes.')
+    } else if (args[0].toLowerCase() == "setpassword") { 
+        if (args[1] == undefined) {
+            FileLib.write("OrangeAddons", "/src/comms/connection.json", JSON.stringify({backend: "dev.api.orange0513.com", password: null}));
+            ChatLib.chat('&6&lOA - &6Reset backend password')
+            ChatLib.chat('&6&lOA - &cYou must /ct load to apply changes.')
+            return;
+        }
+        FileLib.write("OrangeAddons", "/src/comms/connection.json", JSON.stringify({backend: "orangeaddons.dev", password: args[1]}));
+        ChatLib.chat('&6&lOA - &6Changed Backend Password to: '+ args[1])
         ChatLib.chat('&6&lOA - &cYou must /ct load to apply changes.')
     } else if (args[0].toLowerCase() === "items") {
         if (args[1].toLowerCase() === "dungeons") {
@@ -122,7 +132,15 @@ function maincmd(args) {
             ChatLib.chat('&6&lOA - &6Unknown Item List, /oa items dungeons or /oa items kuudra')
         }
 
-    } else { 
+    } else if (args[0].toLowerCase() === 'scan') {
+        let names = []
+        World.getAllPlayers().forEach(player => {
+          names.push(player.getName()) 
+        })
+        console.log(Object.keys(global))
+        global.sendData.send(JSON.stringify({type: 'oascan', payload: names}))
+
+    }else { 
         ChatLib.chat('&6&lOA - &6Unknown Command. type /oa help or /orangeaddons help')
     }
 }
@@ -133,11 +151,6 @@ if (settings.load_dungeons_module == true) {
     console.log('OrangeAddons - Loading Dungeons Module...')
     loadDungeonsModule();
 }
-import loadStaffModule from './src/features/staff/loadStaff.js';
-if (settings.load_staff_module == true) {
-    console.log('OrangeAddons - Loading Staff Module...')
-    loadStaffModule();
-}
 import loadAlertModule from './src/features/alerts/loadAlerts.js';
 if (settings.load_alerts_module == true) {
     console.log('OrangeAddons - Loading Alerts Module...')
@@ -145,8 +158,8 @@ if (settings.load_alerts_module == true) {
 }
 import loadKuudraModule from './src/features/kuudra/loadKuudra.js';
 if (settings.load_kuudra_module == true) {
-    console.log('OrangeAddons - Loading Kuudra Module...')
-    loadKuudraModule();
+    //console.log('OrangeAddons - Loading Kuudra Module...')
+    //loadKuudraModule();
 }
 import loadBetterMapModule from './src/features/hooks/betterMap.js';
 function betterMapCheck() {
@@ -168,7 +181,8 @@ import loadCommands from './src/features/commands/loadCommands.js';
 console.log('OrangeAddons - Loading Commands...')
 loadCommands();
 console.log('OrangeAddons - Loading Socket...')
-socketHandler();
+boot();
+export default '';
 
 //register('GuiClosed', () => {
    // if (settingsOpen == true) {
