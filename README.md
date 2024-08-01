@@ -1,7 +1,7 @@
 # OrangeAddons
+### Made by a Skyblock Maniacs Developer
 
 
-2.0.4 File
 ## Features:
 - Low Soulflow Alerts
 - Katana Expiry Alerts
