@@ -1,27 +1,27 @@
 import settings from './settings.js';
 import boot from './src/comms/socketHandler.js';
 import global from './src/comms/internal.js';
-setTimeout(() => {
-    function heartBeat() {
-        const packet = {
-            type: 'heartbeat',
-            payload: {}
-        }
-        try {
-            global.sendData.send(JSON.stringify(packet));
-        } catch (e) {
-        }
-        timeout = setTimeout(() => {
-            heartBeat();
-        }, 5000);
-    }
-    let timeout = setTimeout(() => {
-        heartBeat();
-    }, 5000);
-    register('gameUnload', () => {
-        clearTimeout(timeout);
-    });
-}, 10000);
+// setTimeout(() => {
+//     function heartBeat() {
+//         const packet = {
+//             type: 'heartbeat',
+//             payload: {}
+//         }
+//         try {
+//             global.sendData.send(JSON.stringify(packet));
+//         } catch (e) {
+//         }
+//         timeout = setTimeout(() => {
+//             heartBeat();
+//         }, 5000);
+//     }
+//     let timeout = setTimeout(() => {
+//         heartBeat();
+//     }, 5000);
+//     register('gameUnload', () => {
+//         clearTimeout(timeout);
+//     });
+// }, 10000);
 let settingsOpen = false;
 function maincmd(args) {
     if (args[0] == "settings") {
@@ -52,6 +52,12 @@ function maincmd(args) {
         ChatLib.chat('    &eExample 2: /oa items dungeons all remove HYPERION // removes from global list');
         ChatLib.chat('    &eExample 3: /oa items dungeons mage // shows all mage items');
         ChatLib.chat('    &eManages the items you want to see in the dungeons party finder module');
+        ChatLib.chat(' &a/scan');
+        ChatLib.chat('    &eScans the lobby for exotics in the OA Item DB');
+        ChatLib.chat(' &a/cookie')
+        ChatLib.chat('    &eCookie Clicker for all OA Users!')
+        ChatLib.chat(' &a/badge')
+        ChatLib.chat('    &eChange ur badge')
 
     } else if (args[0].toLowerCase() == "setbackend") {
         if (args[1] == undefined) {
@@ -132,14 +138,6 @@ function maincmd(args) {
             ChatLib.chat('&6&lOA - &6Unknown Item List, /oa items dungeons or /oa items kuudra')
         }
 
-    } else if (args[0].toLowerCase() === 'scan') {
-        let names = []
-        World.getAllPlayers().forEach(player => {
-          names.push(player.getName()) 
-        })
-        console.log(Object.keys(global))
-        global.sendData.send(JSON.stringify({type: 'oascan', payload: names}))
-
     }else { 
         ChatLib.chat('&6&lOA - &6Unknown Command. type /oa help or /orangeaddons help')
     }
@@ -180,6 +178,8 @@ loadSoulflowModule();
 import loadCommands from './src/features/commands/loadCommands.js';
 console.log('OrangeAddons - Loading Commands...')
 loadCommands();
+import loadSelfieRemoval from './src/features/misc/removeSelfie.js';
+loadSelfieRemoval();
 console.log('OrangeAddons - Loading Socket...')
 boot();
 export default '';

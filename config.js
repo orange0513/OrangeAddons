@@ -155,6 +155,12 @@ class Settings {
     })
     low_soulflow_amount = '500';
     @SwitchProperty({
+        name: 'Remove Selfie Mode',
+        description: 'Removes the selfie mode in f5',
+        category: 'Misc'
+    })
+    remove_selfie_mode = false;
+    @SwitchProperty({
         name: 'Katana Alerts',
         description: 'Alerts you when your Katana Expires',
         category: 'Misc'

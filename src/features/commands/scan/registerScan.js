@@ -2,11 +2,15 @@ import global from '../../../comms/internal';
 function registerScan() {
     register('command', () => {
         let names = []
-       // Object.keys(World.getAllPlayers()[0])
+    
         World.getAllPlayers().forEach(player => {
-        let displayName = player.getDisplayName();
-        if (displayName.text !== '')
-            names.push(player.getName()) 
+        if (player.getDisplayName() == '') return;
+        try {
+            const uuid = player.getUUID().toString();
+            if (typeof uuid !== 'string' || player.getName().match(/^[0-9a-z]{10}$/)) return;
+            names.push(uuid) 
+        } catch (e) {
+        }
         })
         global.sendData.send(JSON.stringify({type: 'oascan', payload: JSON.stringify(names)}))
     }).setName('scan');

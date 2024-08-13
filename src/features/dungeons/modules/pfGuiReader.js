@@ -9,20 +9,14 @@ function loadpfGuiReader() {
                 const type = item[4];
                 let floor = item[5];
                 floor = floor +" ";
-                const typeregex = /.*(Master Mode Catacombs|The Catacombs).*/;
                 const floorregex = /.* (1|2|3|4|5|6|7|I|II|III|IV|V|VI|VII|Entrance) .*/;
-                let typeparsed = typeregex.exec(type);
-                let typedone = typeparsed[1];
-                if (typedone == undefined) {
-                    ChatLib.chat('&6&lOA - &cInternal Error, type == undefined')
-                    return ".";
-                } else if (typedone == "Master Mode Catacombs") {
+                // let typeparsed = typeregex.exec(type);
+                let typedone;
+                console.log(type);
+                if (type === '§5§o§aDungeon: §bMaster Mode The Catacombs') {
                     typedone = "M";
-                } else if (typedone == "The Catacombs") {
+                } else if (type === '§5§o§aDungeon: §bThe Catacombs') {
                     typedone = "F";
-                } else {
-                    ChatLib.chat('&6&lOA - &cInternal Error, type == '+ typedone)
-                    return ".";
                 }
                 let floorparsed = floorregex.exec(floor);
                 let floordone = floorparsed[1];
