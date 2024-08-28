@@ -10,7 +10,7 @@
 
 	[dungeons.party_finder]
 		party_finder = true
-		party_finder_floor = "M3"
+		party_finder_floor = "M5"
 		blood_mob_count = true
 		cata_50_date = true
 		mobs_per_run = true
@@ -18,7 +18,7 @@
 		personal_bests = true
 		cata_level = true
 		tank_party_finder_items = "[     \"TERMINATOR\",     \"TANK_WITHER_HELMET\",     \"TANK_WITHER_CHESTPLATE\",     \"TANK_WITHER_LEGGINGS\",     \"TANK_WITHER_BOOTS\",     \"LAST_BREATH\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\",     \"SOUL_WHIP\",     \"AXE_OF_THE_SHREDDED\" ]"
-		unique_pets = true
+		unique_pets = false
 		mage_party_finder_items = "[     \"DARK_CLAYMORE\",     \"WISE_WITHER_HELMET\",     \"WISE__WITHER_CHESTPLATE\",     \"WISE_WITHER_LEGGINGS\",     \"WISE_WITHER_BOOTS\",     \"LAST_BREATH\",     \"RAGNAROCK_AXE\" ]"
 		death_count = true
 		secret_count = true
@@ -36,6 +36,7 @@
 	cells_alignment_alerts = false
 	katana_alerts = false
 	weird_tuba_alerts = false
+	remove_selfie_mode = false
 	ice_spray_alerts = true
-	low_soulflow_amount = "500"
+	low_soulflow_amount = "500000"
 

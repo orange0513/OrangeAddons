@@ -7,7 +7,7 @@ import settings from '../../settings'
 const backend = JSON.parse(FileLib.read("OrangeAddons", "/src/comms/connection.json")).backend 
 let backendAddress = "unknown";
 let commandsLoaded = false;
-let token = null;
+let oatoken;
 let chatPrompt = null;
 let channelsRegistered = false;
 let currentChatChannel = null;
@@ -29,7 +29,7 @@ register("messageSent", (m, e) => {
     }
 });
 try {
-    token = JSON.parse(FileLib.read("./config/orangeaddons_token.json"))
+    oatoken = JSON.parse(FileLib.read("./config/orangeaddons_token.json"))
 }  catch (e) {
 }
 function boot() {
@@ -150,7 +150,7 @@ function socketHandler() {
         console.log(JSON.stringify(Object.keys(v)));
         let response = {
             type: 'auth',
-            payload: {name: getIGNPreLoad(), password: password, version: v.version, token: token}
+            payload: {name: getIGNPreLoad(), password: password, version: v.version, token: oatoken}
         }
         socket.send(JSON.stringify(response));
     }
@@ -165,6 +165,8 @@ function socketHandler() {
     socket.onMessage = (message) => {
         let data = JSON.parse(message);
         if (debugging) console.log('OrangeAddons - Received Data: '+ JSON.stringify(data))
+        if (debugging) console.log('OrangeAddons - Data Keys: '+ Object.keys(data))
+        if (debugging) console.log('OrangeAddons - Data Type: '+ data.type)
         if (data.type == 'console') {
             console.log(data.payload.msg)
             if (commandsLoaded == false) {
@@ -197,6 +199,7 @@ function socketHandler() {
                 global.returnPacket.staffCommands = returnData;
             }
         } else if (data.type == 'message') {
+            if (debugging) console.log('OrangeAddons - Received Message: '+ JSON.stringify(data.payload.msg))
             messageHandler(data.payload.msg.response)
         } else if (data.type == 'reconnect') {
             endFunction = true;
@@ -212,8 +215,8 @@ function socketHandler() {
                 global.returnPacket.secretCount[returnPacket.name].send(returnPacket.amt)
             }
         } else if (data.type == 'newToken') {
-            token = data.payload;
-            FileLib.write("./config/orangeaddons_token.json", JSON.stringify(token))
+            oatoken = data.payload;
+            FileLib.write("./config/orangeaddons_token.json", JSON.stringify(oatoken))
         
         } else if (data.type == 'chatPrompt') {
             chatPrompt = data.payload;
