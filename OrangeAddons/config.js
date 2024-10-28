@@ -17,7 +17,7 @@ class Settings {
     party_finder = true;
     @SwitchProperty({
         name: 'Show own stats in Party Finder',
-        description: 'Shows your own stats whenever you join a party (must have Part Finder enabled)',
+        description: 'Shows your own stats whenever you join a party (must have Party Finder enabled)',
         category: 'Dungeons',
         subcategory: 'Party Finder'
     })

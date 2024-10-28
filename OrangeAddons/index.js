@@ -35,8 +35,12 @@ function maincmd(args) {
         ChatLib.chat(' &a/oa settings');
                 ChatLib.chat('    &eOpens the settings menu');
         ChatLib.chat(' &a/mpr (name) (floor)');
-        ChatLib.chat('    &eExample: /fmpr orange0513 f1');
-                ChatLib.chat('    &eChecks a persons Mobs/Run for a floor');
+        ChatLib.chat('    &eExample: /mpr orange0513 f1');
+        ChatLib.chat('    &eChecks a persons Mobs/Run for a floor');
+        ChatLib.chat(' &a/cheapest (item) (attribute) (lowest you wanna buy) (level you have) (level you want)');
+        ChatLib.chat('    &eExample: /cheapest boots mp 4 8 10');
+        ChatLib.chat('    &eExample 2: /cheapest molten_bracelet vit 5 5 7');
+        ChatLib.chat('    &eFinds the cheapest attributes needed to upgrade an item');
         ChatLib.chat(' &a/xpneeded # #');
         ChatLib.chat('    &eExample: /xpneeded 50.10 60');
         ChatLib.chat('    &eShows how much skill xp you need to get from level 50.10 to 60. ');
@@ -68,16 +72,6 @@ function maincmd(args) {
         }
         FileLib.write("OrangeAddons", "/src/comms/connection.json", JSON.stringify({backend: args[1]}));
         ChatLib.chat('&6&lOA - &6Changed Backend Address to: '+ args[1])
-        ChatLib.chat('&6&lOA - &cYou must /ct load to apply changes.')
-    } else if (args[0].toLowerCase() == "setpassword") { 
-        if (args[1] == undefined) {
-            FileLib.write("OrangeAddons", "/src/comms/connection.json", JSON.stringify({backend: "dev.api.orange0513.com", password: null}));
-            ChatLib.chat('&6&lOA - &6Reset backend password')
-            ChatLib.chat('&6&lOA - &cYou must /ct load to apply changes.')
-            return;
-        }
-        FileLib.write("OrangeAddons", "/src/comms/connection.json", JSON.stringify({backend: "orangeaddons.dev", password: args[1]}));
-        ChatLib.chat('&6&lOA - &6Changed Backend Password to: '+ args[1])
         ChatLib.chat('&6&lOA - &cYou must /ct load to apply changes.')
     } else if (args[0].toLowerCase() === "items") {
         if (args[1].toLowerCase() === "dungeons") {

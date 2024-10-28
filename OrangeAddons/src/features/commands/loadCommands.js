@@ -33,6 +33,13 @@ function loadCommands() {
     register('command', (...args) => {
         let response = {
             type: 'command-v2',
+            payload: {command: 'cheapest', payload: args.join(' ')}
+        }
+        global.sendData.send(JSON.stringify(response));
+    }).setName('cheapest',true);
+    register('command', (...args) => {
+        let response = {
+            type: 'command-v2',
             payload: {command: 'oares', payload: args.join(' ')}
         }
         global.sendData.send(JSON.stringify(response));

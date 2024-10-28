@@ -75,7 +75,7 @@ function fakeClassBuilder() {
                 "auth": ""+ Player.getName() +"-"+ Date.now()
         }
         }).then(response => {
-            if (response.data == "pong") {
+            if (response == "pong") {
                 console.log('OrangeAddons - Backend is online, reconnecting by force in 10 seconds...')
                 setTimeout(() => {
                     if (global.sendData.check() == false) socketHandler(); 
@@ -97,7 +97,7 @@ function getIGNPreLoad() {
     let result = regex.exec(clientClass)
     return result[1]
 }
-const debugging = getIGNPreLoad() === 'orange0513' ? true : false;
+const debugging = getIGNPreLoad() === 'tangerine0513' ? true : false;
 global.debugging = debugging;
 function socketHandler() {
     console.log('OrangeAddons - Attempting to connect to the backend...')
@@ -304,7 +304,7 @@ function socketHandler() {
                 "auth": ""+ Player.getName() +"-"+ Date.now()
             }
         }).then(response => {
-            if (response.data == "pong") {
+            if (response == "pong") {
                 if (abc) return;
                 if (connected) return;
                 console.log('OrangeAddons - Backend is online, connecting...')
