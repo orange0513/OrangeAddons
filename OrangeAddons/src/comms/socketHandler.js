@@ -282,6 +282,8 @@ function socketHandler() {
                 console.log('OrangeAddons - Registered Chat Channel: '+ channe.name)
                 chatChannels.push(channe);
             }
+        } else if (data.type == 'keepAlive') {
+            socket.send(JSON.stringify({type: 'keepAlive'}))
         }
     }
     function restart() {
