@@ -18,3 +18,4 @@
 - /cookie - Global Cookie Clicker
 - Party Finder Mod, very customizable
 - Secrets Per Run module thats very accurate
+- /cheapest - shows the cheapest way to upgrade your attributes
