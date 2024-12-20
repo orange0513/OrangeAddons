@@ -3,6 +3,7 @@ import sleep from 'sleep';
 function loadpfGuiReader() {
     register('GuiOpened', () => {
         sleep(40, () => {
+            if (!Player.getContainer()) return;
             const guiname = Player.getContainer().getName();
             if (guiname == "Party Finder") {
                 const item = Player.getContainer().getStackInSlot(50).getLore();
@@ -12,7 +13,7 @@ function loadpfGuiReader() {
                 const floorregex = /.* (1|2|3|4|5|6|7|I|II|III|IV|V|VI|VII|Entrance) .*/;
                 // let typeparsed = typeregex.exec(type);
                 let typedone;
-                console.log(type);
+                ;
                 if (type === '§5§o§aDungeon: §bMaster Mode The Catacombs') {
                     typedone = "M";
                 } else if (type === '§5§o§aDungeon: §bThe Catacombs') {
@@ -40,13 +41,13 @@ function loadpfGuiReader() {
                 } else if (floordone == "I" || floordone == "1") {
                     floordone = 1;
                 }
-                console.log('Type: '+ typedone + floordone)
+                
                 settings.party_finder_floor = typedone + floordone;
                 return ".";
             }
         });
         return ".";
     })
-    console.log('OrangeAddons - Loaded Party Finder Gui Reader!')
+    
 }
 export default loadpfGuiReader;

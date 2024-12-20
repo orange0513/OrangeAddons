@@ -9,8 +9,8 @@ function loadMPRCommand() {
                 "floor": args[1]
             }
         }
-        global.sendData.send(JSON.stringify(packet));
+        global.socket.send(packet);
     }).setName('mpr')
-    console.log('OrangeAddons - Loaded MPR Command!')
+    
 }
 export default loadMPRCommand;

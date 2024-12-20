@@ -4,6 +4,10 @@ import axios from 'axios';
 import settings from '../../../../settings';
 import global from '../../../comms/internal';
 function loadPfAlerts() {
+
+    register('command', (...args) => {
+        ChatLib.simulateChat(`Party Finder > ${args[0] || Player.getName()} joined the dungeon group! (${args[1] || "Mage"} Level 1)`)
+    }).setName('debugpf', true)
     register('chat', (...args) => {
         function displaystats() {
             if (settings.party_finder == true) {
@@ -63,30 +67,49 @@ function loadPfAlerts() {
                     allitems = allitems.concat(tankitems)
                 }
                 let embededsettings = {
-                    "shitter_list": settings.shitter_list,
-                    "mobs_per_run": settings.mobs_per_run,
-                    "catalevel": settings.cata_level,
-                    "death_count": settings.death_count,
-                    "secret_count": settings.secret_count,
-                    "blood_mob_kills": settings.blood_mob_count,
-                    "c50date": settings.cata_50_date,
-                    "upets": settings.unique_pets,
                     "fmprfloor": settings.party_finder_floor,
                     "items": JSON.stringify(allitems),
-                    "pbests": settings.personal_bests,
                     "ecbp": settings.ender_chest_and_backpack_shown,
-                    "runStats": settings.show_run_stats,
                 }
                 let forward = JSON.stringify(embededsettings);
-                console.log('Fetching stats for ' + args[0] + ' with settings: ' + forward)
+                const show = JSON.parse(FileLib.read("OrangeAddons","persists/partyFinder.json"))
                 const packet = {
-                    type: "partyFinder",
+                    type: "partyFinderV2",
                     payload: {
                         name: args[0],
-                        settings: forward
+                        settings: forward,
+                        // show: [
+                        //     'secrets',
+                        //     'magicalPower',
+                        //     'runStats',
+                        //     'bloodMobKills',
+                        //     'deathCount',
+                        //     'personalBests',
+                        //     'mobsPerRun',
+                        //     'actionButtons',
+                        //     'shitterList',
+                        //     'usedPets',
+                        //     'armorEquip',
+                        //     'goodItems',
+                        //     'cataLevel',
+                        //     'blank',
+                        //     'lines',
+                        // ]
+                        // show: [
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList',
+                        //     'shitterList', 
+                        // ]
+                        show
                     }
                 }
-                global.sendData.send(JSON.stringify(packet))
+                global.socket.send(packet);
             }
         }
         if (args[0] != Player.getName()) {
@@ -95,6 +118,6 @@ function loadPfAlerts() {
             displaystats()
         }
     }).setCriteria(/Party Finder > ([A-Za-z0-9_]{2,16}) joined the dungeon group! \((Mage|Tank|Berserk|Healer|Archer) Level \d+\)/)
-    console.log('OrangeAddons - Loaded Party Finder Alerts!')
+    
 }
 export default loadPfAlerts;

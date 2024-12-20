@@ -5,9 +5,8 @@ function registerNetworth() {
             type: 'command',
             payload: {command: 'networth', name: name}
         }
-        global.sendData.send(JSON.stringify(response));
+        global.socket.send(response);
     }
-    setTimeout(() => {
         register('command', (...args) => {
             let name = args[0];
             if (name == undefined) name = Player.getName();
@@ -18,7 +17,6 @@ function registerNetworth() {
             if (name == undefined) name = Player.getName();
             networth(name);
         }).setName('nw',true)
-    }, 1000); // sbe stinks and overwrites this if i dont timeout
 }
 
 

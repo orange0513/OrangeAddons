@@ -13,6 +13,6 @@ function loadKatanaAlerts() {
 			}
 		}
 	}).setCriteria(/.+\(Soulcry\).+/);
-    console.log('OrangeAddons - Loaded Katana Alerts!')
+    
 }
 export default loadKatanaAlerts;

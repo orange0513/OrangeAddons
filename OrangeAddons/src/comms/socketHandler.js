@@ -1,336 +1,312 @@
+// note to reviewer, this is a rewrite of the old version of this just with the addition of callbacks on the send method & being able to register command-v2 aswell and not just staffCommand
+// just wanted to go back and remake this since ive really improved my coding since when i first made it, and it was an atrocity to look at
 
+
+import messageHandler from "../handlers/message";
+import { bulkDelete } from "../handlers/message";
+import global from "./internal";
 import WebSocket from "WebSocket";
-import messageHandler from '../handlers/message';
-import global from './internal';
-import request from 'RequestV2';
-import settings from '../../settings'
-const backend = JSON.parse(FileLib.read("OrangeAddons", "/src/comms/connection.json")).backend 
-let backendAddress = "unknown";
-let commandsLoaded = false;
-let oatoken;
-let chatPrompt = null;
-let channelsRegistered = false;
-let currentChatChannel = null;
-let chatChannels = []; // Format: [{name: 'name', command: 'command}]
-let chatPromptid = 0;
-register("messageSent", (m, e) => {
-    if (m.startsWith('/')) return;
-    if (chatPrompt) {
-        cancel(e);
-        const packetCommand = {
-            type: 'command-v2',
-            payload: {
-                command: 'oares',
-                payload: chatPrompt + ' ==>' + m + '<=='
-            }
-        }
-        global.sendData.send(JSON.stringify(packetCommand))
-        chatPrompt = null;
-    }
-});
-try {
-    oatoken = JSON.parse(FileLib.read("./config/orangeaddons_token.json"))
-}  catch (e) {
-}
-function boot() {
-    console.log('Fetching backend...')
-    request('https://'+ backend +'/address', { timeout: 10000 })
-    .then(response => { 
-        backendAddress = response; 
-        socketHandler(); 
-        console.log('Starting Socket with: '+ response) 
-    })
-    .catch(error => {
-        console.log('Error fetching backend: '+ error.toString())
-        boot()
-    });
-}
-function makeSureAddressIsKnown() {
-    if (backendAddress == "unknown") {
-        boot();
-        console.log('OrangeAddons - Backend Address is unknown, attempting to get address...')
-        setTimeout(() => {
-            makeSureAddressIsKnown()
-        }, 5000);
-    }
+import sleep from "sleep";
+let unloaded = false;
+let socket;
 
-}
-setTimeout(() => {
-    makeSureAddressIsKnown()
-}, 5000);
-const password = JSON.parse(FileLib.read("OrangeAddons", "/src/comms/connection.json")).password // for the reviewer this is for staff module as a 2nd method to access it just incase the first one dosent work for people
-console.log('OrangeAddons - Backend Address: '+ backend)
-function fakeClassBuilder() {
-    class sendData {
-        constructor() {
-            this.socket = null
-        }
-        send(data) {
-            console.log("Socket is currently disconnected, cannot send data")
-        request('https://'+ backend +'/ping', {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (CT - OrangeAddons)",
-                "OA": true,
-                "OA-V": 2,
-                "auth": ""+ Player.getName() +"-"+ Date.now()
-        }
-        }).then(response => {
-            if (response == "pong") {
-                console.log('OrangeAddons - Backend is online, reconnecting by force in 10 seconds...')
-                setTimeout(() => {
-                    if (global.sendData.check() == false) socketHandler(); 
-                }, 10000);
-            } else {
-                console.log('OrangeAddons - Invalid response from backend')
-            }
-        })
-        }
-        check() {
-            return false;
-        }
-    }
-    return sendData
-}
 function getIGNPreLoad() {
     let clientClass = Client.getMinecraft().func_110432_I().func_148256_e().toString()
     let regex = /name=([A-Za-z_0-9]+)/
     let result = regex.exec(clientClass)
     return result[1]
 }
-const debugging = getIGNPreLoad() === 'tangerine0513' ? true : false;
-global.debugging = debugging;
-function socketHandler() {
-    console.log('OrangeAddons - Attempting to connect to the backend...')
-    if (backendAddress == "unknown") return;
-    const socket = new WebSocket("ws://"+ backendAddress +"/?password="+ password);
-    let connected = false;
-    let endFunction = false;
-    let unloaded = false;
-    let listeners = {}
-    let fakeData = fakeClassBuilder()
-    global.sendData = new fakeData()
-    register('GameUnload', () => {
-        if (unloaded) return;
-        unloaded = true;
-        endFunction = true;
-        console.log('OrangeAddons - Unloading...')
-        socket.close()
-    })
-    socket.onError = (error) => {
-        console.log('OrangeAddons - Error: ' + JSON.stringify(error))
-        if (endFunction) return;
-        restart()
+
+function getUUIDPreLoad() {
+    let clientClass = Client.getMinecraft().func_110432_I().func_148256_e().toString()
+    let regex = /id=([A-Za-z_0-9-]+)/
+    let result = regex.exec(clientClass)
+    return result[1]
+}
+
+
+register('GameUnload', () => {  
+    if (unloaded) return;
+    unloaded = true;
+    socket.close();
+});
+const debugging = getIGNPreLoad() === "orange0513";
+
+// // const serverId = OASession;
+
+// import axios from 'axios';
+// try {
+//     const joinServerUrl = "https://sessionserver.mojang.com/session/minecraft/join";
+//     const accessToken = Client.getMinecraft().func_110432_I().func_148254_d();
+//     const selectedProfile = "playerUuid";
+  
+//     axios.post(
+//       joinServerUrl,
+//       {
+//         accessToken,
+//         selectedProfile,
+//         serverId,
+//       },
+//       {
+//         headers: {
+//           "Content-Type": "application/json", // Explicitly set the content type
+//         },
+//       }
+//     ).then((response) => {
+//       console.log("Joined server successfully!");
+//       console.log(response.data);
+//       console.log(response.status);
+//     }).catch((error) => {
+//       console.error("Failed to join server:", JSON.stringify(error));
+//     });
+// } catch (error) {
+//     console.error("Error occurred while joining server:", error.message);
+// }
+let prevId = null;
+function getServerId() {
+    if (prevId && prevId.generatedTime + 1000 * 60 * 1 > Date.now() && prevId.name === getIGNPreLoad()) {
+        return prevId.serverId;
     }
-    socket.onOpen = () => {
-        class sendData {
-            constructor() {
-                this.socket = socket
-            }
-            send(data) {
-                try {
-                    if (debugging) console.log('OrangeAddons - Sending Data: '+ data)
-                    this.socket.send(data);
-                } catch (error) {
-                    console.log('Error sending data: ', JSON.stringify(error));
-                    if (JSON.stringify(error).includes('WebsocketNotConnected')) {
-                        console.log('OrangeAddons - Attempting to reconnect to the backend...')
-                        socketHandler();
-                        endFunction = true;
-                    }   
+    // from https://www.chattriggers.com/modules/v/IRC (thank you fork)
+    const serverId = java.util.UUID.randomUUID().toString().replace(/-/g, "")
+    Client.getMinecraft().func_152347_ac().joinServer(Client.getMinecraft().func_110432_I().func_148256_e(), Client.getMinecraft().func_110432_I().func_148254_d(), serverId);
+    console.log("Validated ID: " + serverId);
+    prevId = {
+        serverId,
+        name: getIGNPreLoad(),
+        generatedTime: Date.now()
+    };
+    return serverId;
+}
+  
+        
+class socketHandler {
+    constructor() {
+        setTimeout(() => {
+            const thisthis = this;
+            this.token = FileLib.read("./config/orangeaddons_token.json") ? JSON.parse(FileLib.read("./config/orangeaddons_token.json")) : null;
+            this.pendingRequests = [];
+            this.alreadyRegistered = [];
+            this.chatPromptId = 0;
+            this.currentChatPrompt = null;
+            this.chatChannels = [];
+            this.currentChatChannel = null;
+            this.chatChannelsRegistered = false;
+            this.restarting = false;
+            this.socket = new WebSocket('wss://orangeaddons.dev:30022');
+            this.socket.onMessage = (msg) => {
+                thisthis.onMessage(JSON.parse(msg));
+            };
+            this.socket.onError = (error) => {
+                console.error(error);
+                if (!unloaded)
+                    thisthis.restartSocket();
+            };
+            this.socket.onOpen = () => {
+                const v = JSON.parse(FileLib.read("OrangeAddons", "./metadata.json"));
+                    let response = {
+                        type: 'auth',
+                        payload: {name: getIGNPreLoad(), version: v, token: thisthis.token, session: getServerId()}
+                    }
+                    thisthis.send(response);
+            };
+
+            this.socket.onClose = (code, reason, remote) => {
+                if (!unloaded)
+                    thisthis.restartSocket();
+            };
+                    
+            this.socket.connect();
+
+            register("messageSent", (m, e) => {
+                if (m.startsWith('/')) return;
+                if (this.currentChatPrompt) {
+                    cancel(e);
+                    const packetCommand = {
+                        type: 'command-v2',
+                        payload: {
+                            command: 'oares',
+                            payload: this.currentChatPrompt + ' ==>' + m + '<=='
+                        }
+                    }
+                    this.send(packetCommand)
+                    this.currentChatPrompt = null;
                 }
-            }
-            check() {
-                return true;
-            }
-        }
-        global.sendData = new sendData()
-        connected = true;
-        console.log('OrangeAddons - Connected to the backend!')
-        const v = JSON.parse(FileLib.read("OrangeAddons", "./metadata.json"));
-        console.log(JSON.stringify(Object.keys(v)));
-        let response = {
-            type: 'auth',
-            payload: {name: getIGNPreLoad(), password: password, version: v.version, token: oatoken}
-        }
-        socket.send(JSON.stringify(response));
+            });
+            sleep(3000, () => {
+                this.keepAlive();
+            });
+        }, 2500);
     }
-    socket.onClose = () => {
-        console.log('OrangeAddons - Disconnected from the backend!')
-        if (endFunction) return console.log('OrangeAddons - Socket function was ended, not attempting to reconnect');
-        connected = false;
-        let boop2 = fakeClassBuilder()
-        global.sendData = new boop2()
-        restart()
+
+    restartSocket() {
+        let thisthis = this;
+        if (this.restarting) return;
+        this.restarting = true;
+        sleep(1000, () => {
+            this.restarting = false;
+            try { thisthis.socket.close(); } catch (error) {}
+            let socket = new WebSocket('wss://orangeaddons.dev:30022');
+            thisthis.socket = socket;
+            thisthis.socket.onMessage = (msg) => {
+                thisthis.onMessage(JSON.parse(msg));
+            };
+            thisthis.socket.onError = (error) => {
+                console.error(error);
+                if (!unloaded && thisthis.socket === socket)
+                    thisthis.restartSocket();
+            };
+            thisthis.socket.onOpen = () => {
+                const v = JSON.parse(FileLib.read("OrangeAddons", "./metadata.json"));
+                    let response = {
+                        type: 'auth',
+                        payload: {name: getIGNPreLoad(), version: v, token: thisthis.token, session: getServerId()}
+                    }
+                    thisthis.send(response);
+            };
+
+            thisthis.socket.onClose = (code, reason, remote) => {
+                if (!unloaded && thisthis.socket === socket) 
+                    thisthis.restartSocket();
+            };
+            thisthis.socket.connect();
+        });
     }
-    socket.onMessage = (message) => {
-        let data = JSON.parse(message);
-        if (debugging) console.log('OrangeAddons - Received Data: '+ JSON.stringify(data))
-        if (debugging) console.log('OrangeAddons - Data Keys: '+ Object.keys(data))
-        if (debugging) console.log('OrangeAddons - Data Type: '+ data.type)
-        if (data.type == 'console') {
-            console.log(data.payload.msg)
-            if (commandsLoaded == false) {
-                const packet = {
-                    type: 'fetch',
-                    payload: 'staffCommands'
+
+    keepAlive() {
+        this.send({ type: 'keepAlive' });
+        setTimeout(() => {
+            if (!unloaded)
+                this.keepAlive();
+        }, 2000);
+    }
+
+    onMessage(message) {
+        const messageType = message.type;
+        switch (messageType) {
+            case 'response':
+                const data = message;
+                const callback = this.pendingRequests.find(request => request.id === message.messageId)?.callback;
+                if (data.delete) {
+                    this.pendingRequests = this.pendingRequests.filter(request => request.id !== message.messageId);
                 }
-                global.sendData.send(JSON.stringify(packet));
-                function returnData(data) {
-                    commandsLoaded = true;
-                    console.log('OrangeAddons - Received Staff Commands! ('+ JSON.stringify(data) +')')
-                    Object.keys(data).forEach((i) => {
-                        const name = data[i]
-                        console.log('OrangeAddons - Loading Staff Command: '+ name)
-                        register('command', (...args) => {
-                            let head = args.join(" ")
-                            console.log('Sending command to server: ' + head)
+                if (callback) callback(data);
+                break;
+            case 'message':
+                messageHandler(message.payload.msg.response);
+                break;
+            case 'registerCommands': 
+                let command = message.payload;
+                command.forEach(cmd => {
+                    if (!this.alreadyRegistered.includes(cmd.name) && ['staffCommand','command-v2'].includes(cmd.type)) {
+                    this.alreadyRegistered.push(cmd.name);
+                    register('command', (...args) => {
+                        let head = args.join(" ")
+                        let packetCommand = {
+                            type: cmd.type,
+                            payload: {
+                                command: cmd.name,
+                                payload: head
+                            }
+                        }
+                        this.send(packetCommand);
+                    }).setName(cmd.name);
+                }
+                });
+                break;
+            case 'keepAlive':
+                this.send({ type: 'keepAlive' });
+                break;
+            // case 'newToken':
+            //     this.token = message.payload;
+            //     FileLib.write("./config/orangeaddons_token.json", JSON.stringify(this.token));
+            //     break;
+            case 'newHelpMessage':
+                FileLib.write("OrangeAddons", "help.json", JSON.stringify(message.payload));
+                break;
+            case 'chatPrompt':
+                let chatPrompt = message.payload;
+                let chatPromptidLocal = this.chatPromptId + 1;
+                this.chatPromptid++;
+                this.currentChatPrompt = chatPrompt.id;
+                setTimeout(() => {
+                    if (this.chatPromptid == chatPromptidLocal) {
+                        this.currentChatPrompt = null;
+                    }
+                }, chatPrompt.timeout || 60000);
+                break;
+            case 'registerChannel': 
+
+                let channel = message.payload;
+                
+                if (!this.chatChannelsRegistered) {
+                    
+                    register("messageSent", (m, e) => {
+                        for (let channel of chatChannels) {
+                            if (msg.startsWith((`/chat ${channel.name}`.toLowerCase()))) {
+                                currentChatChannel = channel;
+                                cancel(e);
+                                ChatLib.chat("&aYou are now in the &r&6"+ currentChatChannel.name.toUpperCase() +"&r&a channel&r")
+                            }
+                        } 
+
+                        if (!msg.startsWith('/') && currentChatChannel !== null) {
+                            cancel(e);
                             const packetCommand = {
                                 type: 'staffCommand',
                                 payload: {
-                                    command: name,
-                                    payload: head
+                                    command: currentChatChannel.command,
+                                    payload: m
                                 }
                             }
-                            global.sendData.send(JSON.stringify(packetCommand))
-                        }).setName(name)
-                        console.log('OrangeAddons - Loaded Staff Command: '+ name)
-                    })
-                }
-                global.returnPacket.staffCommands = returnData;
-            }
-        } else if (data.type == 'message') {
-            if (debugging) console.log('OrangeAddons - Received Message: '+ JSON.stringify(data.payload.msg))
-            messageHandler(data.payload.msg.response)
-        } else if (data.type == 'reconnect') {
-            endFunction = true;
-        } else if (data.type == 'returnFetch') {
-            const returnPacket = data.payload
-            const returnType = data.payload.returnType;
-            if (returnType == 'staffCommands') {
-                global.returnPacket.staffCommands(returnPacket.payload)
-            }
-            if (returnType == 'secretCount') {
-                if (!global.returnPacket.secretCount[returnPacket.name]) return console.log('OrangeAddons - Invalid secret count return packet');
-
-                global.returnPacket.secretCount[returnPacket.name].send(returnPacket.amt)
-            }
-        } else if (data.type == 'newToken') {
-            oatoken = data.payload;
-            FileLib.write("./config/orangeaddons_token.json", JSON.stringify(oatoken))
-        
-        } else if (data.type == 'chatPrompt') {
-            chatPrompt = data.payload;
-            let cPrompt = chatPromptid + 1;
-            chatPromptid++;
-            setTimeout(() => {
-                if (chatPromptid == cPrompt) {
-                    chatPrompt = null;
-                }
-            }, 60000);
-        } else if (data.type == 'registerChannel') {
-            console.log('1')
-            console.log(data.payload)
-            let channel = data.payload;
-            console.log('OrangeAddons - Started Registering Chat Channel: '+ channel)
-            if (!channelsRegistered) {
-                console.log('OrangeAddons - Registering Chat Channel Manager...')
-                register("messageSent", (m, e) => {
-                    const msg = m.toLocaleLowerCase()
-                    Object.keys(chatChannels).forEach((i) => {
-                        const channel = chatChannels[i];
-                        if (msg.startsWith((`/chat ${channel.name}`.toLowerCase()))) {
-                            currentChatChannel = channel;
-                            cancel(e);
-                            ChatLib.chat("&aYou are now in the &r&6"+ currentChatChannel.name.toUpperCase() +"&r&a channel&r")
+                            this.send(packetCommand)
                         }
                     });
-                    // for (const channel of chatChannels) {
-                    //     console.log(channel);
-                    //     if (msg.startsWith((`/chat ${channel.name}`.toLowerCase()))) {
-                    //         currentChatChannel = channel;
-                    //         cancel(e);
-                    //         ChatLib.chat("&aYou are now in the &r&6"+ currentChatChannel.name.toUpperCase() +"&r&a channel&r")
-                    //     }
-                    // } 
-                    // i tried this but channel is undefined????
-                    if (!msg.startsWith('/') && currentChatChannel !== null) {
-                        cancel(e);
-                        const packetCommand = {
-                            type: 'staffCommand',
-                            payload: {
-                                command: currentChatChannel.command,
-                                payload: m
-                            }
-                        }
-                        global.sendData.send(JSON.stringify(packetCommand))
-                    }
-                });
-                register("chat", () => {
-                    currentChatChannel = null;
-                }).setCriteria(/Opened a chat conversation with .* for the next 5 minutes. Use \/chat a to leave/);
-                register("chat", () => {
-                    currentChatChannel = null;
-                }).setCriteria('&aYou are now in the &r&6${c}&r&a channel&r')
-                register("chat", () => {
-                    currentChatChannel = null;
-                }).setCriteria("&cYou're already in this channel!&r")
-                channelsRegistered = true;
-                console.log('OrangeAddons - Registered Chat Channel Manager!')
-            }
-            const channe = JSON.parse(channel)
-            if (!chatChannels.find(c => c.name === channe.name)) {
-                console.log('OrangeAddons - Registered Chat Channel: '+ channe.name)
-                chatChannels.push(channe);
-            }
-        } else if (data.type == 'keepAlive') {
-            socket.send(JSON.stringify({type: 'keepAlive'}))
+                    register("chat", () => {
+                        this.currentChatChannel = null;
+                    }).setCriteria(/Opened a chat conversation with .* for the next 5 minutes. Use \/chat a to leave/);
+                    register("chat", () => {
+                        this.currentChatChannel = null;
+                    }).setCriteria('&aYou are now in the &r&6${c}&r&a channel&r')
+                    register("chat", () => {
+                        this.currentChatChannel = null;
+                    }).setCriteria("&cYou're already in this channel!&r")
+                    this.chatChannelsRegistered = true;
+                    
+                }
+                const channe = JSON.parse(channel)
+                if (!chatChannels.find(c => c.name === channe.name)) {
+                    chatChannels.push(channe);
+                };
+                break;
+            case 'updatePf': 
+                let newPf = message.payload;
+                FileLib.write("OrangeAddons", "persists/partyFinder.json", JSON.stringify(newPf));
+                break;
+            case 'bulkDelete':
+                bulkDelete(message.payload);
+                break;
         }
     }
-    function restart() {
-        if (connected) return;
-        if (endFunction) return;
-        console.log('OrangeAddons - Attempting to reconnect to the backend...')
-        let abc = false;
-        setTimeout(() => {
-            abc = true;
-            if (endFunction) return;
-            if (connected) return;
-            console.log('OrangeAddons - Attempting to connect again...')
-            restart()
-        }, 5000);
-        request('https://'+ backend +'/ping', {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (CT - OrangeAddons)",
-                "OA": true,
-                "OA-V": 2,
-                "auth": ""+ Player.getName() +"-"+ Date.now()
-            }
-        }).then(response => {
-            if (response == "pong") {
-                if (abc) return;
-                if (connected) return;
-                console.log('OrangeAddons - Backend is online, connecting...')
-                endFunction = true;
-                try {
-                    socket.close()
-                } catch (error) {
-                }
-                socketHandler()
-            } else {
-                console.log('OrangeAddons - Invalid response from backend')
-            }
-        })
+
+    send(data, callback) {
+        try {
+            if (callback) {
+                let id = Math.floor(Math.random() * 2_000_000_000) + 1;
+                this.socket.send(JSON.stringify({ responseId: id, ...data }));
+                this.pendingRequests.push({ id, callback });
+
+            } else 
+                this.socket.send(JSON.stringify(data));
+        } catch (error) {
+            console.error(error);
+            this.restartSocket();
+        }
     }
-    socket.connect();
-    setTimeout(() => {
-        if (connected) return;
-        if (endFunction) return;
-        console.log('OrangeAddons - Unable to connect to the backend, attempting to reconnect...')
-        restart()
-    }, 10000);
-    while (endFunction) {
-        console.log('OrangeAddons - Ending Socket Function...')
-        return;
-    }
+
+
 }
-export default boot
+
+global.socket = new socketHandler;
+export default global.socket;
+

@@ -8,8 +8,8 @@ function loadSoulflowModule() {
                 "amount": settings.low_soulflow_amount
             }
         }
-        global.sendData.send(JSON.stringify(packet));
+        global.socket.send(packet);
     }).setCriteria(/^Sending\sto\sserver\s.+$/)
-    console.log('OrangeAddons - Loaded Soulflow Module!')
+    
 }
 export default loadSoulflowModule;

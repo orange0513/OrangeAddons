@@ -19,7 +19,7 @@ function loadPfAlerts() {
                     "items": allitems,
                 }
                 let forward = JSON.stringify(embededsettings);
-                console.log('Fetching kuudra stats for ' + args[0] + ' with settings: ' + forward)
+                
                 const packet = {
                     type: "kuudraPartyFinder",
                     payload: {
@@ -27,7 +27,7 @@ function loadPfAlerts() {
                         settings: forward
                     }
                 }
-                global.sendData.send(JSON.stringify(packet))
+                global.socket.send(packet);
             }
         }
         if (args[0] != Player.getName()) {
@@ -36,6 +36,6 @@ function loadPfAlerts() {
             displaystats()
         }
     }).setCriteria(/Party Finder > ([A-Za-z0-9_]{2,16}) joined the group! \(Combat Level \d+\)/)
-    console.log('OrangeAddons - Loaded Kuudra Party Finder Alerts!')
+    
 }
 export default loadPfAlerts;

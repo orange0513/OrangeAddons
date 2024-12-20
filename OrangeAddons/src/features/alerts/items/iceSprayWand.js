@@ -38,6 +38,6 @@ function loadIceSprayAlerts() {
             }
         }
     }).setCriteria(/.+\(Ice Spray\).+/);
-    console.log('OrangeAddons - Loaded Ice Spray Alerts!')
+    
 }
 export default loadIceSprayAlerts;

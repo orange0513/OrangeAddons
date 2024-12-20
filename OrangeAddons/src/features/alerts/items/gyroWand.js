@@ -24,6 +24,6 @@ function loadGyroWandAlerts() {
 	register('Chat', () => {
 		cellalert();
 	}).setCriteria(/([A-Za-z0-9_]+) casted Cells Alignment on you!/);
-	console.log('OrangeAddons - Loaded Gyro Wand Alerts!')
+	
 }
 export default loadGyroWandAlerts;

@@ -15,8 +15,8 @@ function registerCXPNeeded() {
                 "highLevel": highLevel
             }
         }
-        global.sendData.send(JSON.stringify(packet));
+        global.socket.send(packet);
 	}).setName('cxpneeded')
-    console.log('OrangeAddons - Loaded /cxpneeded Command!')
+    
 }
 export default registerCXPNeeded;

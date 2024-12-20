@@ -14,6 +14,6 @@ function loadHealingWandAlerts() {
 		}
 
 	}).setCriteria(/.+\((Small|Medium|Big|Huge) Heal\).+/);
-	console.log('OrangeAddons - Loaded Healing Wand Alerts!')
+	
 }
 export default loadHealingWandAlerts;

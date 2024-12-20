@@ -1,5 +1,5 @@
-import { @TextProperty, @Vigilant, @SwitchProperty } from 'Vigilance';
-
+import { @TextProperty, @Vigilant, @SwitchProperty, @ButtonProperty } from 'Vigilance';
+import global from './src/comms/internal.js';
 @Vigilant('OrangeAddons','OrangeAddons Settings')
 class Settings {
     @SwitchProperty({
@@ -8,6 +8,14 @@ class Settings {
         category: 'Dungeons'
     })
     secrets_per_run = true;
+    @SwitchProperty({
+        name: 'Goldor Counts',
+        description: 'Displays how many devices/terms/levers your teammates have done in F7/M7',
+        category: 'Dungeons'
+    })
+    goldor_counts = false;
+    
+
     @SwitchProperty({
         name: 'Party Finder',
         description: 'Toggles the party finder module',
@@ -23,82 +31,12 @@ class Settings {
     })
     show_own_stats_in_party_finder = false;
     @SwitchProperty({
-        name: 'Show Run Stats',
-        description: 'Show peoples secrets per run, deaths and rooms cleared per run, from actual runs',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    show_run_stats = true;
-    @SwitchProperty({
-        name: 'Shitter List',
-        description: 'Enable OA Shitter List',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    shitter_list = true;
-    @SwitchProperty({
-        name: 'Mobs per run',
-        description: 'Show a players mobs per run in the floor you queueing for',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    mobs_per_run = true;
-    @SwitchProperty({
-        name: 'Cata Level',
-        description: 'Show a players cata level',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    cata_level = true;
-    @SwitchProperty({
-        name: 'Death Count',
-        description: 'Show a players dungeon death count',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    death_count = true;
-    @SwitchProperty({
-        name: 'Secret Count',
-        description: 'Show a players secret count',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    secret_count = true;
-    @SwitchProperty({
-        name: 'Blood Mob Count',
-        description: 'Show a players blood mob kills',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    blood_mob_count = true;
-    @SwitchProperty({
-        name: 'Cata 50 Date',
-        description: 'Show when a player hit cata 50',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    cata_50_date = true;
-    @SwitchProperty({
-        name: 'Personal Bests',
-        description: 'Shows players personal bests',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    personal_bests = true;
-    @SwitchProperty({
         name: 'Ender Chest and Backpack Shown',
         description: 'Shows Ender Chest & Backpack results in items',
         category: 'Dungeons',
         subcategory: 'Party Finder'
     })
     ender_chest_and_backpack_shown = false;
-    @SwitchProperty({
-        name: 'Unique Pets',
-        description: 'Show a players unique pets',
-        category: 'Dungeons',
-        subcategory: 'Party Finder'
-    })
-    unique_pets = true;
     @TextProperty({
         name: 'Party Finder Items',
         description: 'DO NOT CHANGE UNLESS YOU KNOW WHAT YOURE DOING',

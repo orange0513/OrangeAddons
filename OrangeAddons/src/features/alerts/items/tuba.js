@@ -21,6 +21,6 @@ function loadTubaAlerts() {
 			}
 		}
 	}).setCriteria(/.+\(Howl\).+/);
-	console.log('OrangeAddons - Loaded Tuba Alerts!')
+	
 }
 export default loadTubaAlerts;
