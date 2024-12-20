@@ -17,5 +17,7 @@
 - /scan - scans your lobby for exotics/crystal/fairy armor
 - /cookie - Global Cookie Clicker
 - Party Finder Mod, very customizable
-- Secrets Per Run module thats very accurate
+- Secrets Per Run/Rooms Cleared/Deaths per run
 - /cheapest - shows the cheapest way to upgrade your attributes
+- /purselb - checks the purses in your lobby (only works in dark auction)
+- levers/terms per run
