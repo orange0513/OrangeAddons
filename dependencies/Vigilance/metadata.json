@@ -1,0 +1,6 @@
+{
+  "name": "Vigilance",
+  "creator": "FalseHonesty",
+  "description": "A CT wrapper for the Vigilance [https://github.com/Sk1erLLC/Vigilance] configuration library.",
+  "version": "1.3.2"
+}

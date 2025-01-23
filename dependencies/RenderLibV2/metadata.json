@@ -1,0 +1,10 @@
+{
+    "name": "RenderLibV2",
+    "creator": "whats2000_",
+    "version": "0.0.4",
+    "entry": "index.js",
+    "description": "Addition function for RenderLib",
+    "requires": [
+        "RenderLib"
+    ]
+}
