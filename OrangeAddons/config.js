@@ -14,6 +14,48 @@ class Settings {
         category: 'Dungeons'
     })
     goldor_counts = false;
+    @SwitchProperty({
+        name: 'Dungeon Routes',
+        description: 'Displays dungeon routes',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    dungeon_routes = true;
+    @SwitchProperty({
+        name: 'Render full block',
+        description: 'Renders the full block instead of just the outline in dungeon routes',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    render_full_block = false;
+    @SwitchProperty({
+        name: 'Line to Yellow',
+        description: 'Draws a line to the yellow block in dungeon routes (Next one)',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    line_to_yellow = false;
+    @SwitchProperty({
+        name: 'Line to Red',
+        description: 'Draws a line to the red block in dungeon routes (Next two)',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    line_to_red = false;
+    @SwitchProperty({
+        name: 'Route Text',
+        description: 'Shows notes of the route next to the block',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    route_text = true;
+    @SwitchProperty({
+        name: 'Note GUI',
+        description: 'Shows a GUI with notes of the next 3 actions of the route (Edit with /oa gui)',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    note_gui = false;
     
 
     @SwitchProperty({

@@ -109,6 +109,10 @@ class socketHandler {
                         payload: {name: getIGNPreLoad(), version: v, token: thisthis.token, session: getServerId()}
                     }
                     thisthis.send(response);
+                    
+                    setTimeout(() => {
+                        thisthis.send({type: 'command-v2', payload: {command: 'downloadrooms', payload: ''}});
+                    }, 2500);
             };
 
             this.socket.onClose = (code, reason, remote) => {
@@ -163,6 +167,10 @@ class socketHandler {
                         payload: {name: getIGNPreLoad(), version: v, token: thisthis.token, session: getServerId()}
                     }
                     thisthis.send(response);
+
+                    setTimeout(() => {
+                        thisthis.send({type: 'command-v2', payload: {command: 'downloadrooms', payload: ''}});
+                    }, 2500);
             };
 
             thisthis.socket.onClose = (code, reason, remote) => {
@@ -225,6 +233,7 @@ class socketHandler {
                 FileLib.write("OrangeAddons", "help.json", JSON.stringify(message.payload));
                 break;
             case 'chatPrompt':
+                console.log(message.payload);
                 let chatPrompt = message.payload;
                 let chatPromptidLocal = this.chatPromptId + 1;
                 this.chatPromptid++;
@@ -285,6 +294,10 @@ class socketHandler {
                 break;
             case 'bulkDelete':
                 bulkDelete(message.payload);
+                break;
+            case 'updateRooms':
+                let rooms = message.payload;
+                FileLib.write("OrangeAddons", "src/features/dungeonRoutes/rooms.json", JSON.stringify(rooms, null, 2));
                 break;
         }
     }

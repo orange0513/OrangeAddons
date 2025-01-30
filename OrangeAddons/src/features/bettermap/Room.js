@@ -89,7 +89,7 @@ class Room {
     setRoomData(roomData) {
         this.data = roomData
         this.name = roomData.name
-        //if (!this.routes) this.routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json")).find(r => r.name == this.name)?.tracks || null
+        if (!this.routes) this.routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json")).find(r => r.name == this.name)?.tracks || null
         this.type = this.getTypeFromString(this.data.type)
         this.maxSecrets = this.data.secrets
         this.cores = roomData.cores

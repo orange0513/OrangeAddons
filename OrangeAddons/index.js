@@ -23,9 +23,9 @@ import loadSelfieRemoval from './src/features/misc/removeSelfie.js';
 loadSelfieRemoval();
 export default '';
 
-// import loadRoutes from './src/features/dungeonRoutes/index.js';
+import loadRoutes from './src/features/dungeonRoutes/index.js';
 
-// loadRoutes();
+loadRoutes();
 
 if (!FileLib.read("OrangeAddons","persists/partyFinder.json")) {
     FileLib.write("OrangeAddons","persists/partyFinder.json", JSON.stringify(
