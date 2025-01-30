@@ -1,0 +1,10 @@
+{
+  "$schema": "../CTAutocomplete/schema.json",
+  "name": "axios",
+  "creator": "eznick (credit: Ecolsson & McPqndq)",
+  "description": "Improved version of requestV2 created to support more HTTP methods. Responses are formatted almost identically to axios.",
+  "version": "1.0.9",
+  "requires": [
+    "PromiseV2"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "WebSocket",
+    "entry": "index.js",
+    "version": "1.0.0",
+    "description": "A wrapper for the popular websocket library.",
+    "creator": "Debuggings"
+}
