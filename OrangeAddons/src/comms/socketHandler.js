@@ -2,11 +2,13 @@
 // just wanted to go back and remake this since ive really improved my coding since when i first made it, and it was an atrocity to look at
 
 
+import settings from "../../settings";
 import messageHandler from "../handlers/message";
 import { bulkDelete } from "../handlers/message";
 import global from "./internal";
 import WebSocket from "WebSocket";
 import sleep from "sleep";
+import { completeTrack } from "../features/dungeonRoutes";
 let unloaded = false;
 let socket;
 
@@ -186,7 +188,7 @@ class socketHandler {
         setTimeout(() => {
             if (!unloaded)
                 this.keepAlive();
-        }, 2000);
+        }, 60000);
     }
 
     onMessage(message) {
@@ -298,6 +300,12 @@ class socketHandler {
             case 'updateRooms':
                 let rooms = message.payload;
                 FileLib.write("OrangeAddons", "src/features/dungeonRoutes/rooms.json", JSON.stringify(rooms, null, 2));
+                break;
+            case 'updateCurrentRun':
+                const skippingTo = message.payload.skipTo;
+                for (let i = 0; i < skippingTo; i++) {
+                    completeTrack(message.payload.route, i, true);
+                }
                 break;
         }
     }

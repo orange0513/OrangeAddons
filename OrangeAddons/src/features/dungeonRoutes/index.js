@@ -262,6 +262,7 @@ function isNear(x, y, z, range, returnBool = true) {
     return r;
 }
 
+
 let cRoom = null;
 let getNeededHighlightData = {
     last: 0,
@@ -332,10 +333,16 @@ function getNeededHighlight(bypass) {
 
 }
 
-function completeTrack(room, trackId) {
+function completeTrack(room, trackId, bypass = false) {
     try {
+        if (typeof room === 'string') {
+            room = global.currentDungeonMap.roomsArr.find(r => r.name === room);
+        }
         console.log('completed track: ' + trackId + ' in room: ' + room?.name);
         room.routes[trackId].completed = true;
+        if (settings.route_sharing && !bypass) {
+            global.socket.send({sync: true, type: 'broadcastRoute', payload: {id: global.serverId, route: room?.name, data: (trackId + 1)}});
+        }
         getNeededHighlight(true);
     } catch (e) {
         console.error(e);
@@ -345,17 +352,21 @@ function completeTrack(room, trackId) {
 function highlightBlock(x, y, z, line, color, text) {
     const center = RenderLibV2.calculateCenter(x, y+1, z, x+1, y, z+1);
     const renderColor = color;
+    const transparentLine = settings.transparency_on_line / 1000;
+    const transparentBlock = settings.transparency_on_block / 1000;
+    const transparentText = settings.transparency_on_text / 1000;
+    const alphaInt = Math.floor(transparentText * 255);
     if (typeof line === 'object') {
-        RenderLibV2.drawLine((0.5 + line[0]), (0.5 + line[1]), (0.5 + line[2]), x+0.5, y+0.5, z+0.5, renderColor.red, renderColor.green, renderColor.blue, renderColor.alpha, true, 3)
+        RenderLibV2.drawLine((0.5 + line[0]), (0.5 + line[1]), (0.5 + line[2]), x+0.5, y+0.5, z+0.5, renderColor.red, renderColor.green, renderColor.blue,  transparentLine, true, 3)
 
     }   else if (line)
             if (Player.isSneaking())
-                RenderLibV2.drawLine(Player.getRenderX(), Player.getRenderY() + 1.54, Player.getRenderZ(), x+0.5, y+0.5, z+0.5, renderColor.red, renderColor.green, renderColor.blue, renderColor.alpha, true, 3)
+                RenderLibV2.drawLine(Player.getRenderX(), Player.getRenderY() + 1.54, Player.getRenderZ(), x+0.5, y+0.5, z+0.5, renderColor.red, renderColor.green, renderColor.blue, transparentLine, true, 3)
             else
-                RenderLibV2.drawLine(Player.getRenderX(), Player.getRenderY() + 1.62, Player.getRenderZ(), x+0.5, y+0.5, z+0.5, renderColor.red, renderColor.green, renderColor.blue, renderColor.alpha, true, 3)
+                RenderLibV2.drawLine(Player.getRenderX(), Player.getRenderY() + 1.62, Player.getRenderZ(), x+0.5, y+0.5, z+0.5, renderColor.red, renderColor.green, renderColor.blue, transparentLine, true, 3)
 
     if (text && settings.route_text) {
-        const int = (renderColor.red << 16) + (renderColor.green << 8) + renderColor.blue;
+
 
 
 
@@ -381,23 +392,32 @@ function highlightBlock(x, y, z, line, color, text) {
             //console.log(size);
             bypass = true;
         }
+        const intColor = (alphaInt << 24) | (renderColor.red << 16) | (renderColor.green << 8) | renderColor.blue;
 
-        if (r < 20 || bypass)
-            Tessellator.drawString(text.replace(/&./g, ""), center.cx, center.cy + center.h + 0.5, center.cz, int, true, size, false);
+        // Use intColor in Tessellator.drawString
+        if (r < 20 || bypass) {
+            Tessellator.drawString(text.replace(/&./g, ""), center.cx, center.cy + center.h + 0.5, center.cz, intColor, true, size, false);
+        }
     }
 
-    if (!settings.render_full_block)
+    if (!settings.render_full_block) {
+
+
         RenderLibV2.drawEspBoxV2(
             center.cx, center.cy, center.cz,
             center.wx, center.h, center.wz,
-            renderColor.red, renderColor.green, renderColor.blue, renderColor.alpha,
+            renderColor.red, renderColor.green, renderColor.blue, transparentBlock,
             true, 1
         );
-    else
+    } else {
+
         RenderLibV2.drawInnerEspBoxV2(
             center.cx, center.cy, center.cz,
             center.wx, center.h, center.wz,
-            renderColor.red, renderColor.green, renderColor.blue, renderColor.alpha,
-            true, 1
+            renderColor.red, renderColor.green, renderColor.blue, transparentBlock,
+            true, 1 
         );
+    }
 }
+
+export { completeTrack };

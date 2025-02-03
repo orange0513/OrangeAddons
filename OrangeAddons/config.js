@@ -1,4 +1,4 @@
-import { @TextProperty, @Vigilant, @SwitchProperty, @ButtonProperty } from 'Vigilance';
+import { @TextProperty, @Vigilant, @SwitchProperty, @ButtonProperty, @SliderProperty } from 'Vigilance';
 import global from './src/comms/internal.js';
 @Vigilant('OrangeAddons','OrangeAddons Settings')
 class Settings {
@@ -22,12 +22,37 @@ class Settings {
     })
     dungeon_routes = true;
     @SwitchProperty({
+        name: 'Route Sharing',
+        description: 'Shares progress of routes between all party members using OrangeAddons',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes'
+    })
+    route_sharing = true;
+    @SwitchProperty({
         name: 'Render full block',
         description: 'Renders the full block instead of just the outline in dungeon routes',
         category: 'Dungeons',
         subcategory: 'Dungeon Routes'
     })
-    render_full_block = false;
+    render_full_block = true;
+    @SliderProperty({
+        name: 'Transparency on block',
+        description: 'Ajust the transparency of the block',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes',
+        min: 0,
+        max: 1000,
+    })
+    transparency_on_block = 175;
+    @SliderProperty({
+        name: 'Transparency on line',
+        description: 'Ajust the transparency of the line',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes',
+        min: 0,
+        max: 1000,
+    })
+    transparency_on_line = 750;
     @SwitchProperty({
         name: 'Line to Yellow',
         description: 'Draws a line to the yellow block in dungeon routes (Next one)',
@@ -49,6 +74,15 @@ class Settings {
         subcategory: 'Dungeon Routes'
     })
     route_text = true;
+    @SliderProperty({
+        name: 'Transparency on text',
+        description: 'Ajust the transparency of the route text',
+        category: 'Dungeons',
+        subcategory: 'Dungeon Routes',
+        min: 0,
+        max: 1000,
+    })
+    transparency_on_text = 800;
     @SwitchProperty({
         name: 'Note GUI',
         description: 'Shows a GUI with notes of the next 3 actions of the route (Edit with /oa gui)',

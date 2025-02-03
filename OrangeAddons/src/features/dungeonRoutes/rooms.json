@@ -1,3520 +1,3652 @@
 [
-    {
-        "name": "Mines",
-        "tracks": [
-            {
-                "x": 52,
-                "y": 78,
-                "z": 9,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 52,
-                "y": 79,
-                "z": 9,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 53,
-                "y": 80,
-                "z": 9,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 41,
-                "y": 80,
-                "z": 12,
-                "note": "&a&lClick Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 45,
-                "y": 84,
-                "z": 12,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 32,
-                "y": 100,
-                "z": 8,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 14,
-                "y": 101,
-                "z": 7,
-                "note": "&6&lEnter Area",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 9,
-                "y": 108,
-                "z": 17,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 13,
-                "y": 111,
-                "z": 21,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 9,
-                "y": 111,
-                "z": 28,
-                "note": "&c&lSuperboom Crypt",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 9,
-                "y": 109,
-                "z": 30,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 101,
-                "z": 7,
-                "note": "&6&lExit area",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 29,
-                "y": 100,
-                "z": 8,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 35,
-                "y": 97,
-                "z": 41,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 31,
-                "y": 99,
-                "z": 58,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 9,
-                "y": 88,
-                "z": 50,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 6,
-                "y": 90,
-                "z": 57,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 1,
-                "y": 88,
-                "z": 57,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.33
-            },
-            {
-                "x": 29,
-                "y": 91,
-                "z": 60,
-                "note": "&d&lEtherwarp onto skull",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 31,
-                "y": 93,
-                "z": 60,
-                "note": "&5&lStonk Through (2 blocks)",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 35,
-                "y": 77,
-                "z": 56,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 34,
-                "y": 79,
-                "z": 59,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 56,
-                "y": 78,
-                "z": 58,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 43,
-                "y": 79,
-                "z": 50,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 6.66
-            },
-            {
-                "x": 53,
-                "y": 46,
-                "z": 14,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 52,
-                "y": 47,
-                "z": 9,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.33
-            },
-            {
-                "x": 56,
-                "y": 41,
-                "z": 34,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 3.33
-            },
-            {
-                "x": 58,
-                "y": 43,
-                "z": 45,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 60,
-                "y": 43,
-                "z": 50,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 32,
-                "y": 41,
-                "z": 20,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 13,
-                "y": 53,
-                "z": 44,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 4,
-                "y": 53,
-                "z": 56,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            }
-        ]
-    },
-    {
-        "name": "Doors",
-        "tracks": []
-    },
-    {
-        "name": "Locked Away",
-        "tracks": [
-            {
-                "x": 24,
-                "y": 70,
-                "z": 26,
-                "note": "&c&lBlow up crypt",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 26,
-                "y": 73,
-                "z": 29,
-                "note": "&5&lGhost block up",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 26,
-                "y": 75,
-                "z": 29,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Beams",
-        "tracks": [
-            {
-                "x": 4,
-                "y": 80,
-                "z": 12,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 7,
-                "y": 81,
-                "z": 2,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 4,
-                "y": 84,
-                "z": 18,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 9,
-                "y": 91,
-                "z": 25,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 5
-            }
-        ]
-    },
-    {
-        "name": "Hall",
-        "tracks": []
-    },
-    {
-        "name": "Banners",
-        "tracks": [
-            {
-                "x": 22,
-                "y": 70,
-                "z": 15,
-                "note": "&6&lGo through painting (oldest trick in the book)",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 27,
-                "y": 72,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Andesite",
-        "tracks": []
-    },
-    {
-        "name": "Painting",
-        "tracks": []
-    },
-    {
-        "name": "Multicolored",
-        "tracks": []
-    },
-    {
-        "name": "Black Flag",
-        "tracks": []
-    },
-    {
-        "name": "Overgrown Chains",
-        "tracks": []
-    },
-    {
-        "name": "Chains",
-        "tracks": []
-    },
-    {
-        "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
-        "name": "Golden Oasis",
-        "tracks": [
-            {
-                "x": 10,
-                "y": 71,
-                "z": 3,
-                "note": "&4Collect Redstone Skull",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 22,
-                "y": 69,
-                "z": 27,
-                "note": "&dEtherwarp Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 22,
-                "y": 68,
-                "z": 27,
-                "note": "&5&lStonk Through Floor",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 20,
-                "y": 68,
-                "z": 25,
-                "note": "&5&lStonk Through Floor",
-                "trigger": "air",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Redstone Warrior",
-        "tracks": [
-            {
-                "x": 26,
-                "y": 59,
-                "z": 15,
-                "note": "&5&lStonk Iron Bar",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 24,
-                "y": 58,
-                "z": 15,
-                "note": "&a&lOpen Chest (May be locked)",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 56,
-                "y": 76,
-                "z": 15,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 58,
-                "y": 78,
-                "z": 23,
-                "note": "&c&lSuperboom",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 58,
-                "y": 77,
-                "z": 28,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 22,
-                "y": 78,
-                "z": 23,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 30,
-                "y": 83,
-                "z": 27,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Silvers Sword",
-        "tracks": []
-    },
-    {
-        "name": "Pedestal",
-        "tracks": []
-    },
-    {
-        "name": "Temple",
-        "tracks": []
-    },
-    {
-        "name": "Big Red Flag",
-        "tracks": [
-            {
-                "x": 23,
-                "y": 74,
-                "z": 25,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 3
-            }
-        ]
-    },
-    {
-        "name": "Mural",
-        "tracks": []
-    },
-    {
-        "name": "Perch",
-        "tracks": []
-    },
-    {
-        "name": "End",
-        "tracks": []
-    },
-    {
-        "name": "Cage",
-        "tracks": [
-            {
-                "x": 12,
-                "y": 72,
-                "z": 18,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 12,
-                "y": 72,
-                "z": 20,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Sloth",
-        "tracks": []
-    },
-    {
-        "name": "Steps",
-        "tracks": []
-    },
-    {
-        "name": "Granite",
-        "tracks": []
-    },
-    {
-        "name": "Crypt",
-        "tracks": []
-    },
-    {
-        "name": "Dueces",
-        "tracks": [
-            {
-                "x": 10,
-                "y": 71,
-                "z": 13,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 10,
-                "y": 73,
-                "z": 11,
-                "note": "&5&lStonk Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 9,
-                "y": 69,
-                "z": 4,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 16,
-                "y": 71,
-                "z": 2,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 23,
-                "y": 68,
-                "z": 9,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 11,
-                "y": 80,
-                "z": 15,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 1,
-                "y": 73,
-                "z": 15,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 2,
-                "y": 77,
-                "z": 15,
-                "note": "&5&lStonk to Chest",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 2,
-                "y": 78,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Red Green",
-        "tracks": []
-    },
-    {
-        "name": "Long Hall",
-        "tracks": []
-    },
-    {
-        "name": "Mirror",
-        "tracks": []
-    },
-    {
-        "name": "Quad Lava",
-        "tracks": []
-    },
-    {
-        "name": "Small Waterfall",
-        "tracks": []
-    },
-    {
-        "name": "Basement",
-        "tracks": []
-    },
-    {
-        "name": "Dip",
-        "tracks": []
-    },
-    {
-        "name": "Water",
-        "tracks": []
-    },
-    {
-        "name": "Dome",
-        "tracks": []
-    },
-    {
-        "name": "Scaffolding",
-        "tracks": [
-            {
-                "x": 16,
-                "y": 80,
-                "z": 11,
-                "note": "&d&lEtherwarp (Collect Item)",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 7,
-                "y": 83,
-                "z": 27,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 5,
-                "y": 82,
-                "z": 28,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Small Stairs",
-        "tracks": []
-    },
-    {
-        "name": "Tomioka",
-        "tracks": []
-    },
-    {
-        "name": "Mushroom",
-        "tracks": []
-    },
-    {
-        "name": "Slabs",
-        "tracks": [
-            {
-                "x": 20,
-                "y": 83,
-                "z": 4,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 5
-            }
-        ]
-    },
-    {
-        "name": "Duncan",
-        "tracks": []
-    },
-    {
-        "name": "Logs",
-        "tracks": []
-    },
-    {
-        "name": "Cages",
-        "tracks": []
-    },
-    {
-        "name": "Admin",
-        "tracks": []
-    },
-    {
-        "name": "Skull",
-        "tracks": [
-            {
-                "x": 7,
-                "y": 81,
-                "z": 15,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 3,
-                "y": 84,
-                "z": 15,
-                "note": "&6&lEtherwarp or tp to",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 2,
-                "y": 87,
-                "z": 15,
-                "note": "&5&lStonk",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 2,
-                "y": 88,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 18,
-                "y": 81,
-                "z": 4,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 53,
-                "y": 88,
-                "z": 4,
-                "note": "&6&lClimb Vines",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 52,
-                "y": 91,
-                "z": 7,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Balcony",
-        "tracks": []
-    },
-    {
-        "name": "Knight",
-        "tracks": []
-    },
-    {
-        "name": "Sarcophagus",
-        "tracks": []
-    },
-    {
-        "name": "Drop",
-        "tracks": []
-    },
-    {
-        "name": "Raccoon",
-        "credit": "meedy555",
-        "tracks": [
-            {
-                "x": 6,
-                "y": 76,
-                "z": 20,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 6,
-                "y": 77,
-                "z": 24,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 81,
-                "z": 6,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 23,
-                "y": 83,
-                "z": 8,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 1.3
-            },
-            {
-                "x": 25,
-                "y": 84,
-                "z": 8,
-                "note": "&5&lStonk wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 26,
-                "y": 84,
-                "z": 8,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 25,
-                "y": 74,
-                "z": 20,
-                "note": "&c&lSuperboom",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 24,
-                "y": 70,
-                "z": 28,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 27,
-                "y": 69,
-                "z": 24,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 21,
-                "y": 69,
-                "z": 24,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Double Diamond",
-        "tracks": [
-            {
-                "x": 6,
-                "y": 70,
-                "z": 10,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 6,
-                "y": 69,
-                "z": 6,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 11,
-                "y": 77,
-                "z": 19,
-                "note": "&6&lGo up Here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 11,
-                "y": 81,
-                "z": 19,
-                "note": "&5&lStonk diamond block",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 11,
-                "y": 82,
-                "z": 19,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 19,
-                "y": 64,
-                "z": 15,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 24,
-                "y": 64,
-                "z": 23,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            }
-        ]
-    },
-    {
-        "name": "Blue Skulls",
-        "tracks": []
-    },
-    {
-        "name": "Leaves",
-        "tracks": [
-            {
-                "x": 4,
-                "y": 80,
-                "z": 4,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 15,
-                "y": 82,
-                "z": 15,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 14,
-                "y": 81,
-                "z": 27,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
-        "name": "Withermancer",
-        "tracks": [
-            {
-                "x": 26,
-                "y": 70,
-                "z": 5,
-                "note": "&c&lSuperboom Floor",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 24,
-                "y": 61,
-                "z": 3,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 26,
-                "y": 59,
-                "z": 15,
-                "note": "&6&lGo up stairs",
-                "trigger": "near",
-                "near": 7.33
-            },
-            {
-                "x": 22,
-                "y": 70,
-                "z": 6,
-                "note": "&6&lGo up here",
-                "trigger": "near",
-                "near": 10
-            },
-            {
-                "x": 26,
-                "y": 110,
-                "z": 15,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 29,
-                "y": 111,
-                "z": 15,
-                "note": "&a&lOpen chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 4,
-                "y": 110,
-                "z": 16,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 1,
-                "y": 111,
-                "z": 15,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 14,
-                "y": 106,
-                "z": 20,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 1.75
-            },
-            {
-                "x": 15,
-                "y": 107,
-                "z": 20,
-                "note": "&5&lGhost block",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 104,
-                "z": 20,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 25,
-                "y": 70,
-                "z": 34,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 27,
-                "y": 72,
-                "z": 33,
-                "note": "&c&lSuperboom Crypt",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 59,
-                "y": 55,
-                "z": 45,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Redstone Key",
-        "tracks": []
-    },
-    {
-        "name": "Prison Cell",
-        "tracks": []
-    },
-    {
-        "name": "Cell",
-        "tracks": []
-    },
-    {
-        "name": "Arrow Trap",
-        "tracks": []
-    },
-    {
-        "name": "Bridges",
-        "tracks": [
-            {
-                "x": 41,
-                "y": 63,
-                "z": 20,
-                "note": "&6&lEnter Stairway",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 54,
-                "y": 59,
-                "z": 28,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 51,
-                "y": 58,
-                "z": 20,
-                "note": "&d&lEtherwarp on Fence",
-                "trigger": "near",
-                "near": 1.3
-            },
-            {
-                "x": 51,
-                "y": 59,
-                "z": 17,
-                "note": "&5&lStonk to here",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 51,
-                "y": 56,
-                "z": 17,
-                "note": "&5&lMine Down to here",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 53,
-                "y": 52,
-                "z": 17,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 53,
-                "y": 53,
-                "z": 13,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 41,
-                "y": 52,
-                "z": 21,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 68,
-                "z": 16,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 15,
-                "y": 80,
-                "z": 16,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 3,
-                "y": 82,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 42,
-                "y": 81,
-                "z": 15,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 48,
-                "y": 92,
-                "z": 7,
-                "note": "&d&lEtherwarp upto bat and kill",
-                "trigger": "air",
-                "near": 7
-            },
-            {
-                "x": 47,
-                "y": 80,
-                "z": 9,
-                "note": "&6&lGo Back down",
-                "trigger": "near",
-                "near": 8.5
-            },
-            {
-                "x": 51,
-                "y": 80,
-                "z": 24,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 55,
-                "y": 80,
-                "z": 17,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            }
-        ]
-    },
-    {
-        "name": "Cobble Wall Pillar",
-        "tracks": []
-    },
-    {
-        "name": "Spikes",
-        "tracks": []
-    },
-    {
-        "name": "Gold",
-        "tracks": []
-    },
-    {
-        "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
-        "name": "Chambers",
-        "tracks": [
-            {
-                "x": 13,
-                "y": 81,
-                "z": 5,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 9
-            },
-            {
-                "x": 15,
-                "y": 83,
-                "z": 2,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 17,
-                "y": 85,
-                "z": 12,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 17,
-                "y": 87,
-                "z": 13,
-                "note": "&5&lStonk Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 12,
-                "y": 66,
-                "z": 31,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 9
-            },
-            {
-                "x": 8,
-                "y": 70,
-                "z": 38,
-                "note": "&5&lStonk Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 7,
-                "y": 69,
-                "z": 40,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 68,
-                "z": 57,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 10
-            },
-            {
-                "x": 11,
-                "y": 70,
-                "z": 57,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 4,
-                "y": 69,
-                "z": 57,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 16,
-                "y": 76,
-                "z": 58,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 16,
-                "y": 80,
-                "z": 57,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 1.75
-            },
-            {
-                "x": 28,
-                "y": 79,
-                "z": 59,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 35,
-                "y": 79,
-                "z": 59,
-                "note": "&1&lKill Bat",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 40,
-                "y": 69,
-                "z": 57,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5.5
-            },
-            {
-                "x": 40,
-                "y": 68,
-                "z": 47,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 51,
-                "y": 67,
-                "z": 50,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 53,
-                "y": 57,
-                "z": 47,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Lava Ravine",
-        "tracks": []
-    },
-    {
-        "name": "Wizard",
-        "credit": "CerealBridge157",
-        "tracks": [
-            {
-                "x": 72,
-                "y": 81,
-                "z": 24,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 74,
-                "y": 85,
-                "z": 24,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": 5
-            },
-            {
-                "x": 90,
-                "y": 89,
-                "z": 24,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 63,
-                "y": 87,
-                "z": 24,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 36,
-                "y": 88,
-                "z": 24,
-                "note": "&d&lEtherwarp through roof",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 22,
-                "y": 90,
-                "z": 25,
-                "note": "&d&lEtherwarp onto ledge",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 20,
-                "y": 92,
-                "z": 25,
-                "note": "&5&lStonk through wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 17,
-                "y": 92,
-                "z": 26,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 33,
-                "y": 89,
-                "z": 26,
-                "note": "&d&lEtherwarp onto fence",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 33,
-                "y": 88,
-                "z": 26,
-                "note": "&5&lMine down",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 10,
-                "y": 81,
-                "z": 21,
-                "note": "&d&lEtherwarp onto fence",
-                "trigger": "near",
-                "near": 1.5
-            },
-            {
-                "x": 10,
-                "y": 80,
-                "z": 21,
-                "note": "&5&lMine down",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 3,
-                "y": 75,
-                "z": 21,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 9,
-                "y": 70,
-                "z": 23,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": 3
-            }
-        ]
-    },
-    {
-        "name": "Overgrown",
-        "tracks": [
-            {
-                "x": 5,
-                "y": 70,
-                "z": 10,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 4,
-                "y": 69,
-                "z": 2,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.33
-            },
-            {
-                "x": 5,
-                "y": 68,
-                "z": 15,
-                "note": "&6&lExit Cave",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 23,
-                "y": 78,
-                "z": 15,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 4.5
-            },
-            {
-                "x": 27,
-                "y": 81,
-                "z": 15,
-                "note": "&5&lFlick Lever",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 7,
-                "y": 80,
-                "z": 15,
-                "note": "&5&lStonk Iron Bar",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 6,
-                "y": 79,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 8,
-                "y": 85,
-                "z": 15,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4.5
-            },
-            {
-                "x": 5,
-                "y": 87,
-                "z": 19,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Jumping Skulls",
-        "tracks": []
-    },
-    {
-        "name": "Lots Of Floors",
-        "tracks": []
-    },
-    {
-        "name": "Purple Flags",
-        "tracks": []
-    },
-    {
-        "name": "Archway",
-        "tracks": []
-    },
-    {
-        "name": "Mage",
-        "tracks": []
-    },
-    {
-        "name": "Grass Ruin",
-        "tracks": []
-    },
-    {
-        "name": "Grand Library",
-        "tracks": []
-    },
-    {
-        "name": "Pit",
-        "tracks": [
-            {
-                "x": 9,
-                "y": 75,
-                "z": 21,
-                "note": "&d&lEtherwarp then superboom",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 9,
-                "y": 77,
-                "z": 23,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 3,
-                "y": 75,
-                "z": 27,
-                "note": "&e&lPickup Item",
-                "trigger": "near",
-                "near": 2.75
-            },
-            {
-                "x": 3,
-                "y": 73,
-                "z": 3,
-                "note": "&d&lEtherwarp on wall",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 3,
-                "y": 66,
-                "z": 3,
-                "note": "&5&lStonk Down",
-                "trigger": "air",
-                "near": 3
-            },
-            {
-                "x": 7,
-                "y": 65,
-                "z": 7,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 1,
-                "y": 69,
-                "z": 4,
-                "note": "&6&lGo Up Ladder",
-                "trigger": "near",
-                "near": 3.33
-            },
-            {
-                "x": 20,
-                "y": 83,
-                "z": 9,
-                "note": "&d&lEtherwarp on leaf",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 20,
-                "y": 89,
-                "z": 9,
-                "note": "&5&lStonk upto chest",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 20,
-                "y": 91,
-                "z": 9,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 21,
-                "y": 82,
-                "z": 5,
-                "note": "&d&lEtherwarp on ledge",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 104,
-                "y": 82,
-                "z": 8,
-                "note": "&6&lEnter Area",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 113,
-                "y": 91,
-                "z": 24,
-                "note": "&d&lEtherwarp on ledge",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 113,
-                "y": 92,
-                "z": 28,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Atlas",
-        "tracks": [
-            {
-                "x": 42,
-                "y": 79,
-                "z": 6,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 38,
-                "y": 78,
-                "z": 4,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 42,
-                "y": 65,
-                "z": 31,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 53,
-                "y": 67,
-                "z": 31,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 55,
-                "y": 75,
-                "z": 28,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 58,
-                "y": 88,
-                "z": 34,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 60,
-                "y": 90,
-                "z": 33,
-                "note": "&5&lClick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 55,
-                "y": 77,
-                "z": 36,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 38,
-                "y": 73,
-                "z": 47,
-                "note": "&d&lEtherwarp on hopper",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 38,
-                "y": 75,
-                "z": 48,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": 1.5
-            },
-            {
-                "x": 32,
-                "y": 77,
-                "z": 54,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 31,
-                "y": 78,
-                "z": 52,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 8,
-                "y": 80,
-                "z": 49,
-                "note": "&6&lExit Cave",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 14,
-                "y": 80,
-                "z": 32,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 13,
-                "y": 82,
-                "z": 32,
-                "note": "&5&lStonk Iron Bar",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 11,
-                "y": 82,
-                "z": 31,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 38,
-                "y": 65,
-                "z": 22,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 51,
-                "y": 65,
-                "z": 10,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5.5
-            },
-            {
-                "x": 36,
-                "y": 57,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Layers",
-        "tracks": [
-            {
-                "x": 22,
-                "y": 68,
-                "z": 18,
-                "note": "&6&lEnter hallway looking thing",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 25,
-                "y": 69,
-                "z": 28,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 14,
-                "y": 70,
-                "z": 25,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 13,
-                "y": 69,
-                "z": 26,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 13,
-                "y": 68,
-                "z": 8,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4.5
-            },
-            {
-                "x": 9,
-                "y": 70,
-                "z": 7,
-                "note": "&d&lEtherwarp into skull",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 8,
-                "y": 72,
-                "z": 7,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 5,
-                "y": 69,
-                "z": 2,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 5,
-                "y": 75,
-                "z": 2,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 5,
-                "y": 76,
-                "z": 2,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 4,
-                "y": 70,
-                "z": 43,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 20,
-                "y": 87,
-                "z": 54,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 5.5
-            },
-            {
-                "x": 8,
-                "y": 92,
-                "z": 59,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 9,
-                "y": 89,
-                "z": 32,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 8,
-                "y": 91,
-                "z": 32,
-                "note": "&a&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 29,
-                "y": 78,
-                "z": 47,
-                "note": "&d&lEtherwarp here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 47,
-                "y": 79,
-                "z": 42,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 47,
-                "y": 78,
-                "z": 34,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 54,
-                "y": 78,
-                "z": 52,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 54,
-                "y": 80,
-                "z": 53,
-                "note": "&5&lStonk Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 54,
-                "y": 78,
-                "z": 56,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 41,
-                "y": 78,
-                "z": 59,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 1.5
-            },
-            {
-                "x": 41,
-                "y": 76,
-                "z": 59,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 40,
-                "y": 68,
-                "z": 48,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 47,
-                "y": 69,
-                "z": 47,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 34,
-                "y": 68,
-                "z": 53,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 35,
-                "y": 62,
-                "z": 57,
-                "note": "&6&lGo down ladder",
-                "trigger": "near",
-                "near": 4.3
-            },
-            {
-                "x": 35,
-                "y": 58,
-                "z": 52,
-                "note": "&e&lPickup Item",
-                "trigger": "near",
-                "near": 3.5
-            }
-        ]
-    },
-    {
-        "name": "Waterfall",
-        "tracks": [
-            {
-                "x": 119,
-                "y": 80,
-                "z": 15,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 121,
-                "y": 81,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 100,
-                "y": 85,
-                "z": 15,
-                "note": "&d&lEtherwarp to",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 83,
-                "y": 76,
-                "z": 7,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 82,
-                "y": 78,
-                "z": 3,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 77,
-                "y": 59,
-                "z": 7,
-                "note": "&e&lEtherwarp",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 72,
-                "y": 60,
-                "z": 5,
-                "note": "&d&lEtherwarp &1(Hype to kill bat)",
-                "trigger": "near",
-                "near": 1.5
-            },
-            {
-                "x": 72,
-                "y": 58,
-                "z": 5,
-                "note": "&5&lStonk down (2 blocks)",
-                "trigger": "air",
-                "near": 1.5
-            },
-            {
-                "x": 85,
-                "y": 43,
-                "z": 24,
-                "note": "&d&lEtherwarp &1(Hype to kill bat)",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 70,
-                "y": 45,
-                "z": 2,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 47,
-                "y": 45,
-                "z": 19,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 43,
-                "y": 43,
-                "z": 25,
-                "note": "&6&lEnter Cave",
-                "trigger": "near",
-                "near": 1.75
-            },
-            {
-                "x": 47,
-                "y": 45,
-                "z": 27,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 53,
-                "y": 44,
-                "z": 27,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 29,
-                "y": 43,
-                "z": 5,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 5,
-                "y": 43,
-                "z": 20,
-                "note": "&6&lEnter Cave",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 8,
-                "y": 43,
-                "z": 28,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 19,
-                "y": 68,
-                "z": 8,
-                "note": "&d&lEtherwarp to",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 30,
-                "y": 80,
-                "z": 7,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 34,
-                "y": 84,
-                "z": 23,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 42,
-                "y": 82,
-                "z": 21,
-                "note": "&a&lOpen Chest (Ghost Pick)",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Pressure Plates",
-        "tracks": []
-    },
-    {
-        "name": "Supertall",
-        "tracks": []
-    },
-    {
-        "name": "Gravel",
-        "tracks": [
-            {
-                "x": 63,
-                "y": 69,
-                "z": 26,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 27,
-                "y": 68,
-                "z": 22,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 7.5
-            },
-            {
-                "x": 35,
-                "y": 69,
-                "z": 11,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 40,
-                "y": 80,
-                "z": 17,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 5.5
-            },
-            {
-                "x": 44,
-                "y": 80,
-                "z": 8,
-                "note": "&6&lGo Through Tunnel",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 84,
-                "y": 72,
-                "z": 3,
-                "note": "&6&lEnter Cave",
-                "trigger": "near",
-                "near": 5.5
-            },
-            {
-                "x": 92,
-                "y": 69,
-                "z": 3,
-                "note": "&a&lPickup wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 88,
-                "y": 68,
-                "z": 9,
-                "note": "&e&lPickup Item",
-                "trigger": "near",
-                "near": 3.33
-            },
-            {
-                "x": 88,
-                "y": 79,
-                "z": 9,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 5.5
-            },
-            {
-                "x": 83,
-                "y": 80,
-                "z": 15,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6.5
-            },
-            {
-                "x": 71,
-                "y": 80,
-                "z": 14,
-                "note": "&6&lGo up vines",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 69,
-                "y": 84,
-                "z": 14,
-                "note": "&6&lGo up vines",
-                "trigger": "near",
-                "near": 2.2
-            },
-            {
-                "x": 66,
-                "y": 87,
-                "z": 14,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Cathedral",
-        "tracks": []
-    },
-    {
-        "name": "Red Blue",
-        "tracks": []
-    },
-    {
-        "name": "Spider",
-        "tracks": []
-    },
-    {
-        "name": "Deathmite",
-        "tracks": []
-    },
-    {
-        "name": "Museum",
-        "tracks": []
-    },
-    {
-        "name": "Market",
-        "tracks": []
-    },
-    {
-        "name": "Melon",
-        "tracks": []
-    },
-    {
-        "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
-        "name": "Mossy",
-        "tracks": [
-            {
-                "x": 5,
-                "y": 70,
-                "z": 8,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": 4
-            },
-            {
-                "x": 2,
-                "y": 69,
-                "z": 4,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 26,
-                "y": 77,
-                "z": 9,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 47,
-                "y": 88,
-                "z": 10,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 63,
-                "y": 95,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 60,
-                "y": 69,
-                "z": 15,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 63,
-                "y": 72,
-                "z": 26,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": 4
-            },
-            {
-                "x": 63,
-                "y": 70,
-                "z": 29,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 63,
-                "y": 93,
-                "z": 13,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 57,
-                "y": 88,
-                "z": 4,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 47,
-                "y": 89,
-                "z": 4,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Flags",
-        "tracks": []
-    },
-    {
-        "name": "Well",
-        "tracks": []
-    },
-    {
-        "name": "Hallway",
-        "tracks": []
-    },
-    {
-        "name": "Diagonal",
-        "tracks": []
-    },
-    {
-        "name": "Catwalk",
-        "credit": "meedy555",
-        "tracks": [
-            {
-                "x": 24,
-                "y": 62,
-                "z": 25,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 24,
-                "y": 64,
-                "z": 26,
-                "note": "&5&lStonk Block",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 24,
-                "y": 63,
-                "z": 27,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 24,
-                "y": 49,
-                "z": 23,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 24,
-                "y": 51,
-                "z": 20,
-                "note": "&c&lSuperboom",
-                "trigger": "near",
-                "near": 2.1
-            },
-            {
-                "x": 24,
-                "y": 50,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 23,
-                "y": 62,
-                "z": 23,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2.5
-            },
-            {
-                "x": 85,
-                "y": 62,
-                "z": 22,
-                "note": "&d&lEtherwarp onto cyan from ledge",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 84,
-                "y": 63,
-                "z": 14,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 84,
-                "y": 49,
-                "z": 21,
-                "note": "&6&lGo Into Area",
-                "trigger": "near",
-                "near": 1.75
-            },
-            {
-                "x": 89,
-                "y": 49,
-                "z": 18,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 82,
-                "y": 50,
-                "z": 12,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": 2
-            },
-            {
-                "x": 80,
-                "y": 50,
-                "z": 8,
-                "note": "&a&lPickup wither essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 80,
-                "y": 50,
-                "z": 6,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3
-            }
-        ]
-    },
-    {
-        "name": "Dino Site",
-        "tracks": [
-            {
-                "x": 44,
-                "y": 56,
-                "z": 41,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 45,
-                "y": 56,
-                "z": 39,
-                "note": "&e&lCollect Item Through Wall",
-                "trigger": "near",
-                "near": 1.3
-            },
-            {
-                "x": 46,
-                "y": 51,
-                "z": 46,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 3.5
-            },
-            {
-                "x": 54,
-                "y": 52,
-                "z": 51,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 21,
-                "y": 47,
-                "z": 51,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 6,
-                "y": 46,
-                "z": 42,
-                "note": "&6&lEnter Cave",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 8,
-                "y": 45,
-                "z": 35,
-                "note": "&1&lKill Bat",
-                "trigger": "near",
-                "near": 4
-            }
-        ]
-    },
-    {
-        "name": "Stairs",
-        "tracks": []
-    },
-    {
-        "name": "Quartz Knight",
-        "tracks": []
-    },
-    {
-        "name": "Buttons",
-        "credit": "meedy555",
-        "tracks": [
-            {
-                "x": 16,
-                "y": 68,
-                "z": 31,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": 3
-            },
-            {
-                "x": 53,
-                "y": 55,
-                "z": 31,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 16,
-                "y": 55,
-                "z": 31,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 16,
-                "y": 85,
-                "z": 31,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 15,
-                "y": 79,
-                "z": 56,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 38,
-                "y": 81,
-                "z": 57,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 40,
-                "y": 81,
-                "z": 57,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": 1.75
-            },
-            {
-                "x": 42,
-                "y": 81,
-                "z": 57,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 38,
-                "y": 72,
-                "z": 57,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 52,
-                "y": 72,
-                "z": 59,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 2
-            },
-            {
-                "x": 53,
-                "y": 74,
-                "z": 59,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 57,
-                "y": 69,
-                "z": 60,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 56,
-                "y": 71,
-                "z": 53,
-                "note": "&c&lSuperboom",
-                "trigger": "air",
-                "near": 3
-            },
-            {
-                "x": 52,
-                "y": 70,
-                "z": 43,
-                "note": "&d&lEtherwarp on fence",
-                "trigger": "near",
-                "near": 1
-            },
-            {
-                "x": 52,
-                "y": 71,
-                "z": 41,
-                "note": "&5&lStonk Through Wall &7(3 Blocks)",
-                "trigger": "air",
-                "near": 1.55
-            },
-            {
-                "x": 58,
-                "y": 70,
-                "z": 36,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 57,
-                "y": 79,
-                "z": 34,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 1.5
-            },
-            {
-                "x": 56,
-                "y": 81,
-                "z": 2,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 53,
-                "y": 85,
-                "z": 5,
-                "note": "&d&lEtherwarp onto hopper",
-                "trigger": "near",
-                "near": 1.3
-            },
-            {
-                "x": 51,
-                "y": 87,
-                "z": 5,
-                "note": "&5&lStonk Through Wall",
-                "trigger": "air",
-                "near": 1.55
-            },
-            {
-                "x": 16,
-                "y": 68,
-                "z": 7,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 26,
-                "y": 72,
-                "z": 19,
-                "note": "&d&lEtherwarp",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 31,
-                "y": 73,
-                "z": 13,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 16,
-                "y": 81,
-                "z": 37,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 12,
-                "y": 80,
-                "z": 47,
-                "note": "&d&lEtherwarp onto Fence",
-                "trigger": "near",
-                "near": 1.75
-            },
-            {
-                "x": 10,
-                "y": 81,
-                "z": 47,
-                "note": "&5&lStonk Through",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 2,
-                "y": 81,
-                "z": 50,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Rails",
-        "tracks": [
-            {
-                "x": 56,
-                "y": 68,
-                "z": 6,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 56,
-                "y": 66,
-                "z": 6,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 46,
-                "y": 68,
-                "z": 19,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 47,
-                "y": 48,
-                "z": 29,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 51,
-                "y": 48,
-                "z": 9,
-                "note": "&1&lKill Bat",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 51,
-                "y": 48,
-                "z": 31,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 33,
-                "y": 60,
-                "z": 54,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 29,
-                "y": 69,
-                "z": 38,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 29,
-                "y": 71,
-                "z": 35,
-                "note": "&5&lStonk Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 30,
-                "y": 71,
-                "z": 34,
-                "note": "&5&lStonk Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 30,
-                "y": 72,
-                "z": 34,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 25,
-                "y": 70,
-                "z": 28,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 27,
-                "y": 69,
-                "z": 28,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 28,
-                "y": 68,
-                "z": 29,
-                "note": "&5&lGhost Block Down",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 28,
-                "y": 71,
-                "z": 29,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 0.8
-            },
-            {
-                "x": 30,
-                "y": 64,
-                "z": 29,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 17,
-                "y": 61,
-                "z": 23,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 10,
-                "y": 60,
-                "z": 16,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 4,
-                "y": 55,
-                "z": 3,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 6,
-                "y": 49,
-                "z": 10,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 3,
-                "y": 49,
-                "z": 10,
-                "note": "&a&lCollect Wither Essence",
-                "trigger": "air",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Vinny 8 Ball",
-        "tracks": []
-    },
-    {
-        "name": "Pillars",
-        "tracks": []
-    },
-    {
-        "name": "Sand Dragon",
-        "tracks": []
-    },
-    {
-        "name": "Tombstone",
-        "tracks": []
-    },
-    {
-        "name": "Stone Window",
-        "tracks": []
-    },
-    {
-        "name": "Lava Pit",
-        "tracks": []
-    },
-    {
-        "name": "Lava Pit",
-        "tracks": []
-    },
-    {
-        "name": "Mini Rail Track",
-        "tracks": []
-    },
-    {
-        "name": "Carpets",
-        "tracks": []
-    },
-    {
-        "name": "Trinity",
-        "tracks": []
-    },
-    {
-        "name": "Hanging Vines",
-        "tracks": []
-    },
-    {
-        "name": "Altar",
-        "tracks": [
-            {
-                "x": 14,
-                "y": 70,
-                "z": 48,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 19,
-                "y": 81,
-                "z": 46,
-                "note": "&d&lEtherwarp Up",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 19,
-                "y": 83,
-                "z": 43,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 36,
-                "y": 70,
-                "z": 40,
-                "note": "&d&lEtherwarp Down",
-                "trigger": "near",
-                "near": 3
-            },
-            {
-                "x": 54,
-                "y": 87,
-                "z": 47,
-                "note": "&d&lEtherwarp up",
-                "trigger": "near",
-                "near": 7
-            },
-            {
-                "x": 51,
-                "y": 88,
-                "z": 45,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Pirate",
-        "tracks": []
-    },
-    {
-        "name": "Criss Cross",
-        "tracks": []
-    },
-    {
-        "name": "Ritual",
-        "tracks": []
-    },
-    {
-        "name": "Pipes",
-        "tracks": [
-            {
-                "x": 53,
-                "y": 93,
-                "z": 15,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 4
-            },
-            {
-                "x": 52,
-                "y": 94,
-                "z": 15,
-                "note": "&a&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 37,
-                "y": 41,
-                "z": 10,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 33,
-                "y": 43,
-                "z": 6,
-                "note": "&c&lSuperboom Crypt",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 49,
-                "y": 31,
-                "z": 6,
-                "note": "&e&lCollect Item",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 32,
-                "y": 34,
-                "z": 6,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 10
-            },
-            {
-                "x": 54,
-                "y": 53,
-                "z": 20,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 63,
-                "y": 55,
-                "z": 26,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 104,
-                "y": 41,
-                "z": 19,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 107,
-                "y": 44,
-                "z": 15,
-                "note": "&5&lStonk to Chest",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 107,
-                "y": 45,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 101,
-                "y": 53,
-                "z": 5,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 8
-            },
-            {
-                "x": 110,
-                "y": 55,
-                "z": 5,
-                "note": "&c&lSuperboom Wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 119,
-                "y": 54,
-                "z": 5,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 102,
-                "y": 53,
-                "z": 8,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 101,
-                "y": 60,
-                "z": 5,
-                "note": "&d&lEtherwarp Here",
-                "trigger": "near",
-                "near": 6
-            },
-            {
-                "x": 118,
-                "y": 60,
-                "z": 7,
-                "note": "&6&lGo Here",
-                "trigger": "near",
-                "near": 9
-            },
-            {
-                "x": 117,
-                "y": 62,
-                "z": 26,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Slime",
-        "tracks": []
-    },
-    {
-        "name": "Redstone Crypt",
-        "tracks": [
-            {
-                "x": 8,
-                "y": 70,
-                "z": 6,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 9,
-                "y": 69,
-                "z": 3,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 6,
-                "y": 70,
-                "z": 4,
-                "note": "&c&lSuperboom wall",
-                "trigger": "air",
-                "near": 3
-            },
-            {
-                "x": 4,
-                "y": 71,
-                "z": 4,
-                "note": "&a&lPickup redstone skull",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 69,
-                "z": 14,
-                "note": "&5&lGhostblock",
-                "trigger": "air",
-                "near": null
-            },
-            {
-                "x": 15,
-                "y": 68,
-                "z": 15,
-                "note": "&5&lFlick Lever",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 29,
-                "y": 70,
-                "z": 15,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            },
-            {
-                "x": 26,
-                "y": 72,
-                "z": 6,
-                "note": "&a&lPlace redstone skull",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    },
-    {
-        "name": "Staircase",
-        "tracks": []
-    },
-    {
-        "name": "Zodd",
-        "tracks": [
-            {
-                "x": 10,
-                "y": 68,
-                "z": 7,
-                "note": "&6&lGo here",
-                "trigger": "near",
-                "near": 5
-            },
-            {
-                "x": 7,
-                "y": 70,
-                "z": 3,
-                "note": "&a&lOpen Chest",
-                "trigger": "click",
-                "near": null
-            }
-        ]
-    }
+  {
+    "name": "Mines",
+    "tracks": [
+      {
+        "x": 52,
+        "y": 78,
+        "z": 9,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 52,
+        "y": 79,
+        "z": 9,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 53,
+        "y": 80,
+        "z": 9,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 41,
+        "y": 80,
+        "z": 12,
+        "note": "&a&lClick Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 45,
+        "y": 84,
+        "z": 12,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 32,
+        "y": 100,
+        "z": 8,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 14,
+        "y": 101,
+        "z": 7,
+        "note": "&6&lEnter Area",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 9,
+        "y": 108,
+        "z": 17,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 13,
+        "y": 111,
+        "z": 21,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 9,
+        "y": 111,
+        "z": 28,
+        "note": "&c&lSuperboom Crypt",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 9,
+        "y": 109,
+        "z": 30,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 101,
+        "z": 7,
+        "note": "&6&lExit area",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 29,
+        "y": 100,
+        "z": 8,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 35,
+        "y": 97,
+        "z": 41,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 31,
+        "y": 99,
+        "z": 58,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 9,
+        "y": 88,
+        "z": 50,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 6,
+        "y": 90,
+        "z": 57,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 1,
+        "y": 88,
+        "z": 57,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.33
+      },
+      {
+        "x": 29,
+        "y": 91,
+        "z": 60,
+        "note": "&d&lEtherwarp onto skull",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 31,
+        "y": 93,
+        "z": 60,
+        "note": "&5&lStonk Through (2 blocks)",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 35,
+        "y": 77,
+        "z": 56,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 34,
+        "y": 79,
+        "z": 59,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 56,
+        "y": 78,
+        "z": 58,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 43,
+        "y": 79,
+        "z": 50,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 6.66
+      },
+      {
+        "x": 53,
+        "y": 46,
+        "z": 14,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 52,
+        "y": 47,
+        "z": 9,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.33
+      },
+      {
+        "x": 56,
+        "y": 41,
+        "z": 34,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 3.33
+      },
+      {
+        "x": 58,
+        "y": 43,
+        "z": 45,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 60,
+        "y": 43,
+        "z": 50,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 32,
+        "y": 41,
+        "z": 20,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 13,
+        "y": 53,
+        "z": 44,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 4,
+        "y": 53,
+        "z": 56,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      }
+    ]
+  },
+  {
+    "name": "Doors",
+    "tracks": []
+  },
+  {
+    "name": "Locked Away",
+    "tracks": [
+      {
+        "x": 24,
+        "y": 70,
+        "z": 26,
+        "note": "&c&lBlow up crypt",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 26,
+        "y": 73,
+        "z": 29,
+        "note": "&5&lGhost block up",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 26,
+        "y": 75,
+        "z": 29,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Beams",
+    "tracks": [
+      {
+        "x": 4,
+        "y": 80,
+        "z": 12,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 7,
+        "y": 81,
+        "z": 2,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 4,
+        "y": 84,
+        "z": 18,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 9,
+        "y": 91,
+        "z": 25,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      }
+    ]
+  },
+  {
+    "name": "Hall",
+    "tracks": []
+  },
+  {
+    "name": "Banners",
+    "tracks": [
+      {
+        "x": 22,
+        "y": 70,
+        "z": 15,
+        "note": "&6&lGo through painting (oldest trick in the book)",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 27,
+        "y": 72,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Andesite",
+    "tracks": []
+  },
+  {
+    "name": "Painting",
+    "tracks": []
+  },
+  {
+    "name": "Multicolored",
+    "tracks": []
+  },
+  {
+    "name": "Black Flag",
+    "tracks": []
+  },
+  {
+    "name": "Overgrown Chains",
+    "tracks": []
+  },
+  {
+    "name": "Chains",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Golden Oasis",
+    "tracks": [
+      {
+        "x": 10,
+        "y": 71,
+        "z": 3,
+        "note": "&4Collect Redstone Skull",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 22,
+        "y": 69,
+        "z": 27,
+        "note": "&dEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 22,
+        "y": 68,
+        "z": 27,
+        "note": "&5&lStonk Through Floor",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 20,
+        "y": 68,
+        "z": 25,
+        "note": "&5&lStonk Through Floor",
+        "trigger": "air",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Redstone Warrior",
+    "tracks": [
+      {
+        "x": 26,
+        "y": 59,
+        "z": 15,
+        "note": "&5&lStonk Iron Bar",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 24,
+        "y": 58,
+        "z": 15,
+        "note": "&a&lOpen Chest (May be locked)",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 56,
+        "y": 76,
+        "z": 15,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 58,
+        "y": 78,
+        "z": 23,
+        "note": "&c&lSuperboom",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 58,
+        "y": 77,
+        "z": 28,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 22,
+        "y": 78,
+        "z": 23,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 30,
+        "y": 83,
+        "z": 27,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Silvers Sword",
+    "tracks": []
+  },
+  {
+    "name": "Pedestal",
+    "tracks": []
+  },
+  {
+    "name": "Temple",
+    "tracks": []
+  },
+  {
+    "name": "Big Red Flag",
+    "tracks": [
+      {
+        "x": 23,
+        "y": 74,
+        "z": 25,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 3
+      }
+    ]
+  },
+  {
+    "name": "Mural",
+    "tracks": []
+  },
+  {
+    "name": "Perch",
+    "tracks": []
+  },
+  {
+    "name": "End",
+    "tracks": []
+  },
+  {
+    "name": "Cage",
+    "tracks": [
+      {
+        "x": 12,
+        "y": 72,
+        "z": 18,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 12,
+        "y": 72,
+        "z": 20,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Sloth",
+    "tracks": []
+  },
+  {
+    "name": "Steps",
+    "tracks": []
+  },
+  {
+    "name": "Granite",
+    "tracks": []
+  },
+  {
+    "name": "Crypt",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Dueces",
+    "tracks": [
+      {
+        "x": 10,
+        "y": 71,
+        "z": 13,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 10,
+        "y": 73,
+        "z": 11,
+        "note": "&5&lStonk Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 9,
+        "y": 69,
+        "z": 4,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 16,
+        "y": 71,
+        "z": 2,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 23,
+        "y": 68,
+        "z": 9,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 1,
+        "y": 73,
+        "z": 15,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 2,
+        "y": 77,
+        "z": 15,
+        "note": "&5&lStonk to Chest",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 2,
+        "y": 78,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Red Green",
+    "tracks": []
+  },
+  {
+    "name": "Long Hall",
+    "tracks": []
+  },
+  {
+    "name": "Mirror",
+    "tracks": []
+  },
+  {
+    "name": "Quad Lava",
+    "tracks": []
+  },
+  {
+    "name": "Small Waterfall",
+    "tracks": []
+  },
+  {
+    "name": "Basement",
+    "tracks": []
+  },
+  {
+    "name": "Dip",
+    "tracks": []
+  },
+  {
+    "name": "Water",
+    "tracks": []
+  },
+  {
+    "name": "Dome",
+    "tracks": []
+  },
+  {
+    "name": "Scaffolding",
+    "tracks": [
+      {
+        "x": 16,
+        "y": 80,
+        "z": 11,
+        "note": "&d&lEtherwarp (Collect Item)",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 7,
+        "y": 83,
+        "z": 27,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 5,
+        "y": 82,
+        "z": 28,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Small Stairs",
+    "tracks": []
+  },
+  {
+    "name": "Tomioka",
+    "tracks": []
+  },
+  {
+    "name": "Mushroom",
+    "tracks": []
+  },
+  {
+    "name": "Slabs",
+    "tracks": [
+      {
+        "x": 20,
+        "y": 83,
+        "z": 4,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 5
+      }
+    ]
+  },
+  {
+    "name": "Duncan",
+    "tracks": []
+  },
+  {
+    "name": "Logs",
+    "tracks": []
+  },
+  {
+    "name": "Cages",
+    "tracks": []
+  },
+  {
+    "name": "Admin",
+    "tracks": []
+  },
+  {
+    "name": "Skull",
+    "tracks": [
+      {
+        "x": 7,
+        "y": 81,
+        "z": 15,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 3,
+        "y": 84,
+        "z": 15,
+        "note": "&6&lEtherwarp or tp to",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 2,
+        "y": 87,
+        "z": 15,
+        "note": "&5&lStonk",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 2,
+        "y": 88,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 18,
+        "y": 81,
+        "z": 4,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 53,
+        "y": 88,
+        "z": 4,
+        "note": "&6&lClimb Vines",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 52,
+        "y": 91,
+        "z": 7,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Balcony",
+    "tracks": []
+  },
+  {
+    "name": "Knight",
+    "tracks": []
+  },
+  {
+    "name": "Sarcophagus",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Drop",
+    "tracks": [
+      {
+        "x": 15,
+        "y": 58,
+        "z": 15,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 9,
+        "y": 60,
+        "z": 15,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 5,
+        "y": 59,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 21,
+        "y": 68,
+        "z": 15,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 7.5
+      },
+      {
+        "x": 24,
+        "y": 77,
+        "z": 12,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 25,
+        "y": 77,
+        "z": 2,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Raccoon",
+    "credit": "meedy555",
+    "tracks": [
+      {
+        "x": 6,
+        "y": 76,
+        "z": 20,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 6,
+        "y": 77,
+        "z": 24,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 81,
+        "z": 6,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 23,
+        "y": 83,
+        "z": 8,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 1.3
+      },
+      {
+        "x": 25,
+        "y": 84,
+        "z": 8,
+        "note": "&5&lStonk wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 26,
+        "y": 84,
+        "z": 8,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 25,
+        "y": 74,
+        "z": 20,
+        "note": "&c&lSuperboom",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 24,
+        "y": 70,
+        "z": 28,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 27,
+        "y": 69,
+        "z": 24,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 21,
+        "y": 69,
+        "z": 24,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Double Diamond",
+    "tracks": [
+      {
+        "x": 6,
+        "y": 70,
+        "z": 10,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 6,
+        "y": 69,
+        "z": 6,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 11,
+        "y": 77,
+        "z": 19,
+        "note": "&6&lGo up Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 11,
+        "y": 81,
+        "z": 19,
+        "note": "&5&lStonk diamond block",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 11,
+        "y": 82,
+        "z": 19,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 19,
+        "y": 64,
+        "z": 15,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 24,
+        "y": 64,
+        "z": 23,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      }
+    ]
+  },
+  {
+    "name": "Blue Skulls",
+    "tracks": []
+  },
+  {
+    "name": "Leaves",
+    "tracks": [
+      {
+        "x": 4,
+        "y": 80,
+        "z": 4,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 15,
+        "y": 82,
+        "z": 15,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 14,
+        "y": 81,
+        "z": 27,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Withermancer",
+    "tracks": [
+      {
+        "x": 26,
+        "y": 70,
+        "z": 5,
+        "note": "&c&lSuperboom Floor",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 24,
+        "y": 61,
+        "z": 3,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 26,
+        "y": 59,
+        "z": 15,
+        "note": "&6&lGo up stairs",
+        "trigger": "near",
+        "near": 7.33
+      },
+      {
+        "x": 22,
+        "y": 70,
+        "z": 6,
+        "note": "&6&lGo up here",
+        "trigger": "near",
+        "near": 10
+      },
+      {
+        "x": 26,
+        "y": 110,
+        "z": 15,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 29,
+        "y": 111,
+        "z": 15,
+        "note": "&a&lOpen chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 4,
+        "y": 110,
+        "z": 16,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 1,
+        "y": 111,
+        "z": 15,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 14,
+        "y": 106,
+        "z": 20,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 1.75
+      },
+      {
+        "x": 15,
+        "y": 107,
+        "z": 20,
+        "note": "&5&lGhost block",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 104,
+        "z": 20,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 25,
+        "y": 70,
+        "z": 34,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 27,
+        "y": 72,
+        "z": 33,
+        "note": "&c&lSuperboom Crypt",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 59,
+        "y": 55,
+        "z": 45,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Redstone Key",
+    "tracks": []
+  },
+  {
+    "name": "Prison Cell",
+    "tracks": []
+  },
+  {
+    "name": "Cell",
+    "tracks": []
+  },
+  {
+    "name": "Arrow Trap",
+    "tracks": []
+  },
+  {
+    "name": "Bridges",
+    "tracks": [
+      {
+        "x": 41,
+        "y": 63,
+        "z": 20,
+        "note": "&6&lEnter Stairway",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 54,
+        "y": 59,
+        "z": 28,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 51,
+        "y": 58,
+        "z": 20,
+        "note": "&d&lEtherwarp on Fence",
+        "trigger": "near",
+        "near": 1.3
+      },
+      {
+        "x": 51,
+        "y": 59,
+        "z": 17,
+        "note": "&5&lStonk to here",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 51,
+        "y": 56,
+        "z": 17,
+        "note": "&5&lMine Down to here",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 53,
+        "y": 52,
+        "z": 17,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 53,
+        "y": 53,
+        "z": 13,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 41,
+        "y": 52,
+        "z": 21,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 68,
+        "z": 16,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 15,
+        "y": 80,
+        "z": 16,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 3,
+        "y": 82,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 42,
+        "y": 81,
+        "z": 15,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 48,
+        "y": 92,
+        "z": 7,
+        "note": "&d&lEtherwarp upto bat and kill",
+        "trigger": "air",
+        "near": 7
+      },
+      {
+        "x": 47,
+        "y": 80,
+        "z": 9,
+        "note": "&6&lGo Back down",
+        "trigger": "near",
+        "near": 8.5
+      },
+      {
+        "x": 51,
+        "y": 80,
+        "z": 24,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 55,
+        "y": 80,
+        "z": 17,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      }
+    ]
+  },
+  {
+    "name": "Cobble Wall Pillar",
+    "tracks": []
+  },
+  {
+    "name": "Spikes",
+    "tracks": []
+  },
+  {
+    "name": "Gold",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Chambers",
+    "tracks": [
+      {
+        "x": 13,
+        "y": 81,
+        "z": 5,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 9
+      },
+      {
+        "x": 15,
+        "y": 83,
+        "z": 2,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 17,
+        "y": 85,
+        "z": 12,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 17,
+        "y": 87,
+        "z": 13,
+        "note": "&5&lStonk Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 12,
+        "y": 66,
+        "z": 31,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 9
+      },
+      {
+        "x": 8,
+        "y": 70,
+        "z": 38,
+        "note": "&5&lStonk Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 7,
+        "y": 69,
+        "z": 40,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 68,
+        "z": 57,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 10
+      },
+      {
+        "x": 11,
+        "y": 70,
+        "z": 57,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 4,
+        "y": 69,
+        "z": 57,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 16,
+        "y": 76,
+        "z": 58,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 16,
+        "y": 80,
+        "z": 57,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 1.75
+      },
+      {
+        "x": 28,
+        "y": 79,
+        "z": 59,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 35,
+        "y": 79,
+        "z": 59,
+        "note": "&1&lKill Bat",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 40,
+        "y": 69,
+        "z": 57,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5.5
+      },
+      {
+        "x": 40,
+        "y": 68,
+        "z": 47,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 51,
+        "y": 67,
+        "z": 50,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 53,
+        "y": 57,
+        "z": 47,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Lava Ravine",
+    "tracks": []
+  },
+  {
+    "name": "Wizard",
+    "credit": "CerealBridge157",
+    "tracks": [
+      {
+        "x": 72,
+        "y": 81,
+        "z": 24,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 74,
+        "y": 85,
+        "z": 24,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": 5
+      },
+      {
+        "x": 90,
+        "y": 89,
+        "z": 24,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 63,
+        "y": 87,
+        "z": 24,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 36,
+        "y": 88,
+        "z": 24,
+        "note": "&d&lEtherwarp through roof",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 22,
+        "y": 90,
+        "z": 25,
+        "note": "&d&lEtherwarp onto ledge",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 20,
+        "y": 92,
+        "z": 25,
+        "note": "&5&lStonk through wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 17,
+        "y": 92,
+        "z": 26,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 33,
+        "y": 89,
+        "z": 26,
+        "note": "&d&lEtherwarp onto fence",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 33,
+        "y": 88,
+        "z": 26,
+        "note": "&5&lMine down",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 10,
+        "y": 81,
+        "z": 21,
+        "note": "&d&lEtherwarp onto fence",
+        "trigger": "near",
+        "near": 1.5
+      },
+      {
+        "x": 10,
+        "y": 80,
+        "z": 21,
+        "note": "&5&lMine down",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 3,
+        "y": 75,
+        "z": 21,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 9,
+        "y": 70,
+        "z": 23,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": 3
+      }
+    ]
+  },
+  {
+    "name": "Overgrown",
+    "tracks": [
+      {
+        "x": 5,
+        "y": 70,
+        "z": 10,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 4,
+        "y": 69,
+        "z": 2,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.33
+      },
+      {
+        "x": 5,
+        "y": 68,
+        "z": 15,
+        "note": "&6&lExit Cave",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 23,
+        "y": 78,
+        "z": 15,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 4.5
+      },
+      {
+        "x": 27,
+        "y": 81,
+        "z": 15,
+        "note": "&5&lFlick Lever",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 7,
+        "y": 80,
+        "z": 15,
+        "note": "&5&lStonk Iron Bar",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 6,
+        "y": 79,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 8,
+        "y": 85,
+        "z": 15,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4.5
+      },
+      {
+        "x": 5,
+        "y": 87,
+        "z": 19,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Jumping Skulls",
+    "tracks": []
+  },
+  {
+    "name": "Lots Of Floors",
+    "tracks": []
+  },
+  {
+    "name": "Purple Flags",
+    "tracks": []
+  },
+  {
+    "name": "Archway",
+    "tracks": []
+  },
+  {
+    "name": "Mage",
+    "tracks": []
+  },
+  {
+    "name": "Grass Ruin",
+    "tracks": []
+  },
+  {
+    "name": "Grand Library",
+    "tracks": []
+  },
+  {
+    "name": "Pit",
+    "tracks": [
+      {
+        "x": 9,
+        "y": 75,
+        "z": 21,
+        "note": "&d&lEtherwarp then superboom",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 9,
+        "y": 77,
+        "z": 23,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 3,
+        "y": 75,
+        "z": 27,
+        "note": "&e&lPickup Item",
+        "trigger": "near",
+        "near": 2.75
+      },
+      {
+        "x": 3,
+        "y": 73,
+        "z": 3,
+        "note": "&d&lEtherwarp on wall",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 3,
+        "y": 66,
+        "z": 3,
+        "note": "&5&lStonk Down",
+        "trigger": "air",
+        "near": 3
+      },
+      {
+        "x": 7,
+        "y": 65,
+        "z": 7,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 1,
+        "y": 69,
+        "z": 4,
+        "note": "&6&lGo Up Ladder",
+        "trigger": "near",
+        "near": 3.33
+      },
+      {
+        "x": 20,
+        "y": 83,
+        "z": 9,
+        "note": "&d&lEtherwarp on leaf",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 20,
+        "y": 89,
+        "z": 9,
+        "note": "&5&lStonk upto chest",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 20,
+        "y": 91,
+        "z": 9,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 21,
+        "y": 82,
+        "z": 5,
+        "note": "&d&lEtherwarp on ledge",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 104,
+        "y": 82,
+        "z": 8,
+        "note": "&6&lEnter Area",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 113,
+        "y": 91,
+        "z": 24,
+        "note": "&d&lEtherwarp on ledge",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 113,
+        "y": 92,
+        "z": 28,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Atlas",
+    "tracks": [
+      {
+        "x": 42,
+        "y": 79,
+        "z": 6,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 38,
+        "y": 78,
+        "z": 4,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 42,
+        "y": 65,
+        "z": 31,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 53,
+        "y": 67,
+        "z": 31,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 55,
+        "y": 75,
+        "z": 28,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 58,
+        "y": 88,
+        "z": 34,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 60,
+        "y": 90,
+        "z": 33,
+        "note": "&5&lClick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 55,
+        "y": 77,
+        "z": 36,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 38,
+        "y": 73,
+        "z": 47,
+        "note": "&d&lEtherwarp on hopper",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 38,
+        "y": 75,
+        "z": 48,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": 1.5
+      },
+      {
+        "x": 32,
+        "y": 77,
+        "z": 54,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 31,
+        "y": 78,
+        "z": 52,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 8,
+        "y": 80,
+        "z": 49,
+        "note": "&6&lExit Cave",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 14,
+        "y": 80,
+        "z": 32,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 13,
+        "y": 82,
+        "z": 32,
+        "note": "&5&lStonk Iron Bar",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 11,
+        "y": 82,
+        "z": 31,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 38,
+        "y": 65,
+        "z": 22,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 51,
+        "y": 65,
+        "z": 10,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5.5
+      },
+      {
+        "x": 36,
+        "y": 57,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Layers",
+    "tracks": [
+      {
+        "x": 22,
+        "y": 68,
+        "z": 18,
+        "note": "&6&lEnter hallway looking thing",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 25,
+        "y": 69,
+        "z": 28,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 14,
+        "y": 70,
+        "z": 25,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 13,
+        "y": 69,
+        "z": 26,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 13,
+        "y": 68,
+        "z": 8,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4.5
+      },
+      {
+        "x": 9,
+        "y": 70,
+        "z": 7,
+        "note": "&d&lEtherwarp into skull",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 8,
+        "y": 72,
+        "z": 7,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 5,
+        "y": 69,
+        "z": 2,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 5,
+        "y": 75,
+        "z": 2,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 5,
+        "y": 76,
+        "z": 2,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 4,
+        "y": 70,
+        "z": 43,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 20,
+        "y": 87,
+        "z": 54,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 5.5
+      },
+      {
+        "x": 8,
+        "y": 92,
+        "z": 59,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 9,
+        "y": 89,
+        "z": 32,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 8,
+        "y": 91,
+        "z": 32,
+        "note": "&a&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 29,
+        "y": 78,
+        "z": 47,
+        "note": "&d&lEtherwarp here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 47,
+        "y": 79,
+        "z": 42,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 47,
+        "y": 78,
+        "z": 34,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 54,
+        "y": 78,
+        "z": 52,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 54,
+        "y": 80,
+        "z": 53,
+        "note": "&5&lStonk Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 54,
+        "y": 78,
+        "z": 56,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 41,
+        "y": 78,
+        "z": 59,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 1.5
+      },
+      {
+        "x": 41,
+        "y": 76,
+        "z": 59,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 40,
+        "y": 68,
+        "z": 48,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 47,
+        "y": 69,
+        "z": 47,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 34,
+        "y": 68,
+        "z": 53,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 35,
+        "y": 62,
+        "z": 57,
+        "note": "&6&lGo down ladder",
+        "trigger": "near",
+        "near": 4.3
+      },
+      {
+        "x": 35,
+        "y": 58,
+        "z": 52,
+        "note": "&e&lPickup Item",
+        "trigger": "near",
+        "near": 3.5
+      }
+    ]
+  },
+  {
+    "name": "Waterfall",
+    "tracks": [
+      {
+        "x": 119,
+        "y": 80,
+        "z": 15,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 121,
+        "y": 81,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 100,
+        "y": 85,
+        "z": 15,
+        "note": "&d&lEtherwarp to",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 83,
+        "y": 76,
+        "z": 7,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 82,
+        "y": 78,
+        "z": 3,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 77,
+        "y": 59,
+        "z": 7,
+        "note": "&e&lEtherwarp",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 72,
+        "y": 60,
+        "z": 5,
+        "note": "&d&lEtherwarp &1(Hype to kill bat)",
+        "trigger": "near",
+        "near": 1.5
+      },
+      {
+        "x": 72,
+        "y": 58,
+        "z": 5,
+        "note": "&5&lStonk down (2 blocks)",
+        "trigger": "air",
+        "near": 1.5
+      },
+      {
+        "x": 85,
+        "y": 43,
+        "z": 24,
+        "note": "&d&lEtherwarp &1(Hype to kill bat)",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 70,
+        "y": 45,
+        "z": 2,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 47,
+        "y": 45,
+        "z": 19,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 43,
+        "y": 43,
+        "z": 25,
+        "note": "&6&lEnter Cave",
+        "trigger": "near",
+        "near": 1.75
+      },
+      {
+        "x": 47,
+        "y": 45,
+        "z": 27,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 53,
+        "y": 44,
+        "z": 27,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 29,
+        "y": 43,
+        "z": 5,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 5,
+        "y": 43,
+        "z": 20,
+        "note": "&6&lEnter Cave",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 8,
+        "y": 43,
+        "z": 28,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 19,
+        "y": 68,
+        "z": 8,
+        "note": "&d&lEtherwarp to",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 30,
+        "y": 80,
+        "z": 7,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 34,
+        "y": 84,
+        "z": 23,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 42,
+        "y": 82,
+        "z": 21,
+        "note": "&a&lOpen Chest (Ghost Pick)",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Pressure Plates",
+    "tracks": []
+  },
+  {
+    "name": "Supertall",
+    "tracks": []
+  },
+  {
+    "name": "Gravel",
+    "tracks": [
+      {
+        "x": 63,
+        "y": 69,
+        "z": 26,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 27,
+        "y": 68,
+        "z": 22,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 7.5
+      },
+      {
+        "x": 35,
+        "y": 69,
+        "z": 11,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 40,
+        "y": 80,
+        "z": 17,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 5.5
+      },
+      {
+        "x": 44,
+        "y": 80,
+        "z": 8,
+        "note": "&6&lGo Through Tunnel",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 84,
+        "y": 72,
+        "z": 3,
+        "note": "&6&lEnter Cave",
+        "trigger": "near",
+        "near": 5.5
+      },
+      {
+        "x": 92,
+        "y": 69,
+        "z": 3,
+        "note": "&a&lPickup wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 88,
+        "y": 68,
+        "z": 9,
+        "note": "&e&lPickup Item",
+        "trigger": "near",
+        "near": 3.33
+      },
+      {
+        "x": 88,
+        "y": 79,
+        "z": 9,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 5.5
+      },
+      {
+        "x": 83,
+        "y": 80,
+        "z": 15,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6.5
+      },
+      {
+        "x": 71,
+        "y": 80,
+        "z": 14,
+        "note": "&6&lGo up vines",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 69,
+        "y": 84,
+        "z": 14,
+        "note": "&6&lGo up vines",
+        "trigger": "near",
+        "near": 2.2
+      },
+      {
+        "x": 66,
+        "y": 87,
+        "z": 14,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Cathedral",
+    "tracks": []
+  },
+  {
+    "name": "Red Blue",
+    "tracks": []
+  },
+  {
+    "name": "Spider",
+    "tracks": []
+  },
+  {
+    "name": "Deathmite",
+    "tracks": []
+  },
+  {
+    "name": "Museum",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Market",
+    "tracks": [
+      {
+        "x": 43,
+        "y": 74,
+        "z": 47,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 45,
+        "y": 78,
+        "z": 48,
+        "note": "&5&lStonk to Chest",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 46,
+        "y": 79,
+        "z": 48,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 40,
+        "y": 68,
+        "z": 46,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 7.33
+      },
+      {
+        "x": 32,
+        "y": 66,
+        "z": 35,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 32,
+        "y": 61,
+        "z": 48,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 32,
+        "y": 66,
+        "z": 41,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 6,
+        "y": 67,
+        "z": 52,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 7,
+        "y": 59,
+        "z": 44,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Melon",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Mossy",
+    "tracks": [
+      {
+        "x": 5,
+        "y": 70,
+        "z": 8,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": 4
+      },
+      {
+        "x": 2,
+        "y": 69,
+        "z": 4,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 26,
+        "y": 77,
+        "z": 9,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 47,
+        "y": 88,
+        "z": 10,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 63,
+        "y": 95,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 60,
+        "y": 69,
+        "z": 15,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 63,
+        "y": 72,
+        "z": 26,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": 4
+      },
+      {
+        "x": 63,
+        "y": 70,
+        "z": 29,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 63,
+        "y": 93,
+        "z": 13,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 57,
+        "y": 88,
+        "z": 4,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 47,
+        "y": 89,
+        "z": 4,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Flags",
+    "tracks": []
+  },
+  {
+    "name": "Well",
+    "tracks": []
+  },
+  {
+    "name": "Hallway",
+    "tracks": []
+  },
+  {
+    "name": "Diagonal",
+    "tracks": []
+  },
+  {
+    "name": "Catwalk",
+    "credit": "meedy555",
+    "tracks": [
+      {
+        "x": 24,
+        "y": 62,
+        "z": 25,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 24,
+        "y": 64,
+        "z": 26,
+        "note": "&5&lStonk Block",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 24,
+        "y": 63,
+        "z": 27,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 24,
+        "y": 49,
+        "z": 23,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 24,
+        "y": 51,
+        "z": 20,
+        "note": "&c&lSuperboom",
+        "trigger": "near",
+        "near": 2.1
+      },
+      {
+        "x": 24,
+        "y": 50,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 23,
+        "y": 62,
+        "z": 23,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2.5
+      },
+      {
+        "x": 85,
+        "y": 62,
+        "z": 22,
+        "note": "&d&lEtherwarp onto cyan from ledge",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 84,
+        "y": 63,
+        "z": 14,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 84,
+        "y": 49,
+        "z": 21,
+        "note": "&6&lGo Into Area",
+        "trigger": "near",
+        "near": 1.75
+      },
+      {
+        "x": 89,
+        "y": 49,
+        "z": 18,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 82,
+        "y": 50,
+        "z": 12,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": 2
+      },
+      {
+        "x": 80,
+        "y": 50,
+        "z": 8,
+        "note": "&a&lPickup wither essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 80,
+        "y": 50,
+        "z": 6,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3
+      }
+    ]
+  },
+  {
+    "name": "Dino Site",
+    "tracks": [
+      {
+        "x": 44,
+        "y": 56,
+        "z": 41,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 45,
+        "y": 56,
+        "z": 39,
+        "note": "&e&lCollect Item Through Wall",
+        "trigger": "near",
+        "near": 1.3
+      },
+      {
+        "x": 46,
+        "y": 51,
+        "z": 46,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 3.5
+      },
+      {
+        "x": 54,
+        "y": 52,
+        "z": 51,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 21,
+        "y": 47,
+        "z": 51,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 6,
+        "y": 46,
+        "z": 42,
+        "note": "&6&lEnter Cave",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 8,
+        "y": 45,
+        "z": 35,
+        "note": "&1&lKill Bat",
+        "trigger": "near",
+        "near": 4
+      }
+    ]
+  },
+  {
+    "name": "Stairs",
+    "tracks": []
+  },
+  {
+    "name": "Quartz Knight",
+    "tracks": []
+  },
+  {
+    "name": "Buttons",
+    "credit": "meedy555",
+    "tracks": [
+      {
+        "x": 16,
+        "y": 68,
+        "z": 31,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": 3
+      },
+      {
+        "x": 53,
+        "y": 55,
+        "z": 31,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 16,
+        "y": 55,
+        "z": 31,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 16,
+        "y": 85,
+        "z": 31,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 15,
+        "y": 79,
+        "z": 56,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 38,
+        "y": 81,
+        "z": 57,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 40,
+        "y": 81,
+        "z": 57,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": 1.75
+      },
+      {
+        "x": 42,
+        "y": 81,
+        "z": 57,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 38,
+        "y": 72,
+        "z": 57,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 52,
+        "y": 72,
+        "z": 59,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 2
+      },
+      {
+        "x": 53,
+        "y": 74,
+        "z": 59,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 57,
+        "y": 69,
+        "z": 60,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 56,
+        "y": 71,
+        "z": 53,
+        "note": "&c&lSuperboom",
+        "trigger": "air",
+        "near": 3
+      },
+      {
+        "x": 52,
+        "y": 70,
+        "z": 43,
+        "note": "&d&lEtherwarp on fence",
+        "trigger": "near",
+        "near": 1
+      },
+      {
+        "x": 52,
+        "y": 71,
+        "z": 41,
+        "note": "&5&lStonk Through Wall &7(3 Blocks)",
+        "trigger": "air",
+        "near": 1.55
+      },
+      {
+        "x": 58,
+        "y": 70,
+        "z": 36,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 57,
+        "y": 79,
+        "z": 34,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 1.5
+      },
+      {
+        "x": 56,
+        "y": 81,
+        "z": 2,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 53,
+        "y": 85,
+        "z": 5,
+        "note": "&d&lEtherwarp onto hopper",
+        "trigger": "near",
+        "near": 1.3
+      },
+      {
+        "x": 51,
+        "y": 87,
+        "z": 5,
+        "note": "&5&lStonk Through Wall",
+        "trigger": "air",
+        "near": 1.55
+      },
+      {
+        "x": 16,
+        "y": 68,
+        "z": 7,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 26,
+        "y": 72,
+        "z": 19,
+        "note": "&d&lEtherwarp",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 31,
+        "y": 73,
+        "z": 13,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 16,
+        "y": 81,
+        "z": 37,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 12,
+        "y": 80,
+        "z": 47,
+        "note": "&d&lEtherwarp onto Fence",
+        "trigger": "near",
+        "near": 1.75
+      },
+      {
+        "x": 10,
+        "y": 81,
+        "z": 47,
+        "note": "&5&lStonk Through",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 2,
+        "y": 81,
+        "z": 50,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Rails",
+    "tracks": [
+      {
+        "x": 56,
+        "y": 68,
+        "z": 6,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 56,
+        "y": 66,
+        "z": 6,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 46,
+        "y": 68,
+        "z": 19,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 47,
+        "y": 48,
+        "z": 29,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 51,
+        "y": 48,
+        "z": 9,
+        "note": "&1&lKill Bat",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 51,
+        "y": 48,
+        "z": 31,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 50,
+        "y": 62,
+        "z": 55,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 33,
+        "y": 60,
+        "z": 54,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 29,
+        "y": 69,
+        "z": 38,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 29,
+        "y": 71,
+        "z": 35,
+        "note": "&5&lStonk Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 30,
+        "y": 71,
+        "z": 34,
+        "note": "&5&lStonk Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 30,
+        "y": 72,
+        "z": 34,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 25,
+        "y": 70,
+        "z": 28,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 27,
+        "y": 69,
+        "z": 28,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 28,
+        "y": 68,
+        "z": 29,
+        "note": "&5&lGhost Block Down",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 28,
+        "y": 71,
+        "z": 29,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 0.8
+      },
+      {
+        "x": 30,
+        "y": 64,
+        "z": 29,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 17,
+        "y": 61,
+        "z": 23,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 10,
+        "y": 60,
+        "z": 16,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 4,
+        "y": 55,
+        "z": 3,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 6,
+        "y": 49,
+        "z": 10,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 3,
+        "y": 49,
+        "z": 10,
+        "note": "&a&lCollect Wither Essence",
+        "trigger": "air",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Vinny 8 Ball",
+    "tracks": []
+  },
+  {
+    "name": "Pillars",
+    "tracks": []
+  },
+  {
+    "name": "Sand Dragon",
+    "tracks": []
+  },
+  {
+    "name": "Tombstone",
+    "tracks": []
+  },
+  {
+    "name": "Stone Window",
+    "tracks": []
+  },
+  {
+    "name": "Lava Pit",
+    "tracks": []
+  },
+  {
+    "name": "Mini Rail Track",
+    "tracks": []
+  },
+  {
+    "uploadedBy": "bf98c22404e248198a061bcd903d99c1",
+    "name": "Carpets",
+    "tracks": [
+      {
+        "x": 15,
+        "y": 85,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Trinity",
+    "tracks": []
+  },
+  {
+    "name": "Hanging Vines",
+    "tracks": []
+  },
+  {
+    "name": "Altar",
+    "tracks": [
+      {
+        "x": 14,
+        "y": 70,
+        "z": 48,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 19,
+        "y": 81,
+        "z": 46,
+        "note": "&d&lEtherwarp Up",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 19,
+        "y": 83,
+        "z": 43,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 36,
+        "y": 70,
+        "z": 40,
+        "note": "&d&lEtherwarp Down",
+        "trigger": "near",
+        "near": 3
+      },
+      {
+        "x": 54,
+        "y": 87,
+        "z": 47,
+        "note": "&d&lEtherwarp up",
+        "trigger": "near",
+        "near": 7
+      },
+      {
+        "x": 51,
+        "y": 88,
+        "z": 45,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Pirate",
+    "tracks": []
+  },
+  {
+    "name": "Criss Cross",
+    "tracks": []
+  },
+  {
+    "name": "Ritual",
+    "tracks": []
+  },
+  {
+    "name": "Pipes",
+    "tracks": [
+      {
+        "x": 53,
+        "y": 93,
+        "z": 15,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 4
+      },
+      {
+        "x": 52,
+        "y": 94,
+        "z": 15,
+        "note": "&a&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 37,
+        "y": 41,
+        "z": 10,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 33,
+        "y": 43,
+        "z": 6,
+        "note": "&c&lSuperboom Crypt",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 49,
+        "y": 31,
+        "z": 6,
+        "note": "&e&lCollect Item",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 32,
+        "y": 34,
+        "z": 6,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 10
+      },
+      {
+        "x": 54,
+        "y": 53,
+        "z": 20,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 63,
+        "y": 55,
+        "z": 26,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 104,
+        "y": 41,
+        "z": 19,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 107,
+        "y": 44,
+        "z": 15,
+        "note": "&5&lStonk to Chest",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 107,
+        "y": 45,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 101,
+        "y": 53,
+        "z": 5,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 8
+      },
+      {
+        "x": 110,
+        "y": 55,
+        "z": 5,
+        "note": "&c&lSuperboom Wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 119,
+        "y": 54,
+        "z": 5,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 102,
+        "y": 53,
+        "z": 8,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 101,
+        "y": 60,
+        "z": 5,
+        "note": "&d&lEtherwarp Here",
+        "trigger": "near",
+        "near": 6
+      },
+      {
+        "x": 118,
+        "y": 60,
+        "z": 7,
+        "note": "&6&lGo Here",
+        "trigger": "near",
+        "near": 9
+      },
+      {
+        "x": 117,
+        "y": 62,
+        "z": 26,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Slime",
+    "tracks": []
+  },
+  {
+    "name": "Redstone Crypt",
+    "tracks": [
+      {
+        "x": 8,
+        "y": 70,
+        "z": 6,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 9,
+        "y": 69,
+        "z": 3,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 6,
+        "y": 70,
+        "z": 4,
+        "note": "&c&lSuperboom wall",
+        "trigger": "air",
+        "near": 3
+      },
+      {
+        "x": 4,
+        "y": 71,
+        "z": 4,
+        "note": "&a&lPickup redstone skull",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 69,
+        "z": 14,
+        "note": "&5&lGhostblock",
+        "trigger": "air",
+        "near": null
+      },
+      {
+        "x": 15,
+        "y": 68,
+        "z": 15,
+        "note": "&5&lFlick Lever",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 29,
+        "y": 70,
+        "z": 15,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      },
+      {
+        "x": 26,
+        "y": 72,
+        "z": 6,
+        "note": "&a&lPlace redstone skull",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  },
+  {
+    "name": "Staircase",
+    "tracks": []
+  },
+  {
+    "name": "Zodd",
+    "tracks": [
+      {
+        "x": 10,
+        "y": 68,
+        "z": 7,
+        "note": "&6&lGo here",
+        "trigger": "near",
+        "near": 5
+      },
+      {
+        "x": 7,
+        "y": 70,
+        "z": 3,
+        "note": "&a&lOpen Chest",
+        "trigger": "click",
+        "near": null
+      }
+    ]
+  }
 ]
