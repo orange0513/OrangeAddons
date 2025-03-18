@@ -1,9 +1,6 @@
 import global from '../comms/internal';
 function getIGNPreLoad() {
-    let clientClass = Client.getMinecraft().func_110432_I().func_148256_e().toString()
-    let regex = /name=([A-Za-z_0-9]+)/
-    let result = regex.exec(clientClass)
-    return result[1]
+    return Player.getName()
 }
 
 let currentChats = new Map();

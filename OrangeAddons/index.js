@@ -1,3 +1,6 @@
+
+FileLib.write("OrangeAddons", "/src/features/bettermap/roomdata.json", FileLib.getUrlContent('https://raw.githubusercontent.com/DocilElm/Atomx/refs/heads/main/api/roomdata.json'));
+
 import settings from './settings.js';
 import boot from './src/comms/socketHandler.js';
 import global from './src/comms/internal.js';
@@ -21,9 +24,12 @@ import loadCommands from './src/features/commands/loadCommands.js';
 loadCommands();
 import loadSelfieRemoval from './src/features/misc/removeSelfie.js';
 loadSelfieRemoval();
+import registerWTTWMO from './src/features/misc/whoTriedToWarpMeOut.js';
+registerWTTWMO();
 export default '';
 
 import loadRoutes from './src/features/dungeonRoutes/index.js';
+import registerWTTWMO from './src/features/misc/whoTriedToWarpMeOut.js';
 
 loadRoutes();
 

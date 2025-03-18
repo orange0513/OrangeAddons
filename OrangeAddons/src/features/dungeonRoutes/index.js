@@ -9,11 +9,170 @@ let editingRoute = false;
 let editingBlock = null;
 let editingRoom = null;
 let inSertingAt = null;
+let editingId = null;
+function uploadRooms() {
+    const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+    if (!cRoom) return ChatLib.chat(`&c&lNo room selected`);
+    global.socket.send({type: 'command-v2', payload: {command: 'uploadrooms', payload: {
+        name: cRoom.name,
+        routes: routes
+    }}});
+}
+function editBlock(block) {
+    const ogRelitiveCoords = cRoom.getRoomCoord([block.x, block.y, block.z]);
+    let relitiveCoords = cRoom.getRoomCoord([block.x, block.y, block.z]);
+    const existingTrack = cRoom.routes.find(t => t.x === relitiveCoords[0] && t.y === relitiveCoords[1] && t.z === relitiveCoords[2]);
+
+    function callBack(data) {
+        if (data.ping) {
+            console.log('pinged');
+            editingBlock = block;
+            editingRoom = cRoom;
+            editingId = existingTrack ? cRoom.routes.indexOf(existingTrack) : null;
+        } else if (data.editCoords) {
+            relitiveCoords = data.coords;
+            const coords = cRoom.getRealCoord([relitiveCoords[0], relitiveCoords[1], relitiveCoords[2]]);
+            const block = getBlockAtCoords(coords[0], coords[1], coords[2]);
+            editingBlock = block;
+        }
+        else if (data.finalize) {
+            if (data.cancel) {
+                editingBlock = null;
+                editingRoom = null;
+                editingRoute = false;
+                editingId = null;
+                reloadroom();
+                return;
+            };
+
+            const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+            if (!existingTrack) {
+
+
+                const tracks = routes.find(r => r?.name === editingRoom?.name)?.tracks;
+                if (inSertingAt) {
+                    tracks.splice(inSertingAt - 1, 0, {
+                        x: relitiveCoords[0],
+                        y: relitiveCoords[1],
+                        z: relitiveCoords[2],
+                        note: data.note,
+                        trigger: data.trigger,
+                        near: data.near,
+                    });
+                    inSertingAt = null;
+                } else
+                tracks.push({
+                    x: relitiveCoords[0],
+                    y: relitiveCoords[1],
+                    z: relitiveCoords[2],
+                    note: data.note,
+                    trigger: data.trigger,
+                    near: data.near,
+                });
+                routes.find(r => r.name === editingRoom.name).lastEdit = Date.now();
+                FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
+                try {
+                    uploadRooms();
+                } catch (e) {   
+                }
+                editingBlock = null;
+                editingRoute = false;
+                cRoom.routes = tracks;
+                reloadroom();
+                editingId = null;
+            } else {
+                if (data.deleteRoute) {
+                    console.log('deleting route');
+                    const tracks = routes.find(r => r.name === editingRoom.name).tracks;
+                    const track = tracks.find(t => t.x === ogRelitiveCoords[0] && t.y === ogRelitiveCoords[1] && t.z === ogRelitiveCoords[2]);
+                    console.log(tracks.indexOf(track));
+                    tracks.splice(tracks.indexOf(track), 1);
+                    routes.find(r => r.name === editingRoom.name).lastEdit = Date.now();
+                    FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
+                    try {
+                        uploadRooms();
+                    } catch (e) {   
+                    }
+                    editingBlock = null;
+                    editingRoute = false;
+                    editingId = null;
+                    cRoom.routes = tracks;
+                    reloadroom();
+                    return;
+                }
+                const tracks = routes.find(r => r.name === editingRoom.name).tracks;
+                const track = tracks.find(t => t.x === ogRelitiveCoords[0] && t.y === ogRelitiveCoords[1] && t.z === ogRelitiveCoords[2]);
+                track.x = relitiveCoords[0];
+                track.y = relitiveCoords[1];
+                track.z = relitiveCoords[2];
+                track.note = data.note;
+                track.trigger = data.trigger;
+                track.near = data.near;
+                routes.find(r => r.name === editingRoom.name).lastEdit = Date.now();
+                FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
+                try {
+                    uploadRooms();
+                } catch (e) {   
+                }
+                editingBlock = null;
+                editingRoute = false;
+                editingId = null;
+                reloadroom();
+            }
+
+        }
+    }
+
+    let response = {
+        type: 'command-v2',
+        payload: {command: 'editroute', payload: {
+            coords: relitiveCoords,
+            room: cRoom.name,
+            currentBlock: existingTrack || null,
+        }}
+    }
+
+    global.socket.send(response, callBack);
+    
+}
+
+function reloadroom() {
+    const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+    const room = routes.find(r => r.name === cRoom.name);
+    if (!room) return ChatLib.chat(`&c&lNo room selected`);
+    cRoom.routes = room.tracks;
+    ChatLib.chat(`&2&lReloaded room ${cRoom.name}`);
+}
 function loadRoutes() {
     register("command", (...args) => {
         editingRoute = !editingRoute;
-        if (!isNaN(parseInt(args[0]))) {
-            const num =parseInt(args[0]);
+        if (args?.[0]?.toLowerCase() === 'edit' && editingRoute) {
+            const num = parseInt(args[1]);
+            if (isNaN(num)) return ChatLib.chat('&c&lInvalid number');
+            const room = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json")).find(r => r.name === cRoom.name);
+            if (!room) return ChatLib.chat('&c&lNo room selected');
+
+            if (!room.tracks?.[num-1]) return ChatLib.chat('&c&lInvalid number: '+ num);
+            editingId = num - 1;
+            const realCoords = cRoom.getRealCoord([room.tracks[num-1].x, room.tracks[num-1].y, room.tracks[num-1].z]);
+            const block = getBlockAtCoords(
+                realCoords[0],
+                realCoords[1],
+                realCoords[2]
+            );
+            editBlock(block);
+
+            
+            return;
+
+        }
+        if (args?.[0]?.toLowerCase() === 'insert' && editingRoute) {
+            let num =parseInt(args[1]);
+
+            if (args[1].toLowerCase() === 'here') {
+                num = trackId + 1;
+            }
+
             if (isNaN(num)) return ChatLib.chat('&c&lInvalid number');
             inSertingAt = num;
             ChatLib.chat(`&2&lInserting at position ${num}`);
@@ -22,7 +181,10 @@ function loadRoutes() {
             editingBlock = null;
             editingRoom = null;
         } 
-        ChatLib.chat(`&2&lPunch a block to edit route, punch a current block to delete it`);
+        if (editingRoute) {
+            ChatLib.chat(`&2&lYou\'re now editing routes, punch a block to add a route.`);
+        } else
+            ChatLib.chat(`&2&lYou\'re no longer editing routes`);
     }).setName("editroute");
 
     register("command", () => {
@@ -43,11 +205,16 @@ function loadRoutes() {
             name: cRoom.name,
             routes: routes.find(r => r.name === cRoom.name)?.tracks
         }}});
-    }).setName("uploadroom")
+    }).setName("uploadroom");
 
     register("command", () => {
-        if (trackId)
+        uploadRooms();
+    }).setName("uploadrooms")
+
+    register("command", () => {
+        if (trackId || trackId === 0)
         completeTrack(getNeededHighlightData.data.room, trackId);
+        else ChatLib.chat(`&c&lError: no trackId`);
         ChatLib.chat(`&2&lCompleted track`);
     }).setName("skip");
 
@@ -64,11 +231,7 @@ function loadRoutes() {
     }).setName("rooms");
 
     register("command", () => {
-        const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
-        const room = routes.find(r => r.name === cRoom.name);
-        if (!room) return ChatLib.chat(`&c&lNo room selected`);
-        cRoom.routes = room.tracks;
-        ChatLib.chat(`&2&lReloaded room ${cRoom.name}`);
+        reloadroom();
 
     }).setName("reloadroom");
 
@@ -83,8 +246,10 @@ function loadRoutes() {
                 const tracks = routes.find(r => r.name === cRoom?.name)?.tracks;
                 if (tracks)
                 tracks.forEach(t => {
+                    
                     const coords = cRoom.getRealCoord([t.x, t.y, t.z]);
-                    highlightBlock(coords[0], coords[1], coords[2], false, Color.cyan);
+                    if (editingId !== tracks.indexOf(t) && coords) 
+                    highlightBlock(coords[0], coords[1], coords[2], false, Color.cyan, `Note: ${t.note}\nTrigger: ${t.trigger}` + (t.trigger === 'near' ? `\nNear: ${t.near}` : '') + `\nNumber: ${tracks.indexOf(t) + 1}`);
                 });
             }
         } catch (e) {
@@ -137,87 +302,98 @@ function loadRoutes() {
 
     register("HitBlock", (block) => {
 
-        if (editingRoute && global.currentDungeonMap && cRoom) {
-            const relitiveCoords = cRoom.getRoomCoord([block.x, block.y, block.z]);
-            const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
-            const tracks = routes.find(r => r.name === cRoom.name).tracks;
-            const track = tracks.find(t => t.x === relitiveCoords[0] && t.y === relitiveCoords[1] && t.z === relitiveCoords[2]);
-            if (track) {
-                tracks.splice(tracks.indexOf(track), 1);
-                FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
-                ChatLib.chat(`&2&lRoute removed from ${cRoom.name}`);
-                cRoom.routes = tracks;
-                editingRoute = false;
-                return;
+        try {
+
+            if (editingRoute && global.currentDungeonMap && cRoom && !editingBlock) {
+                editBlock(block);
             }
-        }
-        if (editingRoute && global.currentDungeonMap && cRoom && !editingBlock) {
-            const relitiveCoords = cRoom.getRoomCoord([block.x, block.y, block.z]);
-            ChatLib.chat(`&2&lEditing block at ${relitiveCoords.join(', ')}`);
-            function callBack(data) {
-                if (data.ping) {
-                    console.log('pinged');
-                    editingBlock = block;
-                    editingRoom = cRoom;
-                } else if (data.finalize) {
-                    const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
-                    const tracks = routes.find(r => r.name === editingRoom.name).tracks;
-                    if (inSertingAt) {
-                        tracks.splice(inSertingAt - 1, 0, {
-                            x: relitiveCoords[0],
-                            y: relitiveCoords[1],
-                            z: relitiveCoords[2],
-                            note: data.note,
-                            trigger: data.trigger,
-                            near: data.near,
-                        });
-                        inSertingAt = null;
-                    } else
-                    tracks.push({
-                        x: relitiveCoords[0],
-                        y: relitiveCoords[1],
-                        z: relitiveCoords[2],
-                        note: data.note,
-                        trigger: data.trigger,
-                        near: data.near,
-                    });
-                    FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
-                    editingBlock = null;
-                    editingRoute = false;
-                    ChatLib.chat(`&2&lRoute added to ${editingRoom.name}`);
-                    cRoom.routes = tracks;
-                }
+            // if (editingRoute && global.currentDungeonMap && cRoom && !editingBlock) {
+            //     const relitiveCoords = cRoom.getRoomCoord([block.x, block.y, block.z]);
+            //     ChatLib.chat(`&2&lEditing block at ${relitiveCoords.join(', ')}`);
+            //     function callBack(data) {
+            //         if (data.ping) {
+            //             console.log('pinged');
+            //             editingBlock = block;
+            //             editingRoom = cRoom;
+            //         } else if (data.finalize) {
+            //             const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+            //             const tracks = routes.find(r => r.name === editingRoom.name).tracks;
+            //             if (inSertingAt) {
+            //                 tracks.splice(inSertingAt - 1, 0, {
+            //                     x: relitiveCoords[0],
+            //                     y: relitiveCoords[1],
+            //                     z: relitiveCoords[2],
+            //                     note: data.note,
+            //                     trigger: data.trigger,
+            //                     near: data.near,
+            //                 });
+            //                 inSertingAt = null;
+            //             } else
+            //             tracks.push({
+            //                 x: relitiveCoords[0],
+            //                 y: relitiveCoords[1],
+            //                 z: relitiveCoords[2],
+            //                 note: data.note,
+            //                 trigger: data.trigger,
+            //                 near: data.near,
+            //             });
+            //             routes.find(r => r.name === editingRoom.name).lastEdit = Date.now();
+            //             FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
+            //             try {
+            //                 uploadRooms();
+            //             } catch (e) {   
+            //             }
+            //             editingBlock = null;
+            //             editingRoute = false;
+            //             ChatLib.chat(`&2&lRoute added to ${editingRoom.name}`);
+            //             cRoom.routes = tracks;
+            //         }
+            //     }
+
+            //     let response = {
+            //         type: 'command-v2',
+            //         payload: {command: 'editroute', payload: relitiveCoords.join('')}
+            //     }
+            //     global.socket.send(response, callBack);
+            // }
+
+
+            if (global.currentDungeonMap)
+                console.log(cRoom?.getRoomCoord([block.x, block.y, block.z]));
+            
+            if (settings.dungeon_routes && global.currentDungeonMap && getNeededHighlightData.data.room) {
+                if (
+                    (
+                        getNeededHighlightData.data.trigger === 'click' ||
+                        getNeededHighlightData.data.trigger === 'air'
+
+                    ) &&
+                    block.x === getNeededHighlightData.data.x &&
+                    block.y === getNeededHighlightData.data.y &&
+                    block.z === getNeededHighlightData.data.z
+                )
+                    completeTrack(getNeededHighlightData.data.room, trackId);
             }
-
-            let response = {
-                type: 'command-v2',
-                payload: {command: 'editroute', payload: relitiveCoords.join('')}
-            }
-            global.socket.send(response, callBack);
-        }
-
-
-        if (global.currentDungeonMap)
-            console.log(cRoom?.getRoomCoord([block.x, block.y, block.z]));
-        
-        if (settings.dungeon_routes && global.currentDungeonMap && getNeededHighlightData.data.room) {
-            if (
-                (
-                    getNeededHighlightData.data.trigger === 'click' ||
-                    getNeededHighlightData.data.trigger === 'air'
-
-                ) &&
-                block.x === getNeededHighlightData.data.x &&
-                block.y === getNeededHighlightData.data.y &&
-                block.z === getNeededHighlightData.data.z
-            )
-                completeTrack(getNeededHighlightData.data.room, trackId);
+        } catch (e) {
+            console.error(e);
         }
     });
 
     register("playerInteract", (action, {x, y, z}) => {
         const actionString = action.toString();
         if (actionString === 'RIGHT_CLICK_BLOCK' || actionString === 'LEFT_CLICK_BLOCK') {
+            if (editingRoute && global.currentDungeonMap && cRoom) {
+                const relitiveCoords = cRoom.getRoomCoord([x, y, z]);
+                const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+                const tracks = routes.find(r => r.name === cRoom.name).tracks;
+                const track = tracks.find(t => t.x === relitiveCoords[0] && t.y === relitiveCoords[1] && t.z === relitiveCoords[2]);
+                if (track) {
+                    if (actionString === 'RIGHT_CLICK_BLOCK') {
+                        const block = getBlockAtCoords(x, y, z);
+                        editBlock(block);
+                    }
+                }
+            }
             if (settings.dungeon_routes && global.currentDungeonMap && getNeededHighlightData.data.room) {
                 if (
                     (
@@ -282,6 +458,7 @@ let getNeededHighlightData = {
 
     ]
 }
+let showed = false;
 function getNeededHighlight(bypass) {
     if (getNeededHighlightData.last > Date.now() - 250 && !bypass) return;
     getNeededHighlightData.last = Date.now();
@@ -289,16 +466,25 @@ function getNeededHighlight(bypass) {
 
     if (!cDungeonMap) return;
 
+
     const currentRoom = cDungeonMap.getCurrentRoom();
+    cRoom = currentRoom;
+    // || currentRoom._checkmarkState === 4 // add in release
     if (!currentRoom || currentRoom._checkmarkState === 4) {
         getNeededHighlightData.data.room = null;
         return;
     }
-    cRoom = currentRoom;
     if (!currentRoom.routes) {
         getNeededHighlightData.data.room = null;
         return;
     }
+    if (currentRoom.routes.length === 0 ) {
+        if (!showed) {
+            showed = true;
+            //Client.showTitle("&cNO FUCKING ROUTES", "", 0, 40, 10)
+        }
+    } else
+        showed = false;
     const firstIncompleteTrack = currentRoom.routes.find(r => !r.completed);
     if (!firstIncompleteTrack) {
         getNeededHighlightData.data.room = null;
@@ -396,7 +582,10 @@ function highlightBlock(x, y, z, line, color, text) {
 
         // Use intColor in Tessellator.drawString
         if (r < 20 || bypass) {
-            Tessellator.drawString(text.replace(/&./g, ""), center.cx, center.cy + center.h + 0.5, center.cz, intColor, true, size, false);
+            const lines = text.replace(/&./g, "").split('\n').reverse();
+            lines.forEach((line, index) => {
+                Tessellator.drawString(line, center.cx, center.cy + center.h + 0.5 + (index * size * 10), center.cz, intColor, true, size, false);
+            });
         }
     }
 
@@ -418,6 +607,10 @@ function highlightBlock(x, y, z, line, color, text) {
             true, 1 
         );
     }
+}
+
+function getBlockAtCoords(x, y, z) {
+    return World.getBlockAt(x, y, z);
 }
 
 export { completeTrack };
