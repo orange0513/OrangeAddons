@@ -1,4 +1,4 @@
-import settings from '../../../settings';
+import settings from '../../../index';
 
 let key = new KeyBind(Client.getMinecraft().field_71474_y.field_151457_aa);
 let keyPressed = false;

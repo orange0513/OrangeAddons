@@ -3,14 +3,15 @@
 import DungeonMap from "./DungeonMap"
 import DataLoader from "./DataLoader"
 import global from '../../comms/internal'
-import settings from '../../../settings'
+import settings from '../../../index'
 
 let currentDungeonMap = undefined
 let deadPlayers = new Set()
+
 export default currentDungeonMap
 
 register("step", () => {
-    if (!settings.secrets_per_run) return;
+    if (!settings.secrets_per_run && !settings.dungeon_routes) return;
     global.currentDungeonMap = currentDungeonMap;
     if (DataLoader.isInDungeon && DataLoader.dungeonFloor || currentDungeonMap?.getCurrentRoomId() === "30,225") {
         if (!currentDungeonMap) { // Entered dungeon, create map data

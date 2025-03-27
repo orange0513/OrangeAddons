@@ -5,7 +5,7 @@ function getIGNPreLoad() {
 
 let currentChats = new Map();
 
-const debugging = getIGNPreLoad() === "orange0513";
+const debugging = getIGNPreLoad() === "orange05133";
 function messageHandler(messageJSON) {
     if (debugging) console.log(JSON.stringify(messageJSON));
     try {

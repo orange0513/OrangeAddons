@@ -1,5 +1,5 @@
 import sleep from 'sleep';
-import settings from '../../../../settings';
+import settings from '../../../../index';
 import global from '../../../comms/internal';
 import axios from 'axios';
 import { singleLine } from '../../../handlers/message';

@@ -2,13 +2,21 @@
 // just wanted to go back and remake this since ive really improved my coding since when i first made it, and it was an atrocity to look at
 
 
-import settings from "../../settings";
+import settings from "../../index";
 import messageHandler from "../handlers/message";
 import { bulkDelete } from "../handlers/message";
 import global from "./internal";
 import WebSocket from "WebSocket";
 import sleep from "sleep";
 import { completeTrack } from "../features/dungeonRoutes";
+import { reloadRoutes } from "../features/dungeonRoutes";
+import { setConfigValue } from "../../index";
+if (!FileLib.read("OrangeAddons", "./persists/routeOverwrites.json"))
+    FileLib.write("OrangeAddons", "./persists/routeOverwrites.json", JSON.stringify([]));
+let routeOverwrites = JSON.parse(FileLib.read("OrangeAddons", "./persists/routeOverwrites.json"));  
+function saveRouteOverwrites() {
+    FileLib.write("OrangeAddons", "./persists/routeOverwrites.json", JSON.stringify(routeOverwrites));
+}  
 let unloaded = false;
 let socket;
 
@@ -102,7 +110,10 @@ class socketHandler {
                     thisthis.send(response);
                     
                     setTimeout(() => {
-                        thisthis.send({type: 'command-v2', payload: {command: 'downloadrooms', payload: ''}});
+                        thisthis.send({type: 'command-v2', payload: {command: 'downloadrooms', payload: {
+                            route: settings.route_developer_mode ? settings.editing_route : settings.use_route,
+                            overwrites: settings.route_developer_mode ? [] : routeOverwrites
+                        }}});
                     }, 2500);
             };
 
@@ -160,7 +171,10 @@ class socketHandler {
                     thisthis.send(response);
 
                     setTimeout(() => {
-                        thisthis.send({type: 'command-v2', payload: {command: 'downloadrooms', payload: ''}});
+                        thisthis.send({type: 'command-v2', payload: {command: 'downloadrooms', payload:{
+                            route: settings.route_developer_mode ? settings.editing_route : settings.use_route,
+                            overwrites: settings.route_developer_mode ? [] : routeOverwrites
+                        }}});
                     }, 2500);
             };
 
@@ -182,6 +196,8 @@ class socketHandler {
 
     onMessage(message) {
         const messageType = message.type;
+        if (debugging)
+            console.log(`OA - Received message of type ${messageType}`);
         switch (messageType) {
             case 'response':
                 const data = message;
@@ -196,6 +212,7 @@ class socketHandler {
                 break;
             case 'registerCommands': 
                 let command = message.payload;
+                if (!this.alreadyRegistered) this.alreadyRegistered = []; // WHY DOES THIS KEEP DELETING ON CT LOAD
                 command.forEach(cmd => {
                     if (!this.alreadyRegistered.includes(cmd.name) && ['staffCommand','command-v2'].includes(cmd.type)) {
                     this.alreadyRegistered.push(cmd.name);
@@ -289,6 +306,9 @@ class socketHandler {
             case 'updateRooms':
                 let rooms = message.payload;
                 FileLib.write("OrangeAddons", "src/features/dungeonRoutes/rooms.json", JSON.stringify(rooms, null, 2));
+                setTimeout(() => {
+                    reloadRoutes();
+                }, 1000);
                 break;
             case 'updateCurrentRun':
                 const skippingTo = message.payload.skipTo;
@@ -296,6 +316,46 @@ class socketHandler {
                     completeTrack(message.payload.route, i, true);
                 }
                 break;
+            case 'setRouteDevMode': // will be triggered in /oa routes
+                if (message.payload !== false && message.payload !== true) return console.error("Invalid payload for setRouteDevMode", message.payload);
+                setConfigValue("route_developer_mode",message.payload)
+                break; 
+            case 'setEditingRoute': // will be triggered in /oa routes
+                if (typeof message.payload !== 'string') return;
+                setConfigValue("editing_route",message.payload);
+                break;
+            case 'setUseRoute': // will be triggered in /oa routes
+                if (typeof message.payload !== 'string') return;
+                setConfigValue("use_route",message.payload);
+                break;
+            case 'addRouteOverwrite': 
+            console.log(JSON.stringify(message.payload));
+                if (typeof message.payload !== 'object') return console.log("Invalid payload 1 for addRouteOverwrite");
+                if (typeof message.payload.room !== 'string') return console.log("Invalid payload 2 for addRouteOverwrite");
+                if (typeof message.payload.route !== 'string') return console.log("Invalid 3 payload for addRouteOverwrite");
+                if (Object.keys(routeOverwrites).length > 2) return console.log("Invalid payload 4 for addRouteOverwrite");
+                console.log("Adding route overwrite", message.payload);
+                routeOverwrites = routeOverwrites.filter(ow => ow.room !== message.payload.room);
+                routeOverwrites.push(message.payload);
+                saveRouteOverwrites();
+                break;
+            case 'removeRouteOverwrite':
+                if (typeof message.payload !== 'string') return;
+                routeOverwrites = routeOverwrites.filter(ow => ow.room !== message.payload);
+                saveRouteOverwrites();
+                break;
+            case 'changeInfo': 
+                let hasNonString = false;
+                Object.values(message.payload).forEach(obj => {
+                    if (typeof obj !== 'string') {
+                        hasNonString = true;
+                    }
+                });
+                if (hasNonString) return console.error("Invalid payload for changeInfo", message.payload);
+                infoMsg = message.payload;
+            break;
+            
+                
         }
     }
 
@@ -317,6 +377,20 @@ class socketHandler {
 
 }
 
+let infoMsg = [
+    "&c&lAwaiting Information from OrangeAddons Backend",
+    "&c&lPlease wait a moment",
+    "&c&lIf this message persists, please contact an OrangeAddons Developer"
+]
+
+function getInfoMsg() {
+    if (!global?.socket?.send)
+        return [
+            "&c&lNot Connected to OrangeAddons Backend",
+        ];
+    return infoMsg;
+}
+export {getInfoMsg};
 global.socket = new socketHandler;
 export default global.socket;
 
