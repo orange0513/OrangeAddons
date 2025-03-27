@@ -1,8 +1,0 @@
-{
-    "name": "OrangeAddons",
-    "creator": "orange0513",
-    "version": "2.1.0",
-    "description": "OrangeAddons 2.1.1 (DR 9)",
-    "requires": ["Amaterasu", "sleep", "axios", "WebSocket", "requestV2", "PromiseV2", "RenderLibV2", "tska"],
-    "entry": "index.js"
-}
