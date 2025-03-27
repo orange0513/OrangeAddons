@@ -1,0 +1,15 @@
+export default '';
+import loadDungeonsModule from './src/features/dungeons/loadDungeons';
+    loadDungeonsModule();
+import loadAlertModule from './src/features/alerts/loadAlerts.js';
+    loadAlertModule();
+import loadSoulflowModule from './src/features/alerts/stats/soulflow.js';
+    loadSoulflowModule();
+import loadCommands from './src/features/commands/loadCommands.js';
+    loadCommands();
+import loadSelfieRemoval from './src/features/misc/removeSelfie.js';
+    loadSelfieRemoval();
+import registerWTTWMO from './src/features/misc/whoTriedToWarpMeOut.js';
+    registerWTTWMO();
+import loadRoutes from './src/features/dungeonRoutes/index.js';
+    loadRoutes();

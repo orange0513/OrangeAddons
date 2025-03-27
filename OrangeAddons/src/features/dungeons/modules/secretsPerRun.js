@@ -1,7 +1,6 @@
 import sleep from 'sleep';
-import settings from '../../../../settings';
+import settings from '../../../../index';
 import global from '../../../comms/internal';
-import { Promise } from '../../../../../PromiseV2/index';
 import axios from 'axios';
 import { singleLine } from '../../../handlers/message';
 
@@ -13,6 +12,13 @@ function loadSecretsPerRun() {
     let isF7 = false;
     // 'Starting in 1 second.' trigger
     register('Chat', () => {
+        if (settings.route_sharing) {
+            const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+
+            global.socket.send({sync: true, type: 'registerDungeonRun', payload: {id: global.serverId, players: global.currentDungeonMap.getPlayers()
+                .map(p => p.username)
+                , routes: routes}});
+        }
 
         sleep(2000, () => {
             if (!settings.goldor_counts) return;
@@ -72,8 +78,6 @@ function loadSecretsPerRun() {
         });
 
     }).setCriteria('Starting in 1 second.');
-
-
     register('Chat', () => {
         sleep(1000, () => {
             // Initialize teammates
@@ -119,6 +123,10 @@ function loadSecretsPerRun() {
 
     // 'EXTRA STATS' trigger
     register('Chat', () => {
+        if (settings.route_sharing) {
+            global.socket.send({sync: true, type: 'deleteDungeonRun', payload: {id: global.serverId}});
+            global.replaceWhenFound.routes = {};
+        }
         if (!settings.secrets_per_run) {
             for (let register of registers) {
                 register.unregister();
@@ -172,8 +180,6 @@ function loadSecretsPerRun() {
             }
         });
     }).setCriteria('                             > EXTRA STATS <');
-
-    ;
 }
 
 export default loadSecretsPerRun;

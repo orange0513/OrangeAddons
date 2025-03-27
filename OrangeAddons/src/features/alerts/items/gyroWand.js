@@ -1,5 +1,5 @@
 import sleep from 'sleep';
-import settings from '../../../../settings';
+import settings from '../../../../index';
 function loadGyroWandAlerts() {
     let cellcount = 0;
     function cellalert() {

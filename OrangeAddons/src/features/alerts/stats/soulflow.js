@@ -1,5 +1,5 @@
 import global from '../../../comms/internal';
-import settings from '../../../../settings';
+import settings from '../../../../index';
 function loadSoulflowModule() {
     register('chat', () => {
         const packet = {
