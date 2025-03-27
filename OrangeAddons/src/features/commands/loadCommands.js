@@ -1,3 +1,4 @@
+import settings from '../../../settings.js';
 import registerNetworth from './networth/registerNetworth.js';
 import registerMPR from './mpr/registerMPR.js';
 import registerCXPNeeded from './cxpneeded/registerCXPNeeded.js';
@@ -5,8 +6,6 @@ import registerXPNeeded from './xpneeded/registerXPNeeded.js';
 import registerScan from './scan/registerScan.js';
 import global from '../../comms/internal';
 import messageHandler from '../../handlers/message.js';
-import { getInfoMsg } from '../../comms/socketHandler.js';
-import { refreshSettings, settings } from '../../../index.js';
 function loadCommands() {
     
     registerNetworth();
@@ -58,17 +57,9 @@ function loadCommands() {
         global.socket.send({type: 'command-v2', payload: {command: 'purselb', payload: names}});
     }).setName('purselb');;
 
-    register('command', () => {
-        global.socket.send({type: 'command-v2', payload: {command: 'downloadrooms', payload: {
-            route: settings.route_developer_mode ? settings.editing_route : settings.use_route,
-            overwrites: settings.route_developer_mode ? [] : JSON.parse(FileLib.read("OrangeAddons", "./persists/routeOverwrites.json"))
-        }}});
-    }).setName('downloadrooms');
-
     function maincmd(args) {
         if (args[0] === "settings" || args[0] === undefined) {
-            refreshSettings(getInfoMsg());
-            console.log(JSON.stringify(getInfoMsg()));
+            settings.openGUI();
         } else if (args[0] === "help" || args[0] === 'h') {    
             const helpMessage = FileLib.read("OrangeAddons", "help.json");
             messageHandler(JSON.parse(helpMessage));
@@ -140,16 +131,9 @@ function loadCommands() {
             ChatLib.chat('&6&lOA - &aEditing UI, open chat and drag to move them, run /oa gui again to stop editing.')
         } else if (args[0].toLowerCase() === 'ping') {
             global.socket.send({type: 'command-v2', payload: {command: 'ping', payload: Date.now()}}, ping2);
-        }  else if (args[0].toLowerCase() === 'routes') {
-            global.socket.send({type: 'command-v2', payload: {command: 'routeBrowser', payload: {
-                devMode: settings.route_developer_mode,
-                editing: settings.editing_route,
-                using: settings.use_route,
-                overwrites: JSON.parse(FileLib.read("OrangeAddons", "./persists/routeOverwrites.json"))
-            }}});
-        } else 
+        } else { 
             ChatLib.chat('&6&lOA - &6Unknown Command. type /oa help or /orangeaddons help')
-        
+        }
     }
     register('command', (...args) => { maincmd(args) }).setName('oa');
     register('command', (...args) => { maincmd(args) }).setName('orangeaddons');

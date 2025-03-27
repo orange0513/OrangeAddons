@@ -4,7 +4,6 @@ import { Checkmark, chunkLoaded, firstLetterCapital, rotateCoords } from "./Util
 import MapPlayer from "./MapPlayer.js"
 import { createEvent, RoomEvents, toDisplayString } from "./RoomEvent.js"
 import sleep from 'sleep';
-import global from "../../comms/internal.js";
 
 class Room {
 
@@ -90,14 +89,10 @@ class Room {
     setRoomData(roomData) {
         this.data = roomData
         this.name = roomData.name
+        //if (!this.routes) this.routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json")).find(r => r.name == this.name)?.tracks || null
         this.type = this.getTypeFromString(this.data.type)
         this.maxSecrets = this.data.secrets
         this.cores = roomData.cores
-    }
-
-    updateRoutes(routes) {
-        this.routes = routes
-        console.log(JSON.stringify(routes))
     }
 
     /**

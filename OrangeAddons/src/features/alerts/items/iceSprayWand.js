@@ -1,4 +1,4 @@
-import settings from "../../../../index";
+import settings from "../../../../settings";
 import sleep from 'sleep';
 function loadIceSprayAlerts() {
     let icecount = 0;

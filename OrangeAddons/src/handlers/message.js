@@ -1,11 +1,14 @@
 import global from '../comms/internal';
 function getIGNPreLoad() {
-    return Player.getName()
+    let clientClass = Client.getMinecraft().func_110432_I().func_148256_e().toString()
+    let regex = /name=([A-Za-z_0-9]+)/
+    let result = regex.exec(clientClass)
+    return result[1]
 }
 
 let currentChats = new Map();
 
-const debugging = getIGNPreLoad() === "orange05133";
+const debugging = getIGNPreLoad() === "orange0513";
 function messageHandler(messageJSON) {
     if (debugging) console.log(JSON.stringify(messageJSON));
     try {

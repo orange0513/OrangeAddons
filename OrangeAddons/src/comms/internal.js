@@ -6,10 +6,6 @@ try {
 } catch (error) {
 }
 
-function getuuid() {
-    return java.util.UUID.randomUUID().toString().replace(/-/g, "");
-}
-
 let global = {
     returnPacket: {
         "secretCount": function() {
@@ -24,17 +20,8 @@ let global = {
     onMessage: function(message) {
     }, 
     editingUI: false,
-    config: JSON.parse(FileLib.read("OrangeAddons", "hiddenConfig.json")),
-    replaceWhenFound: {
-        routes: {}
-    },
-    serverId: getuuid(),
+    config: JSON.parse(FileLib.read("OrangeAddons", "hiddenConfig.json")),    
 }
-
-
-register('chat', () => {
-    global.serverId = getuuid();
-}).setCriteria(/^Sending\sto\sserver\s.+$/)
 
 register("step", () => {
     if (JSON.stringify(global.config) !== JSON.stringify(JSON.parse(FileLib.read("OrangeAddons", "hiddenConfig.json"))))

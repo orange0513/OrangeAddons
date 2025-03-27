@@ -1,4 +1,0 @@
-import Settings from "../Amaterasu/core/Settings"
-import DefaultConfig from "../Amaterasu/core/DefaultConfig"
-
-const settings = new DefaultConfig("OrangeAddons", "settings.json")

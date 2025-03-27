@@ -1,5 +1,7 @@
-
-import settings from '../../../../index';
+import api from '../../../comms/legacy_backend.js';
+import messageHandler from '../../../handlers/message.js';
+import axios from 'axios';
+import settings from '../../../../settings';
 import global from '../../../comms/internal';
 function loadPfAlerts() {
 

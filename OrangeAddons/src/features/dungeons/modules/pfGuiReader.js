@@ -1,5 +1,5 @@
+import settings from '../../../../settings';
 import sleep from 'sleep';
-import { setConfigValue } from '../../../../index';
 function loadpfGuiReader() {
     register('GuiOpened', () => {
         sleep(40, () => {
@@ -42,7 +42,7 @@ function loadpfGuiReader() {
                     floordone = 1;
                 }
                 
-                setConfigValue("party_finder_floor",typedone + floordone);
+                settings.party_finder_floor = typedone + floordone;
                 return ".";
             }
         });

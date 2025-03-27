@@ -1,4 +1,4 @@
-import settings from "../../../../index";
+import settings from "../../../../settings";
 import sleep from 'sleep';
 function loadKatanaAlerts() {
 	let soulcryactive = false;
