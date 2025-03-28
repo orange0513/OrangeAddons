@@ -547,8 +547,4 @@ export function setConfigValue(name, value, category) {
     setting.setConfigValue(category, name, value)
 }
 
-setTimeout(() => {
-    ChatLib.chat("&6&lOrangeAddons &eSettings have been loaded!")
-}, 1000)
-
 export default setting.settings
