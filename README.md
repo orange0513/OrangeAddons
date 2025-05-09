@@ -19,3 +19,8 @@
 - /cheapest - shows the cheapest way to upgrade your attributes
 - /purselb - checks the purses in your lobby (only works in dark auction)
 - levers/terms per run
+- Dungeon Routes
+- Route Explorer
+- Who Tried To Warp Me Out (checks mutual guilds with people in your lobby)
+- Auto Kick For Shitter List
+- Auto Kick For PB

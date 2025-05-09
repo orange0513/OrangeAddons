@@ -1,7 +1,0 @@
-{
-  "name": "sleep",
-  "creator": "Witherflare",
-  "description": "Module to create delays without making a new thread",
-  "version": "1.0.0",
-  "entry": "index.js"
-}
