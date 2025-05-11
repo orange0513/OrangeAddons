@@ -1,7 +1,0 @@
-{
-  "name": "PromiseV2",
-  "creator": "McPqndq",
-  "description": "Promise polyfill",
-  "version": "1.0.4",
-  "entry": "index.js"
-}

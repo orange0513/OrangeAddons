@@ -1,0 +1,73 @@
+
+[loaders]
+	load_dungeons_module = true
+	load_kuudra_module = true
+	load_alerts_module = true
+
+[dungeons]
+	secrets_per_run = true
+	goldor_counts = false
+
+	[dungeons.party_finder]
+		party_finder_floor = "F0"
+		m2_pb_kick_threshold = "0"
+		f4_pb_kick_threshold = "0"
+		f1_pb_kick_threshold = "0"
+		m5_pb_kick_threshold = "0"
+		tank_party_finder_items = "[     \"TERMINATOR\",     \"TANK_WITHER_HELMET\",     \"TANK_WITHER_CHESTPLATE\",     \"TANK_WITHER_LEGGINGS\",     \"TANK_WITHER_BOOTS\",     \"LAST_BREATH\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\",     \"SOUL_WHIP\",     \"AXE_OF_THE_SHREDDED\" ]"
+		mage_party_finder_items = "[     \"DARK_CLAYMORE\",     \"WISE_WITHER_HELMET\",     \"WISE__WITHER_CHESTPLATE\",     \"WISE_WITHER_LEGGINGS\",     \"WISE_WITHER_BOOTS\",     \"LAST_BREATH\",     \"RAGNAROCK_AXE\" ]"
+		auto_kick_from_pb = false
+		m7_pb_kick_threshold = "0"
+		f7_pb_kick_threshold = "0"
+		ender_chest_and_backpack_shown = false
+		archer_party_finder_items = "[     \"TERMINATOR\",     \"RAGNAROCK_AXE\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\" ]"
+		m1_pb_kick_threshold = "0"
+		m4_pb_kick_threshold = "0"
+		party_finder = true
+		shitter_kick_message = "Kicking {name} for being on the OA Shitter List!"
+		m6_pb_kick_threshold = "0"
+		f0_pb_kick_threshold = "0"
+		m3_pb_kick_threshold = "0"
+		party_message_on_pb_kick = false
+		auto_kick_shitters = false
+		f3_pb_kick_threshold = "0"
+		f6_pb_kick_threshold = "0"
+		pb_kick_message = "Kicking {name} for having a bad PB ({pb})"
+		berserk_party_finder_items = "[     \"TERMINATOR\",     \"DARK_CLAYMORE\",     \"RAGNAROCK_AXE\" ]"
+		healer_party_finder_items = "[     \"TERMINATOR\",     \"SOUL_WHIP\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\" ]"
+		f5_pb_kick_threshold = "0"
+		show_own_stats_in_party_finder = false
+		party_finder_items = "[     \"HYPERION\",     \"SCYLLA\",     \"ASTRAEA\",     \"VALKYRIE\",     \"NECRON_BLADE\",     \"DARK_CLAYMORE\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\",     \"SPEED_WITHER_HELMET\",     \"SPEED_WITHER_CHESTPLATE\",     \"SPEED_WITHER_LEGGINGS\",     \"SPEED_WITHER_BOOTS\",     \"SPRING_BOOTS\",     \"JERRY_STAFF\",     \"DIAMOND_PICKAXE\",     \"ALPHA_PICK\",     \"STONK\" ]"
+		f2_pb_kick_threshold = "0"
+		party_message_on_shitter_kick = false
+
+	[dungeons.dungeon_routes]
+		render_full_block = true
+		change_3rd_route_color = "255,255,0,0"
+		route_text = true
+		transparency_on_text = 800
+		transparency_on_block = 175
+		change_current_route_color = "255,0,255,0"
+		route_sharing = true
+		auto_update_routes = true
+		transparency_on_line = 750
+		change_next_route_color = "255,255,255,0"
+		line_to_red = true
+		line_to_yellow = true
+		dungeon_routes = true
+
+[developer]
+	editing_route = "boop"
+	route_developer_mode = false
+	use_route = "GG"
+
+[misc]
+	healing_wand_alerts = false
+	wither_cloak_alerts = true
+	cells_alignment_alerts = false
+	katana_alerts = false
+	weird_tuba_alerts = false
+	remove_selfie_mode = false
+	ice_spray_alerts = false
+	low_soulflow_amount = "500"
+
