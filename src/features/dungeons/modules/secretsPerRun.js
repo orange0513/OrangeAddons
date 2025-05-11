@@ -1,8 +1,10 @@
+/// <reference types="../../../../../CTAutocomplete" />
 import sleep from 'sleep';
 import settings from '../../../../index';
 import global from '../../../comms/internal';
 import axios from 'axios';
 import { singleLine } from '../../../handlers/message';
+import DungeonScanner from "../../../../../tska/skyblock/dungeon/DungeonScanner";
 
 function loadSecretsPerRun() {
     let dungeonactive = false;
@@ -12,37 +14,35 @@ function loadSecretsPerRun() {
     let isF7 = false;
     // 'Starting in 1 second.' trigger
     register('Chat', () => {
-        if (settings.route_sharing) {
-            const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
-
-            global.socket.send({sync: true, type: 'registerDungeonRun', payload: {id: global.serverId, players: global.currentDungeonMap.getPlayers()
-                .map(p => p.username)
-                , routes: routes}});
+        console.log(JSON.stringify(DungeonScanner.players
+            .map(p => p.name)))
+        teammates = {};
+        for (let name of TabList.getNames()) {
+            let noColors = ChatLib.removeFormatting(name);
+            let regex = /\[\d+\]\s([A-Za-z0-9_]{1,32})\s/;
+            let match = regex.exec(noColors);
+            if (match) {
+                teammates[match[1]] = {
+                    scount: '0:0',
+                    counts: {
+                        terminal: 0,
+                        lever: 0,
+                        device: 0
+                    }
+                };
+                if (Object.keys(teammates).length >= 5) break;
+            }
         }
+        const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
+
+        global.socket.send({sync: true, type: 'registerDungeonRun', payload: {id: global.serverId, players: DungeonScanner.players
+            .map(p => p.name)
+            , routes: routes}});
 
         sleep(2000, () => {
             if (!settings.goldor_counts) return;
 
-            if (!settings.secrets_per_run) {
-                teammates = {};
-                for (let name of TabList.getNames()) {
-                    let noColors = ChatLib.removeFormatting(name);
-                    let regex = /\[\d+\]\s([A-Za-z0-9_]{1,32})\s/;
-                    let match = regex.exec(noColors);
-                    if (match) {
-                        teammates[match[1]] = {
-                            scount: '0:0',
-                            counts: {
-                                terminal: 0,
-                                lever: 0,
-                                device: 0
-                            }
-                        };
-                        if (Object.keys(teammates).length >= 5) break;
-                    }
-                }
-            }
-            isF7 = ['m7','f7'].includes(global.currentDungeonMap.floor.toLowerCase())
+            isF7 = ['m7','f7'].includes(Scoreboard.getLines()[4].toString().removeFormatting().split('(')[1].replace(')', ''));
 
             if (isF7) {
 
@@ -80,27 +80,6 @@ function loadSecretsPerRun() {
     }).setCriteria('Starting in 1 second.');
     register('Chat', () => {
         sleep(1000, () => {
-            // Initialize teammates
-			teammates = {};
-            for (let name of TabList.getNames()) {
-
-                let noColors = ChatLib.removeFormatting(name);
-                let regex = /\[\d+\]\s([A-Za-z0-9_]{1,32})\s/;
-                let match = regex.exec(noColors);
-                if (match) {
-                    teammates[match[1]] = {
-                        scount: '0:0',
-                        counts: {
-                            terminal: 0,
-                            lever: 0,
-                            device: 0
-                        }
-                    };
-                    if (Object.keys(teammates).length >= 5) break;
-                }
-            }
-
-
             function send(data) {
                 for (let d of data.payload.secretCounts) {
                     if (teammates[d.name]?.scount) {
@@ -133,34 +112,33 @@ function loadSecretsPerRun() {
             }
             return
         } 
-        sleep(global.hasBetterMap ? 3000 : 1, () => {
+        sleep(1, () => {
             let players;
             try {
-                players = global.currentDungeonMap.getPlayers();
+                players = DungeonScanner.players
             } catch (error) {
             }
 
             let packets = [];
 
                 for (let name in teammates) {
-                    const player = players.find(p => p.username === name);
+                    const player = players.find(p => p.name === name);
                     if (player) {
-                        const rooms = player.roomsData.map(([playersInRoom, room]) => {
-                            return {
-                                name: room.name ?? room.shape,
-                                type: room.typeToName(),
-                                color: room.typeToColor(),
-                                nameWithColor: `&${room.typeToColor()}${room.name ?? room.shape}`,
-                                players: playersInRoom.map(p => p.username),
-                            };
-                        });
 
                         let secrets = teammates[name]; // 'old:new' format
+                        let rooms = [];
+                        player.getWhiteChecks().forEach((name, data) => {
+                            rooms.push({
+                                name: name,
+                                solo: data.solo,
+                            })
+                            
+                        });
                         packets.push({
                             name: name,
-                            roomsHigh: player.maxRooms,
-                            roomsLow: player.minRooms,
-                            rooms: rooms,
+                            roomsNewFormat: rooms,
+                            roomsHigh: rooms.length,
+                            roomsLow: rooms.filter(r => r.solo).length,
                             deaths: player.deaths,
                             secrets: secrets,
                         });

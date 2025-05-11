@@ -31,14 +31,6 @@ const config = new DefaultConfig("OrangeAddons", "settings.json")
 })
 .addSwitch({
     category: "Dungeons",
-    configName: "route_sharing",
-    title: "&aRoute Sharing",
-    description: "&eShares progress of routes between all party members using OrangeAddons",
-    subcategory: "Dungeon Routes",
-    value: true
-})
-.addSwitch({
-    category: "Dungeons",
     configName: "render_full_block",
     title: "&aRender Full Block",
     description: "&eCovers the full block instead of just an outline",

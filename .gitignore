@@ -2,3 +2,7 @@ src/features/dungeonRoutes/rooms.json
 settings.json
 help.json
 help.json
+help.json
+persists/partyFinder.json
+persists/routeOverwrites.json
+persists/routeOverwrites.json

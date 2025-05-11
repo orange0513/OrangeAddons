@@ -11,5 +11,5 @@ import loadSelfieRemoval from './src/features/misc/removeSelfie.js';
     loadSelfieRemoval();
 import registerWTTWMO from './src/features/misc/whoTriedToWarpMeOut.js';
     registerWTTWMO();
-import loadRoutes from './src/features/dungeonRoutes/index.js';
+import loadRoutes from './src/features/dungeonRoutes/index';
     loadRoutes();

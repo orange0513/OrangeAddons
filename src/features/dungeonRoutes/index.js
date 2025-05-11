@@ -8,44 +8,82 @@ const Color = Java.type("java.awt.Color");
 
 // {name: string, room: roomFromDungeonScanner}
 let knownRooms = [];
+let doRoomWhenOpening = [];
 let cRoom = null;
 let runOpen = false;
 let trackId = null;
+export function syncRoom(roomName, skipTo) {
+    const room = knownRooms.find(r => r.name === roomName);
+    if (!room) {
+        console.log(`Room ${roomName} not found`);
+        if (!doRoomWhenOpening.find(r => r.roomName === roomName)) {
+            console.log(`Adding ${roomName} to doRoomWhenOpening`);
+            doRoomWhenOpening.push({
+                roomName: roomName,
+                skipTo: skipTo
+            })
+        } else {
+            console.log(`Room ${roomName} already in doRoomWhenOpening`);
+            doRoomWhenOpening.find(r => r.roomName === roomName).skipTo = skipTo;
+        }
+        return;
+    };
+    console.log(`Syncing room ${roomName} to ${skipTo}`);
+    room.room.routes.forEach(r => {
+        const i = room.room.routes.indexOf(r);
+        if (i < skipTo
+    ) {
+            r.completed = true;
+        }
+    });
+
+}
 function getRoomCoord(coords) {
     const roomResponse = cRoom.getRoomCoord(coords);
-    roomResponse[1] = coords[1];
+    if (roomResponse)
+        roomResponse[1] = coords[1];
     return roomResponse;
 }
 function getRealCoord(coords) {
     const roomResponse = cRoom.getRealCoord(coords);
-    roomResponse[1] = coords[1];
+    if (roomResponse)
+        roomResponse[1] = coords[1];
     return roomResponse;
 }
 function registerRoom(room) {
-    console.log('registering room ', room.name, Object.keys(room));
+    if (!room || !room?.name) { // hopefully this also detects when you enter boss??????
+        cRoom = null;
+        runOpen = false;
+        knownRooms = [];
+        doRoomWhenOpening = [];
+        return;
+    }
     const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
     cRoom = room;
     runOpen = true;
     if (!knownRooms.find(r => r.name === room.name)) {
+        
         knownRooms.push({name: room.name, room: room});
         knownRooms.find(r => r.name === room.name).room.routes = 
             routes.find(r => r.name === room.name)?.tracks
          || [];
         cRoom = knownRooms.find(r => r.name === room.name).room;
+
+        if (doRoomWhenOpening.length > 0 && doRoomWhenOpening.find(r => r.roomName === room.name)) {
+            syncRoom(doRoomWhenOpening.find(r => r.roomName === room.name).roomName, doRoomWhenOpening.find(r => r.roomName === room.name).skipTo);
+            doRoomWhenOpening = doRoomWhenOpening.filter(r => r.roomName !== room.name);
+        }
     }
 }
-DungeonScanner
-.onRoomEnter((room) => registerRoom(room))
-.onRoomLeave((room, oldRoom) => {
-    if (room) 
-        registerRoom(room);
-});
+DungeonScanner.onRoomEnter((r) => registerRoom(r));
+DungeonScanner.onRoomLeave((r) => registerRoom(r));
 
-register('chat', () => {
+register('worldLoad', () => {   
     cRoom = null;
     knownRooms = [];
     runOpen = false;
-}).setCriteria(/^Sending\sto\sserver\s.+$/)
+    doRoomWhenOpening = [];
+});
 
 let getNeededHighlightData = {
     last: 0,
@@ -88,7 +126,6 @@ function editBlock(block) {
 
     function callBack(data) {
         if (data.ping) {
-            console.log('pinged');
             editingBlock = block;
             editingRoom = cRoom;
             editingId = existingTrack ? cRoom.routes.indexOf(existingTrack) : null;
@@ -152,10 +189,8 @@ function editBlock(block) {
             } else {
                 if (data.deleteRoute) {
                     try {
-                        console.log('deleting route');
                         const tracks = routes.find(r => r.name === editingRoom.name).tracks;
                         const track = tracks.find(t => t.x === ogRelitiveCoords[0] && t.y === ogRelitiveCoords[1] && t.z === ogRelitiveCoords[2]);
-                        console.log(tracks.indexOf(track));
                         tracks.splice(tracks.indexOf(track), 1);
                         routes.find(r => r.name === editingRoom.name).lastEdit = Date.now();
                         FileLib.write("OrangeAddons", "/src/features/dungeonRoutes/rooms.json", JSON.stringify(routes, null, 4));
@@ -233,6 +268,21 @@ function reloadRoutes() {
 
 export { reloadRoutes };
 function loadRoutes() {
+    register("command", () => {
+        ChatLib.chat('&2&lCurrent Known Rooms:');
+        knownRooms.forEach(room => {
+            ChatLib.chat(`&2&l${room.name} (${room.room.routes.filter(r => r.completed).length}/${room.room.routes.length} Tracks Completed)`);
+        });
+        doRoomWhenOpening.forEach(room => {
+            ChatLib.chat(`&2&l${room.roomName} (SYNC) (${room.skipTo})`);
+        });
+    }).setName('getrooms');
+    register("command", () => {
+        knownRooms = [];
+        doRoomWhenOpening = [];
+        cRoom = null;
+        ChatLib.chat('&2&lCleared known rooms');
+    }).setName("clearrooms");
     register("command", (...args) => {
 
         if (!settings.route_developer_mode)
@@ -525,12 +575,13 @@ function isNear(x, y, z, range, returnBool = true) {
 let showed = false;
 function getNeededHighlight(bypass) {
     if (getNeededHighlightData.last > Date.now() - 250 && !bypass) return;
+    registerRoom(DungeonScanner.getCurrentRoom());
     getNeededHighlightData.last = Date.now();
 
     if (!runOpen) return;
     if (!cRoom) return;
     const currentRoom = cRoom;
-    if (!currentRoom || (currentRoom._checkmarkState === 4 && !settings.route_developer_mode)) {
+    if (!currentRoom || (currentRoom.checkmark === 2 && !settings.route_developer_mode)) {
         getNeededHighlightData.data.room = null;
         return;
     }
@@ -585,7 +636,6 @@ function completeTrack(room, trackId, bypass = false) {
         if (typeof room === 'string') {
             room = knownRooms.find(r => r.name === room);
         }
-        console.log('completed track: ' + trackId + ' in room: ' + room?.name);
         room.routes[trackId].completed = true;
         if (settings.route_sharing && !bypass) {
             global.socket.send({sync: true, type: 'broadcastRoute', payload: {id: global.serverId, route: room?.name, data: (trackId + 1)}});

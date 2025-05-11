@@ -8,8 +8,8 @@ import { bulkDelete } from "../handlers/message";
 import global from "./internal";
 import WebSocket from "WebSocket";
 import sleep from "sleep";
-import { completeTrack } from "../features/dungeonRoutes";
-import { reloadRoutes } from "../features/dungeonRoutes";
+import { syncRoom } from "../features/dungeonRoutes/index";
+import { reloadRoutes } from "../features/dungeonRoutes/index";
 import { setConfigValue } from "../../index";
 if (!FileLib.read("OrangeAddons", "./persists/routeOverwrites.json"))
     FileLib.write("OrangeAddons", "./persists/routeOverwrites.json", JSON.stringify([]));
@@ -212,7 +212,7 @@ class socketHandler {
                 break;
             case 'registerCommands': 
                 let command = message.payload;
-                if (!this.alreadyRegistered) this.alreadyRegistered = []; // WHY DOES THIS KEEP DELETING ON CT LOAD
+                if (!this.alreadyRegistered) this.alreadyRegistered = []; // WHY DOES THIS KEEP DELETING
                 command.forEach(cmd => {
                     if (!this.alreadyRegistered.includes(cmd.name) && ['staffCommand','command-v2'].includes(cmd.type)) {
                     this.alreadyRegistered.push(cmd.name);
@@ -233,10 +233,6 @@ class socketHandler {
             case 'keepAlive':
                 this.send({ type: 'keepAlive' });
                 break;
-            // case 'newToken':
-            //     this.token = message.payload;
-            //     FileLib.write("./config/orangeaddons_token.json", JSON.stringify(this.token));
-            //     break;
             case 'newHelpMessage':
                 FileLib.write("OrangeAddons", "help.json", JSON.stringify(message.payload));
                 break;
@@ -312,9 +308,8 @@ class socketHandler {
                 break;
             case 'updateCurrentRun':
                 const skippingTo = message.payload.skipTo;
-                for (let i = 0; i < skippingTo; i++) {
-                    completeTrack(message.payload.route, i, true);
-                }
+                console.log("Skipping to", skippingTo, message.payload.route);
+                syncRoom(message.payload.route, skippingTo);
                 break;
             case 'setRouteDevMode': // will be triggered in /oa routes
                 if (message.payload !== false && message.payload !== true) return console.error("Invalid payload for setRouteDevMode", message.payload);
@@ -328,23 +323,22 @@ class socketHandler {
                 if (typeof message.payload !== 'string') return;
                 setConfigValue("use_route",message.payload);
                 break;
-            case 'addRouteOverwrite': 
+            case 'addRouteOverwrite': // will be triggered in /oa routes 
             console.log(JSON.stringify(message.payload));
                 if (typeof message.payload !== 'object') return console.log("Invalid payload 1 for addRouteOverwrite");
                 if (typeof message.payload.room !== 'string') return console.log("Invalid payload 2 for addRouteOverwrite");
                 if (typeof message.payload.route !== 'string') return console.log("Invalid 3 payload for addRouteOverwrite");
-                if (Object.keys(routeOverwrites).length > 2) return console.log("Invalid payload 4 for addRouteOverwrite");
                 console.log("Adding route overwrite", message.payload);
                 routeOverwrites = routeOverwrites.filter(ow => ow.room !== message.payload.room);
                 routeOverwrites.push(message.payload);
                 saveRouteOverwrites();
                 break;
-            case 'removeRouteOverwrite':
+            case 'removeRouteOverwrite': // will be triggered in /oa routes
                 if (typeof message.payload !== 'string') return;
                 routeOverwrites = routeOverwrites.filter(ow => ow.room !== message.payload);
                 saveRouteOverwrites();
                 break;
-            case 'changeInfo': 
+            case 'changeInfo': // will be triggered in /oa routes 
                 let hasNonString = false;
                 Object.values(message.payload).forEach(obj => {
                     if (typeof obj !== 'string') {
@@ -363,11 +357,13 @@ class socketHandler {
         try {
             if (callback) {
                 let id = Math.floor(Math.random() * 2_000_000_000) + 1;
-                this.socket.send(JSON.stringify({ responseId: id, ...data }));
+                this.socket?.send(JSON.stringify({ responseId: id, ...data }));
+                if (!this.pendingRequests)
+                    this.pendingRequests = []; // WHY DOES THIS KEEP DELETING
                 this.pendingRequests.push({ id, callback });
 
             } else 
-                this.socket.send(JSON.stringify(data));
+                this.socket?.send(JSON.stringify(data));
         } catch (error) {
             console.error(error);
             this.restartSocket();
