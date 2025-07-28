@@ -1,0 +1,297 @@
+[
+    {
+        "category": "Dungeons",
+        "settings": [
+            {
+                "type": 6,
+                "name": "secrets_per_run",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "goldor_counts",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "dungeon_routes",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "render_full_block",
+                "value": true
+            },
+            {
+                "type": 1,
+                "name": "transparency_on_block",
+                "value": 175
+            },
+            {
+                "type": 1,
+                "name": "transparency_on_line",
+                "value": 750
+            },
+            {
+                "type": 6,
+                "name": "line_to_yellow",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "line_to_red",
+                "value": true
+            },
+            {
+                "type": 1,
+                "name": "transparency_on_text",
+                "value": 800
+            },
+            {
+                "type": 5,
+                "name": "change_current_route_color",
+                "value": [
+                    0,
+                    204,
+                    0,
+                    255
+                ]
+            },
+            {
+                "type": 5,
+                "name": "change_next_route_color",
+                "value": [
+                    255,
+                    255,
+                    0,
+                    255
+                ]
+            },
+            {
+                "type": 5,
+                "name": "change_3rd_route_color",
+                "value": [
+                    255,
+                    0,
+                    0,
+                    255
+                ]
+            },
+            {
+                "type": 6,
+                "name": "party_finder",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "show_own_stats_in_party_finder",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "ender_chest_and_backpack_shown",
+                "value": false
+            },
+            {
+                "type": 4,
+                "name": "party_finder_items",
+                "value": "[     \"HYPERION\",     \"SCYLLA\",     \"ASTRAEA\",     \"VALKYRIE\",     \"NECRON_BLADE\",     \"DARK_CLAYMORE\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\",     \"SPEED_WITHER_HELMET\",     \"SPEED_WITHER_CHESTPLATE\",     \"SPEED_WITHER_LEGGINGS\",     \"SPEED_WITHER_BOOTS\",     \"SPRING_BOOTS\",     \"JERRY_STAFF\",     \"DIAMOND_PICKAXE\",     \"ALPHA_PICK\",     \"STONK\" ]"
+            },
+            {
+                "type": 4,
+                "name": "healer_party_finder_items",
+                "value": "[     \"TERMINATOR\",     \"SOUL_WHIP\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\" ]"
+            },
+            {
+                "type": 4,
+                "name": "mage_party_finder_items",
+                "value": "[     \"DARK_CLAYMORE\",     \"WISE_WITHER_HELMET\",     \"WISE__WITHER_CHESTPLATE\",     \"WISE_WITHER_LEGGINGS\",     \"WISE_WITHER_BOOTS\",     \"LAST_BREATH\",     \"RAGNAROCK_AXE\" ]"
+            },
+            {
+                "type": 4,
+                "name": "berserk_party_finder_items",
+                "value": "[     \"TERMINATOR\",     \"DARK_CLAYMORE\",     \"RAGNAROCK_AXE\" ]"
+            },
+            {
+                "type": 4,
+                "name": "archer_party_finder_items",
+                "value": "[     \"TERMINATOR\",     \"RAGNAROCK_AXE\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\" ]"
+            },
+            {
+                "type": 4,
+                "name": "tank_party_finder_items",
+                "value": "[     \"TERMINATOR\",     \"TANK_WITHER_HELMET\",     \"TANK_WITHER_CHESTPLATE\",     \"TANK_WITHER_LEGGINGS\",     \"TANK_WITHER_BOOTS\",     \"LAST_BREATH\",     \"POWER_WITHER_HELMET\",     \"POWER_WITHER_CHESTPLATE\",     \"POWER_WITHER_LEGGINGS\",     \"POWER_WITHER_BOOTS\",     \"SOUL_WHIP\",     \"AXE_OF_THE_SHREDDED\" ]"
+            },
+            {
+                "type": 4,
+                "name": "party_finder_floor",
+                "value": "F7"
+            },
+            {
+                "type": 6,
+                "name": "auto_kick_shitters",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "party_message_on_shitter_kick",
+                "value": false
+            },
+            {
+                "type": 4,
+                "name": "shitter_kick_message",
+                "value": "Kicking {name} for being on the OA Shitter List!"
+            },
+            {
+                "type": 6,
+                "name": "auto_kick_from_pb",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "party_message_on_pb_kick",
+                "value": false
+            },
+            {
+                "type": 4,
+                "name": "pb_kick_message",
+                "value": "Kicking {name} for having a bad PB ({pb})"
+            },
+            {
+                "type": 4,
+                "name": "f0_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f1_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f2_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f3_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f4_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f5_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f6_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "f7_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m1_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m2_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m3_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m4_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m5_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m6_pb_kick_threshold",
+                "value": "0"
+            },
+            {
+                "type": 4,
+                "name": "m7_pb_kick_threshold",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "category": "Misc",
+        "settings": [
+            {
+                "type": 4,
+                "name": "low_soulflow_amount",
+                "value": "500"
+            },
+            {
+                "type": 6,
+                "name": "remove_selfie_mode",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "katana_alerts",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "healing_wand_alerts",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "wither_cloak_alerts",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "weird_tuba_alerts",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "cells_alignment_alerts",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "ice_spray_alerts",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "route_developer_mode",
+                "value": false
+            },
+            {
+                "type": 4,
+                "name": "use_route",
+                "value": "default"
+            },
+            {
+                "type": 4,
+                "name": "editing_route",
+                "value": "default"
+            }
+        ]
+    }
+]
