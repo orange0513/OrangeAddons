@@ -30,7 +30,7 @@ export default class autoKick {
     
                             if (main.settings.values.party_message_on_shitter_kick)
                                 ChatLib.command(`pc ${
-                                    settings.shitter_kick_message.replace(/{name}/g, args[0])
+                                    main.settings.values.shitter_kick_message.replace(/{name}/g, args[0])
                                 }`);
                             
                             setTimeout(() => {

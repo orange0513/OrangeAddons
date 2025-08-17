@@ -11,7 +11,7 @@ export default class goldorCounts {
         register('Chat', () => {
                 if (!this.main.settings.values.goldor_counts) return;
     
-                isF7 = ['m7','f7'].includes(Scoreboard.getLines()[4].toString().removeFormatting().split('(')?.[1]?.replace(')', ''));
+                let isF7 = ['m7','f7'].includes(Scoreboard.getLines()[4].toString().removeFormatting().split('(')?.[1]?.replace(')', ''));
     
                 if (!isF7)  return;
 
@@ -24,7 +24,7 @@ export default class goldorCounts {
                 this.registers.push(
                     register("Chat", () => {
                         for (let tm of this.main.features.dungeons.dungeonStats.teammates) {
-                            axios.get('https://api.orangeaddons.dev/rendername/' + key).then((response) => {
+                            axios.get('https://api.orangeaddons.dev/rendername/' + tm).then((response) => {
                                 this.main.MessageUtils.singleLine('&6&lOA - &6' + response.data + ` &r&6got &a${tm.counts.terminal} &r&6terminals, &a${tm.counts.lever} &r&6levers and &a${tm.counts.device} &r&6devices.`);
                             }).catch((error) => {
                                 console.error(error);

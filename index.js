@@ -31,6 +31,7 @@ export default new class main {
             this.commands = [];
             this.init();
             this.loadCommands();
+            this.unloaded = false;
         }, 1500); // delaying the loading of OA so getServerId works properly (welcome to ct)
     }
 
@@ -40,6 +41,12 @@ export default new class main {
      * @description This is called when the module is loaded.
      */
     init() {
+        register("GameUnload", () => {
+            this.unloaded = true;
+            if (!this.socket.socketObj) return;
+            this.socket.socketObj.dontReconnect = true;
+            this.socket.socketObj.close();
+        });
         if (!this.FileUtils.exists("/data/routeOverwrites.json"))
             this.FileUtils.write("/data/routeOverwrites.json", "[]");
         if (!this.FileUtils.exists("/data/partyFinder.json"))

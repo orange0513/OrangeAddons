@@ -1,5 +1,6 @@
 import { registerWhen } from '../../../BloomCore/utils/Utils';
-
+let key = new KeyBind(Client.getMinecraft().field_71474_y.field_151457_aa)
+let keyPressed = false;
 export default class misc {
     /**
      * @param {import('../../../index.js').default} main
@@ -10,6 +11,7 @@ export default class misc {
         registerWhen( // from /src/features/misc/removeSelfie.js
             register("tick", () => {
                 try {
+                
                 if (Client.settings.getSettings().field_74320_O === 2) Client.settings.getSettings().field_74320_O = 0;
                 else if (Keyboard.isKeyDown(key.getKeyCode()) && !keyPressed) {
                     if (Client.settings.getSettings().field_74320_O === 1) Client.settings.getSettings().field_74320_O = 2;

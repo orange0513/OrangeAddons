@@ -18,14 +18,7 @@ export default class socket {
         this.registeredCommands = [];
         this.currentChatPrompt = null;
         this.infoMsg = [];
-        this.unloaded = false;
 
-        register('GameUnload', () => {  
-            this.unloaded = true;
-            if (!this.socketObj) return;
-            this.socketObj.dontReconnect = true;
-            this.socketObj.close();
-        });
         this.start();
         
     }
@@ -65,8 +58,13 @@ export default class socket {
                 }
             }
         } catch (error) {
+            console.log(error)
             console.error("OA Socket error while sending data Restarting:", error);
-            _this.start();
+            console.log('Send reboot')
+            if (this.socketObj?.dontReconnect) return console.log("OA Socket not reconnecting due to dontReconnect flag.");
+            setTimeout(() => {
+                _this.start();
+            }, 1000);
         }
     }
 
@@ -215,8 +213,13 @@ export default class socket {
     start() {
         if (this.socketObj) {
             this.socketObj?.dontReconnect = true;
+            this.socketObj.onClose = () => {};
+            this.socketObj.onError = () => {};
+            this.socketObj.onOpen = () => {};
+            this.socketObj.onMessage = () => {};
             this.socketObj?.close();
         }
+        if (this.main.unloaded) return;
         this.socketObj = new WebSocket('wss://orangeaddons.dev:30022');
         this.socketObj.isOpen = false;
         this.registerSocket();
@@ -227,7 +230,7 @@ export default class socket {
      * @returns {void}
      */
     registerSocket() {
-        if (this.unloaded) return;
+        if (this.main.unloaded) return;
         this.socketObj.onOpen = () => {
             try {
                 this.socketObj.isOpen = true;
@@ -246,7 +249,11 @@ export default class socket {
                 
             } catch (error) {
                 console.error("OA Socket error while opening connection:", error);
+                console.log('open reboot')
+                if (this.socketObj?.dontReconnect) return console.log("OA Socket not reconnecting due to dontReconnect flag.");
+                            setTimeout(() => {
                 this.start();
+            }, 1000);
                 return;
             }
         }
@@ -257,19 +264,27 @@ export default class socket {
 
         this.socketObj.onError = (error) => {
             console.error(error);
-            if (this.socketObj.dontReconnect) return console.log("OA Socket error, not reconnecting due to dontReconnect flag.");
+            if (this.socketObj?.dontReconnect) return console.log("OA Socket not reconnecting due to dontReconnect flag.");
 
             setTimeout(() => {
+                if (this.socketObj?.dontReconnect) return console.log("OA Socket not reconnecting due to dontReconnect flag.");
+                console.log('error reboot')
+                            setTimeout(() => {
                 this.start();
+            }, 1000);
             }, 500)
         }
 
         this.socketObj.onClose = (code) => {
-            if (this.socketObj.dontReconnect) return console.log("OA Socket closed, not reconnecting due to dontReconnect flag.");
 
+            if (this.socketObj?.dontReconnect) return console.log("OA Socket not reconnecting due to dontReconnect flag.");
             console.error("OA Socket closed with code:", code);
             setTimeout(() => {
-                this.start();
+                if (this.socketObj?.dontReconnect) return console.log("OA Socket not reconnecting due to dontReconnect flag.");
+                console.log('close reboot')
+                setTimeout(() => {
+                    this.start();
+                }, 1000);
             }, 500);
         }
 

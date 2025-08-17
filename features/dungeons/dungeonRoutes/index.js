@@ -254,14 +254,14 @@ export default class dungeonRoutes {
             const actionString = action.toString();
             if (actionString === 'RIGHT_CLICK_BLOCK' || actionString === 'LEFT_CLICK_BLOCK') {
                 if (this.editing.isEditing && this.currentlyInRun && this.currentRoom) {
-                    const relitiveCoords = getRoomCoord([x, y, z]);
+                    const relitiveCoords = this.getRoomCoord([x, y, z]);
                     const routes = JSON.parse(FileLib.read("OrangeAddons", "/src/features/dungeonRoutes/rooms.json"));
                     const tracks = routes.find(r => r.name === this.currentRoom.name).tracks;
                     const track = tracks.find(t => t.x === relitiveCoords[0] && t.y === relitiveCoords[1] && t.z === relitiveCoords[2]);
                     if (track) {
                         if (actionString === 'RIGHT_CLICK_BLOCK') {
-                            const block = getBlockAtCoords(x, y, z);
-                            editBlock(block);
+                            const block = this.getBlockAtCoords(x, y, z);
+                            this.editBlock(block);
                         }
                     }
                 }
@@ -447,7 +447,7 @@ export default class dungeonRoutes {
                 else if (data.finalize) {
                     if (data.cancel) {
                         _this.resetEditing();
-                        reloadroom();
+                        _this.reloadroom();
                         return;
                     };
 
