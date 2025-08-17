@@ -1,5 +1,6 @@
 # OrangeAddons
 ### Made by a Skyblock Maniacs Developer
+### This version of OA is not tested very much so it may be very buggy as it is a mostly untested refactor. report any bugs to orange0513 on discord
 ## Features:
 - Low Soulflow Alerts
 - Katana Expiry Alerts
@@ -19,3 +20,8 @@
 - /cheapest - shows the cheapest way to upgrade your attributes
 - /purselb - checks the purses in your lobby (only works in dark auction)
 - levers/terms per run
+- Dungeon Routes
+- Route Explorer
+- Who Tried To Warp Me Out (checks mutual guilds with people in your lobby)
+- Auto Kick For Shitter List
+- Auto Kick For PB

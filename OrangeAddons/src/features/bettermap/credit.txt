@@ -1,2 +1,0 @@
-any code in this folder is from the bettermap module with modifications to fit OA
-/ct import bettermap
